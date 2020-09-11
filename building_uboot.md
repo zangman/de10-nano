@@ -100,4 +100,9 @@ Once the compilation completes, it should have generated the file `u-boot-with-s
 
 ## References
 
-TODO
+[Official U-Boot repository](https://github.com/u-boot/u-boot) - The README has most of the instructions.
+
+[Building embedded linux for the Terasic DE10-Nano](https://bitlog.it/20170820_building_embedded_linux_for_the_terasic_de10-nano.html) - This page is again a very useful reference.
+
+
+
