@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Absolute beginner's guide to DE10-Nano.](#absolute-beginners-guide-to-de10-nano)
+  - [Isn't there documentation already? Why this doc?](#isnt-there-documentation-already-why-this-doc)
+  - [Prerequisites](#prerequisites)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Absolute beginner's guide to DE10-Nano.
 
 This repository contains all the details for an absolute beginner to get started with the DE10-Nano.

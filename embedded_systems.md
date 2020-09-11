@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Introduction to Embedded Systems](#introduction-to-embedded-systems)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Introduction to Embedded Systems
 
 Read these series of articles titled **Mastering Embedded Linux**, it gives a good introduction to embedded systems and is probably all you need to get started with understanding how to build and configure linux for your de10-nano.

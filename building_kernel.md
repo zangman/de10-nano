@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Building the Kernel](#building-the-kernel)
+    - [Library dependencies](#library-dependencies)
+    - [Get a suitable ARM compiler](#get-a-suitable-arm-compiler)
+    - [Download the Kernel](#download-the-kernel)
+    - [Configure the Kernel](#configure-the-kernel)
+    - [Build the Kernel image](#build-the-kernel-image)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Building the Kernel
 
 ### Library dependencies

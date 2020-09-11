@@ -1,6 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Preparing your development environment](#preparing-your-development-environment)
+  - [Summary](#summary)
+  - [Operating System](#operating-system)
+    - [Important: Storage space](#important-storage-space)
+  - [Quartus Download and Install](#quartus-download-and-install)
+  - [Working Directory](#working-directory)
+  - [ARM Compiler](#arm-compiler)
+    - [Get a suitable ARM compiler](#get-a-suitable-arm-compiler)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Preparing your development environment
 
-[TOC]
+
 
 ## Summary
 

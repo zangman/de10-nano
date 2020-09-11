@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [SoCs are different from standard FPGAs](#socs-are-different-from-standard-fpgas)
+- [You can ignore the HPS and it becomes a standard FPGA](#you-can-ignore-the-hps-and-it-becomes-a-standard-fpga)
+- [I'm comfortable with basic FPGAs, I want to use the HPS, so how?!](#im-comfortable-with-basic-fpgas-i-want-to-use-the-hps-so-how)
+- [Stop ranting, tell me something useful!](#stop-ranting-tell-me-something-useful)
+- [How does the HPS interact with the SoC? Can I just access some pins internally?](#how-does-the-hps-interact-with-the-soc-can-i-just-access-some-pins-internally)
+- [Now we can start!](#now-we-can-start)
+- [Final words](#final-words)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## SoCs are different from standard FPGAs
 
 On a standard FPGA board ([iCEstick](https://www.latticesemi.com/icestick), [nandland go](https://www.nandland.com/goboard/introduction.html)), all the peripherals are connected to various pins on the FPGA. However, on the DE10-Nano, some of the peripherals are connected to the FPGA fabric and some are connected to the HPS. For example, HDMI is connected to the FPGA fabric. So you can't get video out just by using Linux on an sd card. It needs to be accompanied with some files that will allow the HPS to communicate with the FPGA to show the HDMI output. This is shown in the [block diagram](https://software.intel.com/content/www/us/en/develop/articles/de10-nano-board-schematic.html). Similarly, UART is only available with the HPS.

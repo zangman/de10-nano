@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Debian rootfs](#debian-rootfs)
+    - [Debootstrap and QEMU](#debootstrap-and-qemu)
+    - [First Stage](#first-stage)
+    - [Second Stage](#second-stage)
+    - [Configuration](#configuration)
+    - [Clean up](#clean-up)
+    - [Create a tarball](#create-a-tarball)
+  - [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Debian rootfs
 
 There are several flavours of rootfs to choose from. This one focuses on the Debian rootfs. This will give you an environment similar to the Rasbperry Pi OS for your DE10-Nano.

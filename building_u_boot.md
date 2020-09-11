@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Building U-Boot for the DE10-Nano](#building-u-boot-for-the-de10-nano)
+  - [Getting the sources](#getting-the-sources)
+  - [Configuring and Building](#configuring-and-building)
+    - [Getting the ARM compiler](#getting-the-arm-compiler)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Building U-Boot for the DE10-Nano
 
 U-Boot is a universal bootloader. Truly. It is used in almost every known embedded device out there and the DE10-Nano is no exception. Here we will build a U-Boot image to be used for the DE10-Nano.
