@@ -1,19 +1,25 @@
+# Building U-Boot for the DE10-Nano
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Building U-Boot for the DE10-Nano](#building-u-boot-for-the-de10-nano)
+- [Summary](#summary)
+- [Steps](#steps)
   - [Getting the sources](#getting-the-sources)
-  - [Configuring and Building](#configuring-and-building)
-    - [Getting the ARM compiler](#getting-the-arm-compiler)
+  - [Configuring](#configuring)
+  - [Building](#building)
+- [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Building U-Boot for the DE10-Nano
+## Summary
 
 U-Boot is a universal bootloader. Truly. It is used in almost every known embedded device out there and the DE10-Nano is no exception. Here we will build a U-Boot image to be used for the DE10-Nano.
 
-## Getting the sources
+## Steps
+
+### Getting the sources
 
 There are two source repositories for U-Boot - the official [U-Boot repo](https://github.com/u-boot/u-boot) and the [altera fork](https://github.com/altera-opensource/u-boot-socfpga) of the U-Boot repo. You can use either of them and honestly, I don't know if any difference exists. For this guide, we will be using the official U-Boot repo because a [patch](https://lists.denx.de/pipermail/u-boot/2019-April/367258.html) had been submitted for it and it worked fine when I tested it.
 
@@ -35,13 +41,7 @@ git tag
 git checkout v2020.07
 ```
 
-## Configuring and Building
-
-### Getting the ARM compiler
-
-U-Boot will need to be compiled with a suitable cross-compiler. This step was covered when we were building the kernel. 
-
-
+### Configuring
 
 U-Boot has a number of pre-built configurations in the `configs` folder. To view all the available ones for altera, run the following command:
 
@@ -57,3 +57,10 @@ Prepare the default config:
 make socfpga_de10_nano_defconfig
 ```
 
+### Building
+
+TODO
+
+## References
+
+TODO

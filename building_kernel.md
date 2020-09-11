@@ -1,10 +1,12 @@
+# Building the Kernel
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Building the Kernel](#building-the-kernel)
+  - [Summary](#summary)
+  - [Steps](#steps)
     - [Library dependencies](#library-dependencies)
-    - [Get a suitable ARM compiler](#get-a-suitable-arm-compiler)
     - [Download the Kernel](#download-the-kernel)
     - [Configure the Kernel](#configure-the-kernel)
     - [Build the Kernel image](#build-the-kernel-image)
@@ -12,31 +14,16 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Building the Kernel
+## Summary
+
+Here we build a kernel for the DE10-Nano from scratch.
+
+## Steps
 
 ### Library dependencies
 
 ```bash
 sudo apt-get install libncurses-dev flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf bc
-```
-
-### Get a suitable ARM compiler
-
-Head over to the [downloads page at Linaro](https://www.linaro.org/downloads/) and download the latest binary release for `arm-linux-gnueabihf`. This is the version of `gcc` that we will use to compile our kernel with. The latest version at the time of writing is `7.5.0-2019.12`. We will fetch the `x86_64` release because we're using Debian on a 64-bit machine.
-
-```bash
-wget https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz
-
-tar -xf gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz
-
-# Delete the archive since we don't need it anymore.
-rm gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz
-```
-
-Set the `CROSS_COMPILE` environment variable to point to the binary location. This is to tell the kernel `Makefile` where the compiler binary is located.
-
-```bash
-export CROSS_COMPILE=$PWD/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
 ```
 
 ### Download the Kernel

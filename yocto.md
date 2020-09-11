@@ -1,17 +1,19 @@
+# Yocto
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Yocto](#yocto)
-  - [Steps](#steps)
-    - [Preparing the sources](#preparing-the-sources)
-    - [Configuration](#configuration)
-    - [Build It!](#build-it)
-  - [Appendix](#appendix)
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Preparing the sources](#preparing-the-sources)
+  - [Configuration](#configuration)
+  - [Build It!](#build-it)
+- [Appendix](#appendix)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Yocto
+## Summary
 
 This page lists all the steps to build a Yocto based debian distro for de10-nano-soc.
 

@@ -1,23 +1,25 @@
+# Debian rootfs
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Debian rootfs](#debian-rootfs)
-    - [Debootstrap and QEMU](#debootstrap-and-qemu)
-    - [First Stage](#first-stage)
-    - [Second Stage](#second-stage)
-    - [Configuration](#configuration)
-    - [Clean up](#clean-up)
-    - [Create a tarball](#create-a-tarball)
-  - [References](#references)
+- [Summary](#summary)
+- [Debootstrap and QEMU](#debootstrap-and-qemu)
+- [First Stage](#first-stage)
+- [Second Stage](#second-stage)
+- [Configuration](#configuration)
+- [Clean up](#clean-up)
+- [Create a tarball](#create-a-tarball)
+- [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Debian rootfs
+## Summary
 
 There are several flavours of rootfs to choose from. This one focuses on the Debian rootfs. This will give you an environment similar to the Rasbperry Pi OS for your DE10-Nano.
 
-### Debootstrap and QEMU
+## Debootstrap and QEMU
 
 Debootstrap is a utility that makes it easy to create a rootfs on an existing Debian based machine. However, since our host machine is most likely `x86_64` and we are targeting an `armhf` architecture for the DE10-Nano, we will need to install an emulator from the [QEMU project](https://wiki.qemu.org/Main_Page). To install both on your host OS:
 
@@ -25,7 +27,7 @@ Debootstrap is a utility that makes it easy to create a rootfs on an existing De
 sudo apt install debootstrap qemu-user-static
 ```
 
-### First Stage
+## First Stage
 
 In the first stage, we will create a directory to hold the rootfs. Note that almost all the commands in this part will be done as root using `sudo` so take care not to make any mistakes.
 
@@ -40,7 +42,7 @@ mkdir $rootfs
 sudo debootstrap --arch=armhf --foreign buster $rootfs
 ```
 
-### Second Stage
+## Second Stage
 
 First, we have to copy over `qemu` to the target file system and `chroot` to target. Without copying over `qemu` we cannot `chroot`.
 
@@ -62,7 +64,7 @@ Once in the `chroot`-ed environment, we can kick off the second stage of `deboot
 
 This will take about 5 minutes to complete.
 
-### Configuration
+## Configuration
 
 While still in the `chroot` environment, let's do some setup so that our rootfs is more convenient to use.
 
@@ -140,7 +142,7 @@ While still in the `chroot` environment, let's do some setup so that our rootfs 
   apt install vim
   ```
 
-### Clean up
+## Clean up
 
 Run the following for some basic clean up:
 
@@ -155,7 +157,7 @@ rm /usr/bin/qemu-arm-static
 exit
 ```
 
-### Create a tarball
+## Create a tarball
 
 The last step is to create a tarball that we will extract into our SD Card partition:
 
@@ -168,8 +170,6 @@ sudo tar -cjpf ~/rootfs.tar.bz2 .
 ```
 
 And that completes the Debian rootfs. Be careful when extracting this as it will extract everything within the same directory (without creating another directory).
-
-
 
 ## References
 
