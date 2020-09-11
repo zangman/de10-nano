@@ -32,14 +32,12 @@ sudo apt install debootstrap qemu-user-static
 In the first stage, we will create a directory to hold the rootfs. Note that almost all the commands in this part will be done as root using `sudo` so take care not to make any mistakes.
 
 ```bash
-# I prefer to use a directory in my home folder.
-rootfs=~/rootfs
-
-mkdir $rootfs
+cd $DEWD
+mkdir rootfs
 
 # buster is the latest debian version at the time of writing.
 # Replace it with whatever is the latest.
-sudo debootstrap --arch=armhf --foreign buster $rootfs
+sudo debootstrap --arch=armhf --foreign buster rootfs
 ```
 
 ## Second Stage
@@ -47,13 +45,14 @@ sudo debootstrap --arch=armhf --foreign buster $rootfs
 First, we have to copy over `qemu` to the target file system and `chroot` to target. Without copying over `qemu` we cannot `chroot`.
 
 ```bash
-sudo cp /usr/bin/qemu-arm-static $rootfs/usr/bin/
+cd $DEWD
+sudo cp /usr/bin/qemu-arm-static rootfs/usr/bin/
 ```
 
 Now we should be able to `chroot`:
 
 ```bash
-sudo chroot $rootfs /usr/bin/qemu-arm-static /bin/sh -i
+sudo chroot rootfs /usr/bin/qemu-arm-static /bin/bash -i
 ```
 
 Once in the `chroot`-ed environment, we can kick off the second stage of `debootstrap`:
@@ -136,10 +135,10 @@ While still in the `chroot` environment, let's do some setup so that our rootfs 
   apt install haveged
   ```
 
-* **Install any other packages** - I can't live without vim, so I'll install it. You can install any other package as well:
+* **Install any other packages** - You can install any other packages you need as well:
 
   ```bash
-  apt install vim
+  apt install vim net-tools
   ```
 
 ## Clean up
@@ -162,11 +161,12 @@ exit
 The last step is to create a tarball that we will extract into our SD Card partition:
 
 ```bash
-cd $rootfs
+cd $DEWD
+cd rootfs
 
 # Don't forget the dot at the end.
 # Also has to be run as root.
-sudo tar -cjpf ~/rootfs.tar.bz2 .
+sudo tar -cjpf $DEWD/rootfs.tar.bz2 .
 ```
 
 And that completes the Debian rootfs. Be careful when extracting this as it will extract everything within the same directory (without creating another directory).

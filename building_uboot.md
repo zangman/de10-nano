@@ -17,6 +17,30 @@
 
 U-Boot is a universal bootloader. Truly. It is used in almost every known embedded device out there and the DE10-Nano is no exception. Here we will build a U-Boot image to be used for the DE10-Nano.
 
+This step will also generate the Secondary Program Loader (SPL) along with the bootloader. To understand how all the pieces fit together, refer to this table originally shared on [Stack Overflow](https://stackoverflow.com/questions/31244862/what-is-the-use-of-spl-secondary-program-loader/31252989). We will generate both steps 2 and 3.
+
+```
++--------+----------------+----------------+----------+
+| Boot   | Terminology #1 | Terminology #2 | Actual   |
+| stage  |                |                | program  |
+| number |                |                | name     |
++--------+----------------+----------------+----------+
+| 1      |  Primary       |  -             | ROM code |
+|        |  Program       |                |          |
+|        |  Loader        |                |          |
+|        |                |                |          |
+| 2      |  Secondary     |  1st stage     | u-boot   |
+|        |  Program       |  bootloader    | SPL      |
+|        |  Loader (SPL)  |                |          |
+|        |                |                |          |
+| 3      |  -             |  2nd stage     | u-boot   |
+|        |                |  bootloader    |          |
+|        |                |                |          |
+| 4      |  -             |  -             | kernel   |
+|        |                |                |          |
++--------+----------------+----------------+----------+
+```
+
 ## Steps
 
 ### Getting the sources
@@ -26,13 +50,14 @@ There are two source repositories for U-Boot - the official [U-Boot repo](https:
 Clone the repository:
 
 ```bash
+cd $DEWD
 git clone https://github.com/u-boot/u-boot.git
 ```
 
 List all the tags and select a release that you want to use. For this guide, I used the latest stable release `v2020.07`:
 
 ```bash
-cd u-boot
+cd $DEWD/u-boot
 
 # List all available tags.
 git tag
@@ -54,12 +79,24 @@ We will be using `socfpga_de10_nano_defconfig`.
 Prepare the default config:
 
 ```bash
-make socfpga_de10_nano_defconfig
+make ARCH=arm socfpga_de10_nano_defconfig
+```
+
+The defaults should be fine. But should you choose to fine tune the config, you can run the following and update them:
+
+```bash
+make ARCH=arm menuconfig
 ```
 
 ### Building
 
-TODO
+Now we can build U-Boot. Run the following command:
+
+```bash
+make ARCH=arm -j 24
+```
+
+Once the compilation completes, it should have generated the file `u-boot-with-spl.sfp`. This is the bootloader combined with the secondary program loader (spl).
 
 ## References
 

@@ -22,6 +22,8 @@ Here we build a kernel for the DE10-Nano from scratch.
 
 ### Library dependencies
 
+The following packages are needed for compiling the kernel:
+
 ```bash
 sudo apt-get install libncurses-dev flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf bc
 ```
@@ -31,6 +33,7 @@ sudo apt-get install libncurses-dev flex bison openssl libssl-dev dkms libelf-de
 Altera has their own fork of the kernel. You can clone the [altera linux repository](https://github.com/altera-opensource/linux-socfpga.git):
 
 ```bash
+cd $DEWD
 git clone https://github.com/altera-opensource/linux-socfpga.git
 ```
 
@@ -38,6 +41,11 @@ List the branches with `git branch -a` and checkout the one you want to use. We 
 
 ```bash
 cd linux-socfpga
+
+# View the list of available branches.
+git branch -a
+
+# Use the branch you prefer.
 git checkout socfpga-5.8
 ```
 
@@ -57,12 +65,14 @@ make ARCH=arm menuconfig
 
 Under `General setup` and uncheck `Automatically append version information to the version string`. This makes it easier to test different versions of the drivers. Better to keep it enabled in production though.
 
+Feel free to look through the other options and when done, press the right-arrow key until `Exit` is highlighted and press enter. Keep exiting until you get a window that asks if you want to save config. Choose yes and that will exit you out of the utility.
+
 ### Build the Kernel image
 
 Now we can finally build the kernel image. Use the following command to create a kernel image called `zImage`:
 
 ```bash
-make ARCH=arm LOCALVERSION=zImage
+make ARCH=arm LOCALVERSION=zImage -j 24
 ```
 
 If it makes any complaints about `bc` not found or `flex` not found, install that utility using `sudo apt install <library>`.
