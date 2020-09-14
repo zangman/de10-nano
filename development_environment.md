@@ -71,6 +71,23 @@ chmod +x *.run
 ./SoCEDSSetup-20.1.0.711-linux.run
 ```
 
+Let's edit `.bash_aliases` so that we the quartus tools are easily accessible:
+
+```bash
+echo "" >> ~/.bash_aliases
+echo "# Path for Quartus tools." >> ~/.bash_aliases
+
+# Access to quartus, qsys etc.
+echo "export PATH=$HOME/intelFPGA_lite/20.1/quartus/bin:\$PATH" >> ~/.bash_aliases
+
+# Access to embedded_command_shell.sh which sets up the
+# environment variables so that all the embedded tools are available
+# like bsp-settings-editor etc.
+echo "export PATH=$HOME/intelFPGA_lite/20.1/embedded:\$PATH" >> ~/.bash_aliases
+```
+
+
+
 This completes the Quartus section of the setup.
 
 ## Working Directory

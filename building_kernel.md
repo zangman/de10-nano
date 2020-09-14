@@ -9,6 +9,11 @@
     - [Library dependencies](#library-dependencies)
     - [Download the Kernel](#download-the-kernel)
     - [Configure the Kernel](#configure-the-kernel)
+    - [Primer on Flashing FPGA](#primer-on-flashing-fpga)
+    - [Kernel Options](#kernel-options)
+      - [Do not append version](#do-not-append-version)
+      - [Enable Overlay filesystem support](#enable-overlay-filesystem-support)
+      - [Enable CONFIGFS](#enable-configfs)
     - [Build the Kernel image](#build-the-kernel-image)
 - [References](#references)
 
@@ -51,7 +56,7 @@ git checkout socfpga-5.8
 
 ### Configure the Kernel
 
-Create the default configuration:
+Initialize the configuration for the DE10-Nano:
 
 ```bash
 make ARCH=arm socfpga_defconfig
@@ -63,7 +68,38 @@ Now open the kernel configuration window:
 make ARCH=arm menuconfig
 ```
 
+There are a few adjustments we want to make. But before that, let's understand a little bit about how to flash the FPGA on your DE10-Nano.
+
+### Primer on Flashing FPGA
+
+There are a few ways to flash your FPGA design. The traditional way is to just connect to the USB blaster interface and just flash it away. However, with the ARM HPS on our SoC, we have a couple of other ways as well:
+
+1. **Flash from U-Boot on boot** - U-Boot has the ability to flash the FPGA design using some built-in commands. We will visit how to do this when we're building U-Boot.
+2. **Flash from Linux while running** - I think this is one of the big benefits of having an HPS. We can flash our hardware design directly from Linux without even rebooting the device.
+
+To be able to do this, we need to enable the **Overlay filesystem support** and **Userspace-driven configuration filesystem** in the kernel. If you don't intend to flash your FPGA from linux then feel free to skip these.
+
+> **NOTE** - If you don't need these 2 options, you can just use the mainstream linux source to build your kernel instead of the altera-opensource version. Just clone the repository at `github.com/torvalds/linux`.
+
+### Kernel Options
+
+#### Do not append version
+
 Under `General setup` and uncheck `Automatically append version information to the version string`. This makes it easier to test different versions of the drivers. Better to keep it enabled in production though.
+
+![](images/kernel_config_append_version.png)
+
+#### Enable Overlay filesystem support
+
+Under `File systems`, enable `Overlay filesystem support` and all the options under it:
+
+![](/home/ryder/myp/de10-nano/images/kernel_config_overlay_filesystem.png)
+
+#### Enable CONFIGFS
+
+This should be enabled already, but if not, do enable it:
+
+![](/home/ryder/myp/de10-nano/images/kernel_config_userspace.png)
 
 Feel free to look through the other options and when done, press the right-arrow key until `Exit` is highlighted and press enter. Keep exiting until you get a window that asks if you want to save config. Choose yes and that will exit you out of the utility.
 
@@ -91,7 +127,9 @@ Once the compilation is complete, you now have a compressed Linux kernel image. 
 
 # References
 
-[Building embedded linux for the Terasic DE10-Nano](https://bitlog.it/20170820_building_embedded_linux_for_the_terasic_de10-nano.html) - Almost everything on this page has been taken from this incredible article. Do take the time to go through it.
+[Building embedded linux for the Terasic DE10-Nano](https://bitlog.it/20170820_building_embedded_linux_for_the_terasic_de10-nano.html) - A large part of this page has been taken from here.
+
+[Stackoverflow - Cannot mount configfs](https://stackoverflow.com/questions/50877808/configfs-do-not-mount-device-tree-overlays) - This page explains why you cannot see the device tree overlay.
 
 
 

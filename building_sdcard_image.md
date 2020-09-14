@@ -4,7 +4,9 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Building the SD Card Image](#building-the-sd-card-image)
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Create the SD Card image file and partitions](#create-the-sd-card-image-file-and-partitions)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
