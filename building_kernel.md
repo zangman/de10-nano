@@ -93,13 +93,13 @@ Under `General setup` and uncheck `Automatically append version information to t
 
 Under `File systems`, enable `Overlay filesystem support` and all the options under it:
 
-![](/home/ryder/myp/de10-nano/images/kernel_config_overlay_filesystem.png)
+![](images/kernel_config_overlay_filesystem.png)
 
 #### Enable CONFIGFS
 
 This should be enabled already, but if not, do enable it:
 
-![](/home/ryder/myp/de10-nano/images/kernel_config_userspace.png)
+![](images/kernel_config_userspace.png)
 
 Feel free to look through the other options and when done, press the right-arrow key until `Exit` is highlighted and press enter. Keep exiting until you get a window that asks if you want to save config. Choose yes and that will exit you out of the utility.
 
