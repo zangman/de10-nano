@@ -1,18 +1,5 @@
 # Absolute beginner's guide to DE10-Nano
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Summary](#summary)
-- [FAQ](#faq)
-  - [Isn't there documentation already? Why this guide?](#isnt-there-documentation-already-why-this-guide)
-  - [I spotted a mistake!](#i-spotted-a-mistake)
-- [Getting further help](#getting-further-help)
-- [Prerequisites](#prerequisites)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ## Summary
 
 This repository contains all the details for an absolute beginner to get started with the DE10-Nano.
