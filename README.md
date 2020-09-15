@@ -7,7 +7,7 @@ This repository contains all the details for an absolute beginner to get started
 ## Topics
 
 1. [Introduction to SoCs](introduction.md)
-2. Introduction to DE10-Nano
+2. Introduction to DE10-Nano - TODO
 3. [Setting up the development Environment](development_environment)
 4. Building Embedded Linux:
    1. [Introduction to embedded systems](embedded_systems.md)
