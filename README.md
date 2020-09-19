@@ -4,23 +4,7 @@
 
 This repository contains all the details for an absolute beginner to get started with the DE10-Nano.
 
-## Topics
-
-1. [Introduction to SoCs](introduction.md)
-2. Introduction to DE10-Nano - TODO
-3. [Setting up the development Environment](development_environment)
-4. Building Embedded Linux:
-   1. [Introduction to embedded systems](embedded_systems.md)
-   2. [Building the Kernel](building_kernel.md)
-   3. [Building the bootloader (U-Boot)](building_uboot.md)
-   4. Building the rootfs
-      1. [Debian (preferred)](debian_rootfs.md)
-      2. [Yocto](yocto.md)
-   5. [Basics of the Device Tree](device_tree.md) - WIP
-   6. [Creating the SD Card image](building_sdcard_image.md)
-5. Flashing the FPGA:
-   1. On reboot - TODO
-   2. [From Linux](flash_fpga_from_linux.md)
+To get started, please visit [the wiki](https://github.com/zangman/de10-nano/wiki).
 
 ## FAQ
 
