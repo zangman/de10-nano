@@ -20,9 +20,7 @@ Please let me know! Either raise an issue or submit a pull request and I will gr
 
 ## Getting further help
 
-If you have a question about something, feel free to raise it as an issue and I'll try and address it. But this is a hobby for me and I can't really guarantee being able to answer it, nor do I guarantee that I will have time to answer your question.
-
-You can also reach out to the following communities for more help:
+If you have a question about something, feel free to raise it as an issue and I'll try and address it if I can. You can also reach out to the following communities for more help:
 
 * [FPGA Subreddit](reddit.com/r/FPGA) - Some of the nicest people online here. I have lost track of the number of times people have asked "Which board should I get?" and yet never has the post been taken down or rudely put down.
 * ##FPGA on IRC Freenode - Excellent resource for general FPGA related questions. Ask a question and do lurk around, people are busy and may not reply immediately.
