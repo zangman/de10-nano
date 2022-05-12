@@ -1,0 +1,1 @@
+If you are not familiar with the DE10-Nano, the [getting started page from Intel](https://software.intel.com/content/www/us/en/develop/articles/terasic-de10-nano-get-started-guide.html) is an excellent resource to begin with. I recommend going through or at least skimming through the various articles, it provides a good overview of how you can think of using the DE10-Nano.
