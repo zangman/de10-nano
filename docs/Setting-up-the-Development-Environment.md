@@ -1,25 +1,15 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Introduction-to-DE10-Nano.md">Back</a> | <a href="Setting-up-the-Development-Environment.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<br/>
+<sup>Setting up the Development Environment</sup></p>
 
-- [Summary](#summary)
-- [Operating System](#operating-system)
-  - [Important: Storage space](#important-storage-space)
-  - [Setting up sudo](#setting-up-sudo)
-- [Quartus Download and Install](#quartus-download-and-install)
-  - [[Optional] Access JTAG as normal user](#optional-access-jtag-as-normal-user)
-- [Working Directory](#working-directory)
-- [ARM Compiler](#arm-compiler)
-  - [Get a suitable ARM compiler](#get-a-suitable-arm-compiler)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Setting up the Development Environment
 
 ## Summary
 
 Here we will take some time to set up our development environment which will be similar to the one was used when putting together this guide. This will ensure that:
 
-* All the commands used in this guide work seamlessly.
-* You can close your session and/or restart your terminal without having to do the set up again.
+- All the commands used in this guide work seamlessly.
+- You can close your session and/or restart your terminal without having to do the set up again.
 
 ## Operating System
 
@@ -45,15 +35,15 @@ The following software is needed. All the tools are free, but you will need to c
 
 Download the following by choosing the latest available Quartus Lite version. At the time of writing, it is 20.1:
 
-* Quartus Prime Lite Edition
-  * Quartus Prime (Includes Nios II EDS)
-  * ModelSim-Intel FPGA Edition (includes Starter Edition)
+- Quartus Prime Lite Edition
+  - Quartus Prime (Includes Nios II EDS)
+  - ModelSim-Intel FPGA Edition (includes Starter Edition)
     (Required for design simulation)
-  * Cyclone V device support
-* Quartus Standard Edition
-  * Intel SoC FPGA Embedded Development Suite Standard Edition
+  - Cyclone V device support
+- Quartus Standard Edition
+  - Intel SoC FPGA Embedded Development Suite Standard Edition
 
-Refer to the screenshots below: 
+Refer to the screenshots below:
 
 ![](images/quartus_download1.png)
 
@@ -92,8 +82,6 @@ echo "export PATH=$HOME/intelFPGA_lite/20.1/quartus/bin:\$PATH" >> ~/.bash_alias
 echo "export PATH=$HOME/intelFPGA_lite/20.1/embedded:\$PATH" >> ~/.bash_aliases
 ```
 
-
-
 ### [Optional] Access JTAG as normal user
 
 If you want to program the de10-nano as a simple FPGA, you will need to use the JTAG programmer present on the board and set the MSEL pins as follows:
@@ -123,7 +111,7 @@ After connecting the cable to your machine, run `lsusb` to list all the usb devi
 ```bash
 ~ > lsusb
 ...
-Bus 001 Device 013: ID 09fb:6810 Altera 
+Bus 001 Device 013: ID 09fb:6810 Altera
 ...
 ~ >
 ```
@@ -203,7 +191,7 @@ echo "export CROSS_COMPILE=$DEWD/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnue
 
 > **Did you know?**
 >
-> This is a very clever way of making sure the same command can be used for multiple architectures. 
+> This is a very clever way of making sure the same command can be used for multiple architectures.
 >
 > ```bash
 > ${CROSS_COMPILE}gcc
@@ -211,3 +199,7 @@ echo "export CROSS_COMPILE=$DEWD/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnue
 >
 > If `CROSS_COMPILE` is not set, then it uses the system default `gcc`. If it is set, it uses the version specified by the variable.
 
+##
+
+<p align="right">Back | <b><a href="Introduction-to-DE10-Nano.md">Introduction to DE10-Nano</a></p>
+</b><p align="center"><sup>Getting Started | </sup><a href="../README.md#getting-started"><sup>Table of Contents</sup></a></p>
