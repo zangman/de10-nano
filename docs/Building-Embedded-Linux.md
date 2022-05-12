@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="../README.md#building-embedded-linux---full-custom">Back</a> | <a href="Building-the-Universal-Bootloader-(U-Boot).md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<p align="right"><sup><a href="../README.md#building-embedded-linux---full-custom">Back</a> | <a href="Building-the-Universal-Bootloader-U-Boot.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
 <br/>
 <sup>Building Embedded Linux - Full Custom</sup></p>
 
@@ -26,7 +26,7 @@ There are a few steps we need to go through to build a working embedded linux OS
 
 ##
 
-<p align="right">Next | <b><a href="Building-the-Universal-Bootloader-(U-Boot).md">Building the Universal Bootloader (U-Boot)</a></b>
+<p align="right">Next | <b><a href="Building-the-Universal-Bootloader-U-Boot.md">Building the Universal Bootloader (U-Boot)</a></b>
 <br/>
 Back | <b><a href="../README.md#building-embedded-linux---full-custom">Overview</a></p>
 </b><p align="center"><sup>Building Embedded Linux - Full Custom | </sup><a href="../README.md#building-embedded-linux---full-custom"><sup>Table of Contents</sup></a></p>
