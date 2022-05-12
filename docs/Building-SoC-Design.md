@@ -1,28 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Configuring-the-Device-Tree.md">Back</a> | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Contents</sup></a>
+<br/>
+<sup>HPS and FPGA communication</sup></p>
 
-- [Summary](#summary)
-- [Steps](#steps)
-  - [Download the CD-ROM](#download-the-cd-rom)
-  - [Copy the GHRD to working directory](#copy-the-ghrd-to-working-directory)
-  - [Editing our design in Quartus](#editing-our-design-in-quartus)
-    - [Open the Project](#open-the-project)
-    - [Platform Designer](#platform-designer)
-      - [Startup](#startup)
-      - [Custom component HDL code](#custom-component-hdl-code)
-      - [Creating a Custom Component](#creating-a-custom-component)
-      - [Connecting the system](#connecting-the-system)
-      - [Generating the HDL](#generating-the-hdl)
-    - [Synthesis](#synthesis)
-    - [Convert file to `.rbf`](#convert-file-to-rbf)
-  - [Program to interact between the HPS and the FPGA](#program-to-interact-between-the-hps-and-the-fpga)
-    - [(Optional) Compiling on the DE10-Nano](#optional-compiling-on-the-de10-nano)
-- [Appendix](#appendix)
-  - [C++ Code](#c-code)
-- [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Designing and Flashing the design
 
 ## Summary
 
@@ -123,14 +103,14 @@ module custom_leds
 (
     input  logic        clk,                // clock.clk
     input  logic        reset,              // reset.reset
-    
+
     // Memory mapped read/write slave interface
     input  logic        avs_s0_address,     // avs_s0.address
     input  logic        avs_s0_read,        // avs_s0.read
     input  logic        avs_s0_write,       // avs_s0.write
     output logic [31:0] avs_s0_readdata,    // avs_s0.readdata
     input  logic [31:0] avs_s0_writedata,   // avs_s0.writedata
-    
+
     // The LED outputs
     output logic [7:0]  leds
 );
@@ -164,7 +144,7 @@ endmodule // custom_leds
 
 The code you see here implements the Avalon MM Slave interface for both read and write operations. If this sounds like greek and latin to you, take heart you are not alone.
 
-The Avalon Bus is Altera's way of having the HPS and FPGA communicate with each other. Xilinx uses the AXI Bus which is different, but serves the same purpose. Before QSys/Platform Designer came along, if you wanted to have them interact using Avalon, you'd have to learn all the details about the bus and implement everything yourself in hardware. Platform Designer does the wiring and instantiation of the Bus pretty seamless.  The code above enables the HPS to write to a memory location to have the FPGA automatically read and perform an action, which in our case is turning the LEDs either on or off.
+The Avalon Bus is Altera's way of having the HPS and FPGA communicate with each other. Xilinx uses the AXI Bus which is different, but serves the same purpose. Before QSys/Platform Designer came along, if you wanted to have them interact using Avalon, you'd have to learn all the details about the bus and implement everything yourself in hardware. Platform Designer does the wiring and instantiation of the Bus pretty seamless. The code above enables the HPS to write to a memory location to have the FPGA automatically read and perform an action, which in our case is turning the LEDs either on or off.
 
 Depending on your needs, you may want to explore more on the Avalon bus, but this is about as much as we'll talk about in this guide.
 
@@ -204,10 +184,10 @@ We've created our IP, but haven't added it to our design yet. So let's do it now
 
 We haven't wired our IP to the Avalon bus. We'll make the following connections:
 
-* `clk_0.clk -> custom_leds_0.clock`
-* `clk_0.reset -> custom_leds_0.reset`
-* `mm_bridge_0.mo -> custom_leds_0.avs_s0`
-* `fpga_only_master.master -> custom_leds_0.avs_s0`
+- `clk_0.clk -> custom_leds_0.clock`
+- `clk_0.reset -> custom_leds_0.reset`
+- `mm_bridge_0.mo -> custom_leds_0.avs_s0`
+- `fpga_only_master.master -> custom_leds_0.avs_s0`
 
 You can click on the highlighted junctions below to make the necessary connections:
 
@@ -223,7 +203,7 @@ First of all, hit `Ctrl + S` to save your design. Then click on the button `Gene
 
 #### Synthesis
 
-When you close the Platform Designer, back in Quartus, you may receive a notification to add the `.qip` to the project. We can ignore this step because we're using the GHRD since it is already added. If we started a project from scratch, we would have had to manually add it. 
+When you close the Platform Designer, back in Quartus, you may receive a notification to add the `.qip` to the project. We can ignore this step because we're using the GHRD since it is already added. If we started a project from scratch, we would have had to manually add it.
 
 ![](images/quartus_synthesis1.png)
 
@@ -231,7 +211,7 @@ You can verify this by changing the `Project Navigator` dropdown to `Files` and 
 
 ![](images/quartus_synthesis2.png)
 
-Change the dropdown back to `Hierarchy` and double-click the main module to open our top level module. Remember we removed the `led_pio` IP and added our own IP called `custom_leds`. We need to replace it in the top level module as well.  Comment out the line that connects `led_pio_external_connection_export` and replace it with `custom_leds_0_leds_new_signal` as shown below:
+Change the dropdown back to `Hierarchy` and double-click the main module to open our top level module. Remember we removed the `led_pio` IP and added our own IP called `custom_leds`. We need to replace it in the top level module as well. Comment out the line that connects `led_pio_external_connection_export` and replace it with `custom_leds_0_leds_new_signal` as shown below:
 
 ![](images/quartus_synthesis3.png)
 
@@ -239,9 +219,9 @@ Hit `Ctrl+S` to save and then double-click to build our design. This can take 10
 
 #### Convert file to `.rbf`
 
-The last step is to convert the file to `.rbf` format as explained [here](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#create-a-blink-design).
+The last step is to convert the file to `.rbf` format as explained [here](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#create-a-blink-design>).
 
-Once converted, you can program the FPGA either on [boot-up](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-On-Boot-Up) or from [the HPS](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)). If you are programming it from the HPS, then remember that the FPGA will get wiped when you power down the board. If this is a problem for you then the boot-up method might be preferable. The GHRD includes a module that will cause one of the LEDs to blink continuously. If you see this, congratulations, your design is up and running.
+Once converted, you can program the FPGA either on [boot-up](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-On-Boot-Up) or from [the HPS](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)>). If you are programming it from the HPS, then remember that the FPGA will get wiped when you power down the board. If this is a problem for you then the boot-up method might be preferable. The GHRD includes a module that will cause one of the LEDs to blink continuously. If you see this, congratulations, your design is up and running.
 
 ### Program to interact between the HPS and the FPGA
 
@@ -296,8 +276,8 @@ int main(int argc, char ** argv)
         exit(EXIT_FAILURE);
     }
 
-    // mmap() the entire address space of the Lightweight bridge so we can access our custom module 
-    lw_bridge_map = (uint32_t*)mmap(NULL, HPS_TO_FPGA_LW_SPAN, PROT_READ|PROT_WRITE, MAP_SHARED, devmem_fd, HPS_TO_FPGA_LW_BASE); 
+    // mmap() the entire address space of the Lightweight bridge so we can access our custom module
+    lw_bridge_map = (uint32_t*)mmap(NULL, HPS_TO_FPGA_LW_SPAN, PROT_READ|PROT_WRITE, MAP_SHARED, devmem_fd, HPS_TO_FPGA_LW_BASE);
     if(lw_bridge_map == MAP_FAILED) {
         perror("devmem mmap");
         close(devmem_fd);
@@ -320,13 +300,13 @@ int main(int argc, char ** argv)
         *custom_led_map = 0x00;
 
         // Wait half a second
-        usleep(500000); 
+        usleep(500000);
     }
 
     printf("Done!\n");
 
     // Unmap everything and close the /dev/mem file descriptor
-    result = munmap(lw_bridge_map, HPS_TO_FPGA_LW_SPAN); 
+    result = munmap(lw_bridge_map, HPS_TO_FPGA_LW_SPAN);
     if(result < 0) {
         perror("devmem munmap");
         close(devmem_fd);
@@ -468,8 +448,13 @@ ${CROSS_COMPILE}g++ -std=c++17 blink_leds.cc -o blink_leds
 
 ## References
 
-[Building embedded linux for the Terasic DE10-Nano](https://bitlog.it/20170820_building_embedded_linux_for_the_terasic_de10-nano.html) - Most of this article has  been adapted from here.
+[Building embedded linux for the Terasic DE10-Nano](https://bitlog.it/20170820_building_embedded_linux_for_the_terasic_de10-nano.html) - Most of this article has been adapted from here.
 
 [How to Create a Device Tree](https://rocketboards.org/foswiki/Documentation/HOWTOCreateADeviceTree) - Excellent article on how to create a device tree for Cyclone V.
 
 [Custom component development using Avalon and AXI interfaces](https://www.youtube.com/watch?v=Vw2_1pqa2h0) - Very informational training video that explains a lot of the magic going on in this article (posted in 2018 by Intel/Altera).
+
+##
+
+<p align="right">Back | <b><a href="Configuring-the-Device-Tree.md">Configuring the Device Tree</a></p>
+</b><p align="center"><sup>HPS and FPGA communication | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Table of Contents</sup></a></p>
