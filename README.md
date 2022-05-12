@@ -4,7 +4,7 @@ To get started with the guide, please visit [the wiki](https://github.com/zangma
 
 To just download the Debian or Arch Linux ARM (**NEW**) image for the DE10-Nano, please visit the [releases page](https://github.com/zangman/de10-nano/releases).
 
-**Table of Contents**
+### Table of Contents
 
 - [Getting Started](#getting-started)
 - [Building Embedded Linux - Full Custom](#building-embedded-linux---full-custom)
