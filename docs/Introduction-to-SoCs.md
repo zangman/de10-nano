@@ -1,6 +1,6 @@
 <p align="right"><sup><a href="../README.md#getting-started">Back</a> | <a href="Introduction-to-DE10-Nano.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
 <br/>
-<sup>Introduction to SoCs</sup></p>
+<sup>Getting Started</sup></p>
 
 # Introduction to SoCs
 

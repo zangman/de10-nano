@@ -1,31 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Building-the-Kernal-RootFS-Choose-One.md">Back</a> | <a href="%5BOptional%5D-Setting-up-Wifi.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<br/>
+<sup>Building Embedded Linux - Full Custom</sup></p>
 
-- [Summary](#summary)
-- [Steps](#steps)
-  - [Create the SD Card image file](#create-the-sd-card-image-file)
-  - [Partitioning the drive](#partitioning-the-drive)
-    - [Bootloader partition](#bootloader-partition)
-    - [Kernel and Device Tree partition](#kernel-and-device-tree-partition)
-    - [Root Partition](#root-partition)
-    - [Writing the partition table](#writing-the-partition-table)
-  - [Creating the file systems](#creating-the-file-systems)
-  - [Writing to the partitions](#writing-to-the-partitions)
-    - [Bootloader partition](#bootloader-partition-1)
-    - [Kernel and Device Tree partition](#kernel-and-device-tree-partition-1)
-    - [Root Filesystem partition](#root-filesystem-partition)
-  - [Cleanup](#cleanup)
-  - [Writing to SD Card](#writing-to-sd-card)
-    - [Writing in Linux](#writing-in-linux)
-    - [Writing in Windows](#writing-in-windows)
-- [References](#references)
-- [Appendix](#appendix)
-  - [Scripts to automate the SD Card creation](#scripts-to-automate-the-sd-card-creation)
-  - [Note on the DE0 Device Tree](#note-on-the-de0-device-tree)
-  - [Note on updating sdcard.img](#note-on-updating-sdcardimg)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Building the SD Card Image
 
 ## Summary
 
@@ -51,6 +28,7 @@ Let's create an image file of 1GB in size. Adjust the `bs` parameter if you want
 # Create an image file of 1GB in size.
 sudo dd if=/dev/zero of=sdcard.img bs=1G count=1
 ```
+
 > **Note**: For larger images, there are several more practical options available now instead of `dd` (such as `fallocate`). I refer you to [this stackoverflow question](https://stackoverflow.com/questions/257844/quickly-create-a-large-file-on-a-linux-system).
 >
 > For example, to create a 10GB image quickly `fallocate` is much faster:
@@ -69,7 +47,7 @@ This should output the loopback device. You should see something like `/dev/loop
 
 ### Partitioning the drive
 
-To run Embedded Linux on the DE10-Nano, we need 3 partitions as shown in the table below. Partition numbers have to be exactly as shown below. File sizes also have to be exactly as shown, except for the Root Filesystem which can be increased to take up all the remaining space on the SD card. In our case, we're using a 1GB image file so, we'll have the Root Filesystem take up  around 750MB.
+To run Embedded Linux on the DE10-Nano, we need 3 partitions as shown in the table below. Partition numbers have to be exactly as shown below. File sizes also have to be exactly as shown, except for the Root Filesystem which can be increased to take up all the remaining space on the SD card. In our case, we're using a 1GB image file so, we'll have the Root Filesystem take up around 750MB.
 
 Note that you should create them in the exact order listed when using fdisk.
 
@@ -103,7 +81,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 Disklabel type: dos
 Disk identifier: 0xef52db22
 
-Command (m for help): 
+Command (m for help):
 ```
 
 #### Bootloader partition
@@ -125,15 +103,15 @@ Partition type
    e   extended (container for logical partitions)
 Select (default p): p
 Partition number (1-4, default 1): 3
-First sector (2048-2097151, default 2048): 
+First sector (2048-2097151, default 2048):
 Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-2097151, default 2097151): +1M
 
 Created a new partition 3 of type 'Linux' and of size 1 MiB.
 
-Command (m for help): 
+Command (m for help):
 ```
 
-You can see that it assigned it the default filesystem of `Linux`. We need to change that to `Altera Custom`. This is not a standard filesystem, so we'll need to manually assign the hex code `a2`.  For this, enter the following commands:
+You can see that it assigned it the default filesystem of `Linux`. We need to change that to `Altera Custom`. This is not a standard filesystem, so we'll need to manually assign the hex code `a2`. For this, enter the following commands:
 
 1. `t`, `enter`
 2. `a2`, `enter`
@@ -162,11 +140,11 @@ Command (m for help): n
 Partition type
    p   primary (1 primary, 0 extended, 3 free)
    e   extended (container for logical partitions)
-Select (default p): 
+Select (default p):
 
 Using default response p.
 Partition number (1,2,4, default 1): 1
-First sector (4096-2097151, default 4096): 
+First sector (4096-2097151, default 4096):
 Last sector, +/-sectors or +/-size{K,M,G,T,P} (4096-2097151, default 2097151): +254M
 
 Created a new partition 1 of type 'Linux' and of size 254 MiB.
@@ -207,8 +185,8 @@ Partition type
    e   extended (container for logical partitions)
 Select (default p): p
 Partition number (2,4, default 2): 2
-First sector (524288-2097151, default 524288): 
-Last sector, +/-sectors or +/-size{K,M,G,T,P} (524288-2097151, default 2097151): 
+First sector (524288-2097151, default 524288):
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (524288-2097151, default 2097151):
 
 Created a new partition 2 of type 'Linux' and of size 768 MiB.
 ```
@@ -253,7 +231,7 @@ ls /dev/loop0*
 
 you will see we only have one device `/dev/loop0` and the partitions are not visible.
 
-To access them for mounting and writing the contents, we have to run 
+To access them for mounting and writing the contents, we have to run
 
 ```bash
 sudo partprobe /dev/loop0
@@ -289,7 +267,7 @@ Now we'll populate the various partitions.
 
 #### Bootloader partition
 
-The bootloader partition is a binary partition which needs to be written in raw format. We don't have to mount it, so we'll just use the `dd` command to write  it directly:
+The bootloader partition is a binary partition which needs to be written in raw format. We don't have to mount it, so we'll just use the `dd` command to write it directly:
 
 ```bash
 cd $DEWD
@@ -401,40 +379,41 @@ If we are writing to an SD card that was already written to with an image file b
 
 To do this, we can use fdisk as follows:
 
- 1. `d`, `enter`
- 1. `enter`
- 1. `d`, `enter`
- 1. `enter`
- 1. `d`, `enter`
- 1. `enter`
- 1. `w`, `enter`
+1.  `d`, `enter`
+1.  `enter`
+1.  `d`, `enter`
+1.  `enter`
+1.  `d`, `enter`
+1.  `enter`
+1.  `w`, `enter`
 
 Example output below:
 
 ```bash
-Command (m for help): d                                                                    
-Partition number (1-3, default 3):                                                         
-                                             
-Partition 3 has been deleted.        
-                                                                                           
-Command (m for help): d                                                                    
-Partition number (1,2, default 2):           
-                                                                                           
-Partition 2 has been deleted.                                                              
-                                                                                           
-Command (m for help): d                                                                    
-Selected partition 1                                                                       
-Partition 1 has been deleted.                                                              
+Command (m for help): d
+Partition number (1-3, default 3):
 
-Command (m for help): d     
-No partition is defined yet!                                                               
-                                                                                           
+Partition 3 has been deleted.
+
+Command (m for help): d
+Partition number (1,2, default 2):
+
+Partition 2 has been deleted.
+
+Command (m for help): d
+Selected partition 1
+Partition 1 has been deleted.
+
+Command (m for help): d
+No partition is defined yet!
+
 Command (m for help): w
 
 The partition table has been altered.
 Calling ioctl() to re-read partition table.
 Syncing disks.
 ```
+
 After this, we can run the `dd` command as shown above.
 
 #### Writing in Windows
@@ -463,13 +442,13 @@ Let's back up a bit about what the device tree does and why we need it. The devi
 
 Device trees for specific boards, such as the DE10-Nano, are provided by the vendors and are submitted via a pull request in 2 locations:
 
-* The official Linux kernel sources ([linux](https://github.com/torvalds/linux))
-* The official U-Boot sources ([u-boot](https://github.com/u-boot/u-boot))
+- The official Linux kernel sources ([linux](https://github.com/torvalds/linux))
+- The official U-Boot sources ([u-boot](https://github.com/u-boot/u-boot))
 
 However, in the case of the DE10-Nano, there are some additional customisations, drivers etc made by Altera/Intel in their own forks of the sources. These are available here:
 
-* Altera Linux kernel sources ([linux-socfpga](https://github.com/altera-opensource/linux-socfpga))
-* Altera U-Boot sources ([u-boot-socfpga](https://github.com/altera-opensource/u-boot-socfpga))
+- Altera Linux kernel sources ([linux-socfpga](https://github.com/altera-opensource/linux-socfpga))
+- Altera U-Boot sources ([u-boot-socfpga](https://github.com/altera-opensource/u-boot-socfpga))
 
 The device tree source files (dts) are generally submitted to both Linux and U-Boot. However, as it turns out, for the Altera devices, both of them are not in sync.
 
@@ -492,6 +471,7 @@ The alternative is to copy the DE10 device tree from U-Boot into the linux sourc
 I hope that helps explain this.
 
 ### Note on updating sdcard.img
+
 I wasted a lot of time on this, so just putting it here in case you run into the same.
 
 When experimenting with different builds of U-Boot, I was reusing the same `sdcard.img` file and simply running `dd` to overwrite the binary partition, which is `/dev/loop0p3` in our guide. However, when I did this and wrote to the SD Card it kept using the old version of the bootloader. After a lot of time debugging, it turns out the reason it wasn't updating was because `dd` doesn't wipe the entire partition. It just streams whatever you have to the destination. So the bits may get overwritten or maybe not.
@@ -501,3 +481,10 @@ The solution is to wipe the partition clean before updating it. This can be done
 ```bash
 sudo dd if=/dev/zero of=/dev/loop0p3 bs=64k oflag=sync status=progress
 ```
+
+##
+
+<p align="right">Next | <b><a href="%5BOptional%5D-Setting-up-Wifi.md">(Optional) Setting up WIFI</a></b>
+<br/>
+Back | <b><a href="Building-the-Kernal-RootFS-Choose-One.md">RootFS - Choose one</a></p>
+</b><p align="center"><sup>Building Embedded Linux - Full Custom | </sup><a href="../README.md#building-embedded-linux---full-custom"><sup>Table of Contents</sup></a></p>

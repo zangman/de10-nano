@@ -1,21 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Building-the-Kernel.md">Back</a> | <a href="Building-the-SD-Card-image.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<br/>
+<sup>Building Embedded Linux - Full Custom</sup></p>
 
-- [Summary](#summary)
-- [Debootstrap and QEMU](#debootstrap-and-qemu)
-- [First Stage](#first-stage)
-- [Second Stage](#second-stage)
-- [NOTE - Manjaro/Arch](#note---manjaroarch)
-- [Configuration](#configuration)
-- [(Optional) Setup WIFI](#optional-setup-wifi)
-- [Clean up](#clean-up)
-- [Create a tarball](#create-a-tarball)
-- [References](#references)
-- [Appendix](#appendix)
-  - [BuildRoot and Yocto](#buildroot-and-yocto)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Debian Root File System
 
 ## Summary
 
@@ -93,41 +80,42 @@ And proceed with the same steps as above to create the rootfs.
 ## Configuration
 
 While still in the `chroot` environment, let's do some setup so that our rootfs is more convenient to use.
-* **Ugh, where's vim?** - Vim is my preferred editor, so I'll install it first before I do anything else. If you're comfortable using nano as the editor, then you can skip this.
+
+- **Ugh, where's vim?** - Vim is my preferred editor, so I'll install it first before I do anything else. If you're comfortable using nano as the editor, then you can skip this.
 
   ```bash
   apt install vim -y
   ```
 
-* **Hostname** - Change the name to be different from the current host distro in `/etc/hostname`. I call mine `de10-nano`.
+- **Hostname** - Change the name to be different from the current host distro in `/etc/hostname`. I call mine `de10-nano`.
 
-* **Root password** - Set the root password so it is not blank. I just set it to 'root'.
+- **Root password** - Set the root password so it is not blank. I just set it to 'root'.
 
   ```bash
   passwd
   ```
 
-* **fstab** - Let's update fstab so that the system auto mounts the drives. Copy the following lines as is into `/etc/fstab`:
+- **fstab** - Let's update fstab so that the system auto mounts the drives. Copy the following lines as is into `/etc/fstab`:
 
   ```bash
   none		/tmp	tmpfs	defaults,noatime,mode=1777	0	0
-  /dev/mmcblk0p2	/	ext4	defaults	0	1 
+  /dev/mmcblk0p2	/	ext4	defaults	0	1
   ```
 
-* **Enable the serial console** - This allows you to see all the messages at boot time without having to ssh into the device using a simple serial console (Putty, minicom etc)
+- **Enable the serial console** - This allows you to see all the messages at boot time without having to ssh into the device using a simple serial console (Putty, minicom etc)
 
   ```bash
   systemctl enable serial-getty@ttyS0.service
   ```
 
-* **Locales** - Configure and install the locales you will need. For me, this is just `en_US.UTF-8`:
+- **Locales** - Configure and install the locales you will need. For me, this is just `en_US.UTF-8`:
 
   ```bash
   apt install locales -y
   dpkg-reconfigure locales
   ```
 
-* **Ethernet** - To get the ethernet on the DE10-Nano working, we need to add the following to the file`/etc/network/interfaces` under the line that says `source-directory /etc/network/interfaces.d`. This will enable DHCP:
+- **Ethernet** - To get the ethernet on the DE10-Nano working, we need to add the following to the file`/etc/network/interfaces` under the line that says `source-directory /etc/network/interfaces.d`. This will enable DHCP:
 
   ```bash
   auto lo eth0
@@ -137,7 +125,7 @@ While still in the `chroot` environment, let's do some setup so that our rootfs 
   iface eth0 inet dhcp
   ```
 
-* **Sources.list** - Use a more complete apt `sources.list`. Edit the file `/etc/apt/sources.list` and add the following. Replace `buster` with whatever version of debian you are using:
+- **Sources.list** - Use a more complete apt `sources.list`. Edit the file `/etc/apt/sources.list` and add the following. Replace `buster` with whatever version of debian you are using:
 
   ```bash
   deb http://deb.debian.org/debian/ buster main contrib non-free
@@ -148,35 +136,37 @@ While still in the `chroot` environment, let's do some setup so that our rootfs 
   deb-src http://deb.debian.org/debian-security/ buster/updates main contrib non-free
   ```
 
-* **Openssh-Server** - Install `openssh-server` so that you can `ssh` into the device:
+- **Openssh-Server** - Install `openssh-server` so that you can `ssh` into the device:
 
   ```bash
   apt install openssh-server -y
   ```
 
-* **(Optional) Root login over ssh** - If you want to ssh as root, add/uncomment the following line in `/etc/ssh/sshd_config`:
+- **(Optional) Root login over ssh** - If you want to ssh as root, add/uncomment the following line in `/etc/ssh/sshd_config`:
 
   ```bash
   PermitRootLogin yes
   ```
 
-* **(Optional) Add a user** - TODO - add a user and enable sudo.
+- **(Optional) Add a user** - TODO - add a user and enable sudo.
 
-* **PRNG entropy seeding speedups** - This speeds up the ssh server startup time on debian buster. See [here](http://linux-sunxi.org/Debootstrap) for more details.
+- **PRNG entropy seeding speedups** - This speeds up the ssh server startup time on debian buster. See [here](http://linux-sunxi.org/Debootstrap) for more details.
 
   ```bash
   apt install haveged -y
   ```
 
-* **Install any other packages** - You can install any other packages you need as well:
+- **Install any other packages** - You can install any other packages you need as well:
 
   ```bash
   apt install net-tools build-essential device-tree-compiler -y
   ```
-  > **Explanation**: 
-  >  * net-tools makes the `ifconfig` command available.
-  >  * build-essential install `gcc` and allows you to compile programs on the DE10-Nano.
-  >  * device-tree-compiler is needed to compile the device tree when flashing the FPGA directly from the HPS.
+
+  > **Explanation**:
+  >
+  > - net-tools makes the `ifconfig` command available.
+  > - build-essential install `gcc` and allows you to compile programs on the DE10-Nano.
+  > - device-tree-compiler is needed to compile the device tree when flashing the FPGA directly from the HPS.
 
 ## (Optional) Setup WIFI
 
@@ -222,12 +212,20 @@ And that completes the Debian rootfs. Be careful when extracting this as it will
 [Debootstrap - Linux-Sunxi](http://linux-sunxi.org/Debootstrap)
 
 ## Appendix
+
 ### BuildRoot and Yocto
+
 [BuildRoot](https://buildroot.org/) and [Yocto](https://www.yoctoproject.org/) are two of the most popular embedded linux generating platforms out there. No doubt you would have heard of them. They are mature and well supported and used by many device manufacturers globally. However, in this guide, I chose to go with Debian instead of either of these. And the reason for that is the target audience. Both BuildRoot and Yocto are designed to build a highly customised and restricted linux OS that the manufacturer wants to have on their device (smartwatch, router, microwave etc). And some of the benefits are:
 
- * Optimized for tiny footprint
- * Packages installed are restricted
- * Well supported steps for firmware updates
+- Optimized for tiny footprint
+- Packages installed are restricted
+- Well supported steps for firmware updates
 
 I wanted a general purpose OS for my DE10-Nano which is why I chose to go with Debian. But if you're doing this for work, chances are you're pretty much looking for BuildRoot or Yocto.
 
+##
+
+<p align="right">Next | <b><a href="Building-the-SD-Card-image.md">Creating the SD Card Image</a></b>
+<br/>
+Back | <b><a href="Building-the-Kernel.md">Building the Kernel</a></p>
+</b><p align="center"><sup>Building Embedded Linux - Full Custom | </sup><a href="../README.md#building-embedded-linux---full-custom"><sup>Table of Contents</sup></a></p>

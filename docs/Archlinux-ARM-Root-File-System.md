@@ -1,30 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Building-the-Kernel.md">Back</a> | <a href="Building-the-SD-Card-image.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<br/>
+<sup>Building Embedded Linux - Full Custom</sup></p>
 
-- [Summary](#summary)
-- [Initial setup](#initial-setup)
-- [Archlinux ARM RootFS Steps](#archlinux-arm-rootfs-steps)
-  - [Install dependencies](#install-dependencies)
-  - [Mount the partition](#mount-the-partition)
-  - [Download prebuilt tarball](#download-prebuilt-tarball)
-  - [Chroot into the folder](#chroot-into-the-folder)
-  - [Customising the rootfs](#customising-the-rootfs)
-    - [Initializing the keys](#initializing-the-keys)
-    - [Update the locale](#update-the-locale)
-    - [Install vim/neovim](#install-vimneovim)
-    - [Set hostname](#set-hostname)
-    - [Root password](#root-password)
-    - [fstab](#fstab)
-    - [Enable serial console](#enable-serial-console)
-    - [Enable root login over ssh](#enable-root-login-over-ssh)
-    - [uboot-tools](#uboot-tools)
-    - [NTP - sync correct time](#ntp---sync-correct-time)
-    - [Speed up SSH connections](#speed-up-ssh-connections)
-    - [(Optional) Install wireless tools for wifi dongle](#optional-install-wireless-tools-for-wifi-dongle)
-  - [Finishing up](#finishing-up)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Archlinux ARM Root File System
 
 ## Summary
 
@@ -36,7 +14,7 @@ One of the main differences with creating the Archlinux ARM rootfs is we need to
 
 In any case, to get started, we'll need to go through all the steps listed [here](https://github.com/zangman/de10-nano/wiki/Building-the-SD-Card-image) all the way up to copying the [kernel and device tree](https://github.com/zangman/de10-nano/wiki/Building-the-SD-Card-image#kernel-and-device-tree-partition-1) and jump back here for the rootfs.
 
-##  Archlinux ARM RootFS Steps
+## Archlinux ARM RootFS Steps
 
 ### Install dependencies
 
@@ -133,7 +111,7 @@ Wait for the update to complete.
 
 #### Update the locale
 
-Follow the steps listed on [this page](https://wiki.archlinux.org/title/locale#Setting_the_locale) to set your locale. I'm just setting mine to US English. 
+Follow the steps listed on [this page](https://wiki.archlinux.org/title/locale#Setting_the_locale) to set your locale. I'm just setting mine to US English.
 
 Uncomment the required locale in /etc/locale.gen:
 
@@ -187,12 +165,12 @@ Copy the following lines as is into `/etc/fstab`:
 
 ```bash
 none		/tmp	tmpfs	defaults,noatime,mode=1777	0	0
-/dev/mmcblk0p2	/	ext4	defaults	0	1 
+/dev/mmcblk0p2	/	ext4	defaults	0	1
 ```
 
 #### Enable serial console
 
-This allows you to see all the messages at boot time without having to  ssh into the device using a simple serial console (Putty, minicom etc):
+This allows you to see all the messages at boot time without having to ssh into the device using a simple serial console (Putty, minicom etc):
 
 ```bash
 systemctl enable serial-getty@ttyS0.service
@@ -225,6 +203,7 @@ systemctl enable ntpd.service
 # Set timezone.
 timedatectl set-timezone America/Los_Angeles
 ```
+
 #### Speed up SSH connections
 
 For some reason it takes about 20 seconds to login everytime I ssh. After a lot of searching, tracked it down to [this issue](https://serverfault.com/a/792494). What worked for me was to set `UsePAM no` in `/etc/ssh/sshd_config`. I don't know the repercussions of doing this, but for now this works great.
@@ -266,3 +245,10 @@ sudo umount ext4
 ```
 
 Now head back over to [this section](https://github.com/zangman/de10-nano/wiki/Building-the-SD-Card-image#cleanup) to continue the clean up and writing to SD Card.
+
+##
+
+<p align="right">Next | <b><a href="Building-the-SD-Card-image.md">Creating the SD Card Image</a></b>
+<br/>
+Back | <b><a href="Building-the-Kernel.md">Building the Kernel</a></p>
+</b><p align="center"><sup>Building Embedded Linux - Full Custom | </sup><a href="../README.md#building-embedded-linux---full-custom"><sup>Table of Contents</sup></a></p>

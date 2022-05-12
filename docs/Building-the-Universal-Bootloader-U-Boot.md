@@ -1,22 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Building-Embedded-Linux.md">Back</a> | <a href="Building-the-Kernel.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<br/>
+<sup>Building Embedded Linux - Full Custom</sup></p>
 
-- [Summary](#summary)
-- [Steps](#steps)
-  - [Getting the sources](#getting-the-sources)
-  - [Configuring](#configuring)
-    - [Part 1 - Customizing the bootloader for the DE10-Nano](#part-1---customizing-the-bootloader-for-the-de10-nano)
-      - [Creating a new branch](#creating-a-new-branch)
-      - [Configure U-Boot to flash FPGA automatically at boot time](#configure-u-boot-to-flash-fpga-automatically-at-boot-time)
-      - [Asssign a permanent mac address to the ethernet device](#asssign-a-permanent-mac-address-to-the-ethernet-device)
-    - [Part 2 - Finish the configuration](#part-2---finish-the-configuration)
-  - [Building](#building)
-- [References](#references)
-- [Appendix](#appendix)
-  - [Setting the mac address at boot time](#setting-the-mac-address-at-boot-time)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Building the Universal Bootloader (U-Boot)
 
 ## Summary
 
@@ -75,10 +61,10 @@ git checkout v2021.07
 
 #### Part 1 - Customizing the bootloader for the DE10-Nano
 
-Here we will make a few changes to the source code to make it work more nicely with our DE10-Nano, viz., 
+Here we will make a few changes to the source code to make it work more nicely with our DE10-Nano, viz.,
 
-* Configure U-Boot to flash FPGA automatically at boot time.
-* Assign a permanent mac address to the ethernet device.
+- Configure U-Boot to flash FPGA automatically at boot time.
+- Assign a permanent mac address to the ethernet device.
 
 These steps are optional i.e. you can skip them and your bootloader will work great and you will only lose these 2 capabilities. If you prefer to get something up and running asap, then you can skip directly to Part 2 and come back to it later when you feel you need it.
 
@@ -153,17 +139,16 @@ Quick explanation of what we're doing here. `distro_bootcmd` sets up the u-boot 
 
 We're modifying this command to do two things.
 
- 1. First, we check to see if a u-boot script file exists on the fat partition called `u-boot.scr`. If it does we load it into memory at `0x2000000` and then run it using the `source` command.
+1.  First, we check to see if a u-boot script file exists on the fat partition called `u-boot.scr`. If it does we load it into memory at `0x2000000` and then run it using the `source` command.
 
     Having the check for `u-boot.scr` is helpful to override the default sequence of commands by creating a boot script image file `u-boot.scr` and saving it in the fat partition. This way we don't have to compile u-boot and burn it to the sd card every time we need some custom configuration. This may come in handy in the future.
- 1. Next, if the script file is not found, then we check if `soc_system.rbf` exists on the fat partition. If it does then, we load the design named `soc_system.rbf` into memory address `0x2000000` and in the next step, copy `0x700000` bytes from the memory location `0x2000000` into the FPGA. I obtained these numbers by looking at [this article](https://rocketboards.org/foswiki/Documentation/EmbeddedLinuxBeginnerSGuide) (Section titled "Writing the boot script") and by looking up in the source code. 
+
+1.  Next, if the script file is not found, then we check if `soc_system.rbf` exists on the fat partition. If it does then, we load the design named `soc_system.rbf` into memory address `0x2000000` and in the next step, copy `0x700000` bytes from the memory location `0x2000000` into the FPGA. I obtained these numbers by looking at [this article](https://rocketboards.org/foswiki/Documentation/EmbeddedLinuxBeginnerSGuide) (Section titled "Writing the boot script") and by looking up in the source code.
 
     Presumably, `0x2000000` is the RAM address where we want to copy the contents of the binary and `0x700000` is the size of the binary in bytes. But where does `0x700000` or `7MB` come from? Well, if we look in the [Cyclone V Device Data Sheet](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-v/cv_51002.pdf) on page 78, we see a table showing the size of `.rbf` configuration files in bits. Here is a screenshot:
 
     ![](images/uboot_rbf_size.png)
     The de10-nano uses a Cyclone V 5CSEBA6U23I7 and I've highlighted that above. So converting that from bits to MB, we get about `6.68MB` which is close to the `7MB` above.
-
-
 
 After making the changes, save the file and exit. Then commit it to the branch.
 
@@ -171,8 +156,6 @@ After making the changes, save the file and exit. Then commit it to the branch.
 git add .
 git commit -m "Load FPGA on boot."
 ```
-
-
 
 ##### Asssign a permanent mac address to the ethernet device
 
@@ -295,3 +278,9 @@ setenv ethaddr 56:6b:20:e9:4a:47
 saveenv
 ```
 
+##
+
+<p align="right">Next | <b><a href="Building-the-Kernel.md">Building the Kernel</a></b>
+<br/>
+Back | <b><a href="Building-Embedded-Linux.md">The Basics</a></p>
+</b><p align="center"><sup>Building Embedded Linux - Full Custom | </sup><a href="../README.md#building-embedded-linux---full-custom"><sup>Table of Contents</sup></a></p>

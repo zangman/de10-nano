@@ -31,7 +31,7 @@ To just download the Debian or Arch Linux ARM (**NEW**) image for the DE10-Nano,
 # Building Embedded Linux - Full Custom
 
 - [The Basics](docs/Building-Embedded-Linux.md)
-- [Building the Universal Bootloader (U-Boot)](<docs/Building-the-Universal-Bootloader-(U-Boot).md>)
+- [Building the Universal Bootloader (U-Boot)](docs/Building-the-Universal-Bootloader-U-Boot.md)
 - [Building the Kernel](docs/Building-the-Kernel.md)
 - RootFS - Choose one:
   - [Debian](docs/Debian-Root-File-System.md)

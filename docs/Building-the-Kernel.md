@@ -1,22 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Building-the-Universal-Bootloader-U-Boot.md">Back</a> | <a href="Building-the-Kernal-RootFS-Choose-One.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<br/>
+<sup>Building Embedded Linux - Full Custom</sup></p>
 
-  - [Summary](#summary)
-  - [Steps](#steps)
-    - [Library dependencies](#library-dependencies)
-    - [Download the Kernel](#download-the-kernel)
-    - [Configure the Kernel](#configure-the-kernel)
-    - [Primer on Flashing FPGA](#primer-on-flashing-fpga)
-    - [Kernel Options](#kernel-options)
-      - [Do not append version](#do-not-append-version)
-      - [Enable Overlay filesystem support](#enable-overlay-filesystem-support)
-      - [Enable CONFIGFS](#enable-configfs)
-      - [(Optional) Enable options for WIFI](#optional-enable-options-for-wifi)
-    - [Build the Kernel image](#build-the-kernel-image)
-- [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Building the Kernel
 
 ## Summary
 
@@ -41,7 +27,7 @@ cd $DEWD
 git clone https://github.com/altera-opensource/linux-socfpga.git
 ```
 
-List the branches with `git branch -a` and checkout the one you want to use. We chose to use the latest available at the time of writing. What's the point of using an ancient kernel if you're going to all this trouble? 
+List the branches with `git branch -a` and checkout the one you want to use. We chose to use the latest available at the time of writing. What's the point of using an ancient kernel if you're going to all this trouble?
 
 ```bash
 cd linux-socfpga
@@ -126,5 +112,9 @@ Once the compilation is complete, you now have a compressed Linux kernel image.
 
 [Stackoverflow - Cannot mount configfs](https://stackoverflow.com/questions/50877808/configfs-do-not-mount-device-tree-overlays) - This page explains why you cannot see the device tree overlay.
 
+##
 
-
+<p align="right">Next | <b><a href="Building-the-Kernal-RootFS-Choose-One.md">RootFS - Choose one</a></b>
+<br/>
+Back | <b><a href="Building-the-Universal-Bootloader-U-Boot.md">Building the Universal Bootloader (U-Boot)</a></p>
+</b><p align="center"><sup>Building Embedded Linux - Full Custom | </sup><a href="../README.md#building-embedded-linux---full-custom"><sup>Table of Contents</sup></a></p>
