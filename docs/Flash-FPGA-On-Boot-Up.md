@@ -1,24 +1,21 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Flash-FPGA-from-HPS-running-Linux.md">Back</a> | </sup><a href="../README.md#flashing-the-fpga-from-sd-card"><sup>Contents</sup></a>
+<br/>
+<sup>Flashing the FPGA from SD Card</sup></p>
 
-- [Summary](#summary)
-- [Steps](#steps)
-  - [Getting the RBF File](#getting-the-rbf-file)
-  - [Copy the RBF file into the FAT partition](#copy-the-rbf-file-into-the-fat-partition)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Flashing the FPGA On Boot Up
 
 ## Summary
-Flashing the FPGA on boot up is a convenient way to have your design on the FPGA every time the board powers up. Here we will go through the steps to do it. Make sure you've followed the step to [modify the U-Boot to flash the FPGA](https://github.com/zangman/de10-nano/wiki/Building-the-Universal-Bootloader-(U-Boot)#part-1---customizing-the-bootloader-for-the-de10-nano), without this, it will not work.
+
+Flashing the FPGA on boot up is a convenient way to have your design on the FPGA every time the board powers up. Here we will go through the steps to do it. Make sure you've followed the step to [modify the U-Boot to flash the FPGA](<https://github.com/zangman/de10-nano/wiki/Building-the-Universal-Bootloader-(U-Boot)#part-1---customizing-the-bootloader-for-the-de10-nano>), without this, it will not work.
 
 ## Steps
+
 ### Getting the RBF File
 
 Complete the following steps to generate the `.rbf` file:
 
-* [Set the MSEL pins](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#set-the-msel-pins)
-* [Create a blink design](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#create-a-blink-design)
+- [Set the MSEL pins](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#set-the-msel-pins>)
+- [Create a blink design](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#create-a-blink-design>)
 
 ### Copy the RBF file into the FAT partition
 
@@ -81,3 +78,7 @@ Retrieving file: /extlinux/../socfpga_cyclone5_de0_nano_soc.dtb
 Starting kernel ...
 ```
 
+##
+
+<p align="right">Back | <b><a href="Flash-FPGA-from-HPS-running-Linux.md">Flashing the FPGA from Linux</a></p>
+</b><p align="center"><sup>Flashing the FPGA from SD Card | </sup><a href="../README.md#flashing-the-fpga-from-sd-card"><sup>Table of Contents</sup></a></p>

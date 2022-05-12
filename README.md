@@ -13,14 +13,14 @@ To just download the Debian or Arch Linux ARM (**NEW**) image for the DE10-Nano,
 - [My First SoC - Simple Hardware Adder](#my-first-soc---simple-hardware-adder)
 - [FPGA - SDRAM Communication](#fpga---sdram-communication)
 - [Appendix](#appendix)
-  - [FAQ](#faq)
-    - [Isn't there documentation already? Why this guide?](#isnt-there-documentation-already-why-this-guide)
-    - [Can I just get the image? I don't want to go through the guide to get Debian on my DE10-Nano.](#can-i-just-get-the-image-i-dont-want-to-go-through-the-guide-to-get-debian-on-my-de10-nano)
-    - [How much Linux do I need to know?](#how-much-linux-do-i-need-to-know)
-    - [Will you cover VHDL/Verilog or FPGAs in general?](#will-you-cover-vhdlverilog-or-fpgas-in-general)
-    - [I spotted a mistake!](#i-spotted-a-mistake)
-  - [Getting further help](#getting-further-help)
-  - [Prerequisites](#prerequisites)
+- [FAQ](#faq)
+  - [Isn't there documentation already? Why this guide?](#isnt-there-documentation-already-why-this-guide)
+  - [Can I just get the image? I don't want to go through the guide to get Debian on my DE10-Nano.](#can-i-just-get-the-image-i-dont-want-to-go-through-the-guide-to-get-debian-on-my-de10-nano)
+  - [How much Linux do I need to know?](#how-much-linux-do-i-need-to-know)
+  - [Will you cover VHDL/Verilog or FPGAs in general?](#will-you-cover-vhdlverilog-or-fpgas-in-general)
+  - [I spotted a mistake!](#i-spotted-a-mistake)
+- [Getting further help](#getting-further-help)
+- [Prerequisites](#prerequisites)
 
 # Getting Started
 
@@ -41,7 +41,7 @@ To just download the Debian or Arch Linux ARM (**NEW**) image for the DE10-Nano,
 
 # Flashing the FPGA from SD Card
 
-- [From Linux](<docs/Flash-FPGA-from-HPS-(running-Linux).md>)
+- [From Linux](docs/Flash-FPGA-from-HPS-running-Linux.md)
 - [On Boot Up](docs/Flash-FPGA-On-Boot-Up.md)
 
 # HPS and FPGA communication

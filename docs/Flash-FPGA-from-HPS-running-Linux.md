@@ -1,22 +1,12 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="../README.md#flashing-the-fpga-from-sd-card">Back</a> | <a href="Flash-FPGA-On-Boot-Up.md">Next</a> | </sup><a href="../README.md#flashing-the-fpga-from-sd-card"><sup>Contents</sup></a>
+<br/>
+<sup>Flashing the FPGA from SD Card</sup></p>
 
-- [Summary](#summary)
-- [Steps](#steps)
-  - [Set the MSEL pins](#set-the-msel-pins)
-  - [Create a blink design](#create-a-blink-design)
-  - [Creating the device tree overlay](#creating-the-device-tree-overlay)
-  - [Compiling the device tree overlay](#compiling-the-device-tree-overlay)
-  - [Flash the FPGA](#flash-the-fpga)
-  - [Updating the design](#updating-the-design)
-- [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Flashing the FPGA from Linux
 
 ## Summary
 
-This document details how to update the FPGA design from Linux without having to reboot the machine. 
+This document details how to update the FPGA design from Linux without having to reboot the machine.
 
 > **NOTE** - It is assumed that you followed the kernel configuration steps as detailed in the [building kernel](building_kernel.md) page. If not, please follow the configuration steps and copy the `zImage` file onto the SD Card. You will not be able to follow the steps otherwise.
 
@@ -38,9 +28,9 @@ module blink (
     output led
 );
     reg [26:0] counter;
-    
+
     always @(posedge clk) counter <= counter + 1'b1;
-    
+
     assign led = counter[26];
 endmodule
 ```
@@ -191,3 +181,10 @@ Then follow the steps as per the previous section to flash the new design.
 ## References
 
 [Zynq PL programming with FPGA Manager](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841645/Solution+Zynq+PL+Programming+With+FPGA+Manager) - This page has the details that work for version 5.5 of the kernel.
+
+##
+
+<p align="right">Next | <b><a href="Flash-FPGA-On-Boot-Up.md">Flashing the FPGA On Boot Up</a></b>
+<br/>
+Back | <b><a href="../README.md#flashing-the-fpga-from-sd-card">Overview</a></p>
+</b><p align="center"><sup>Flashing the FPGA from SD Card | </sup><a href="../README.md#flashing-the-fpga-from-sd-card"><sup>Table of Contents</sup></a></p>
