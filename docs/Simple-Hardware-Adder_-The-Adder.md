@@ -1,11 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Simple-Hardware-Adder_-Initial-Project-Setup.md">Back</a> | <a href="Simple-Hardware-Adder_-Primer-on-Avalon-Memory-Map-Interface.md">Next</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
+<br/>
+<sup>My First SoC - Simple Hardware Adder</sup></p>
 
-- [Summary](#summary)
-- [Simple Adder module](#simple-adder-module)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Simple Adder
 
 ## Summary
 
@@ -19,7 +16,7 @@ This is as easy as can be. We're going to design a 64 bit adder. It will take 2 
 module simple_adder(
   input logic [63:0] a,
   input logic [63:0] b,
-  output logic [63:0] sum 
+  output logic [63:0] sum
 );
 assign sum = a + b;
 
@@ -37,3 +34,10 @@ vim simple_adder.sv
 ```
 
 This completes the adder. Use the menu on the right to go to the next section.
+
+##
+
+<p align="right">Next | <b><a href="Simple-Hardware-Adder_-Primer-on-Avalon-Memory-Map-Interface.md">Primer on Avalon MM</a></b>
+<br/>
+Back | <b><a href="Simple-Hardware-Adder_-Initial-Project-Setup.md">Initial project setup</a></p>
+</b><p align="center"><sup>My First SoC - Simple Hardware Adder | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Table of Contents</sup></a></p>

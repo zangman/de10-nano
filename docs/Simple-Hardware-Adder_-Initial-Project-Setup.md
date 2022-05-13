@@ -1,19 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Simple-Hardware-Adder_-Introduction.md">Back</a> | <a href="Simple-Hardware-Adder_-The-Adder.md">Next</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
+<br/>
+<sup>My First SoC - Simple Hardware Adder</sup></p>
 
-- [Summary](#summary)
-- [Getting the project ready](#getting-the-project-ready)
-- [Upgrade the IP to current quartus version](#upgrade-the-ip-to-current-quartus-version)
-    - [Platform Designer](#platform-designer)
-      - [Startup](#startup)
-      - [Trim the System](#trim-the-system)
-      - [Trim the HDL Code](#trim-the-hdl-code)
-      - [Compile the design](#compile-the-design)
-    - [Why are we doing this?](#why-are-we-doing-this)
-    - [Create a backup of this project](#create-a-backup-of-this-project)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Initial project setup
 
 ## Summary
 
@@ -117,8 +106,6 @@ In the file `DE10_NANO_SoC_GHRD.v`, if you scroll down a bit, there is an instan
 
 You can do this yourself, or if you like, just copy the code below and paste it into `DE10_NANO_SoC_GHRD.v`:
 
-
-
 ```verilog
 
 
@@ -193,9 +180,9 @@ soc_system u0(
                .memory_mem_odt(HPS_DDR3_ODT),                               //                               .mem_odt
                .memory_mem_dm(HPS_DDR3_DM),                                 //                               .mem_dm
                .memory_oct_rzqin(HPS_DDR3_RZQ),                             //                               .oct_rzqin
-              
+
                .hps_0_h2f_reset_reset_n(hps_fpga_reset_n)                  //                hps_0_h2f_reset.reset_n
-      
+
            );
 
 
@@ -228,7 +215,7 @@ Save the file and compile the design. If everything went right, you should not s
 
 #### Why are we doing this?
 
-Strictly speaking, you don't need to do all these edits. But it helps to make it as simple as possible to understand what is actually going on under the hood. I've found this approach helpful for my own learning and hope you will find it useful too. It also compiles the design much faster. For me, the original design with everything takes about 15 mins to compile. The trimmed down version takes less than 10 mins. 
+Strictly speaking, you don't need to do all these edits. But it helps to make it as simple as possible to understand what is actually going on under the hood. I've found this approach helpful for my own learning and hope you will find it useful too. It also compiles the design much faster. For me, the original design with everything takes about 15 mins to compile. The trimmed down version takes less than 10 mins.
 
 Of course, you can leave everything as is in the GHRD, in the platform designer as well as in quartus, and it will work perfectly.
 
@@ -242,3 +229,10 @@ cp -r DE10_NANO_SoC_GHRD ghrd_barebones_template
 ```
 
 Proceed to the next section on the right to start working on the design for the Simple Adder.
+
+##
+
+<p align="right">Next | <b><a href="Simple-Hardware-Adder_-The-Adder.md">Simple Adder</a></b>
+<br/>
+Back | <b><a href="Simple-Hardware-Adder_-Introduction.md">Introduction</a></p>
+</b><p align="center"><sup>My First SoC - Simple Hardware Adder | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Table of Contents</sup></a></p>

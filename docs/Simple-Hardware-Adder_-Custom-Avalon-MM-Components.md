@@ -1,18 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Simple-Hardware-Adder_-Primer-on-Avalon-Memory-Map-Interface.md">Back</a> | <a href="Simple-Hardware-Adder_-Wiring-the-components.md">Next</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
+<br/>
+<sup>My First SoC - Simple Hardware Adder</sup></p>
 
-- [Summary](#summary)
-- [Goal of the custom components](#goal-of-the-custom-components)
-- [IP Catalog](#ip-catalog)
-- [Custom Parallel IO (PIO) Components](#custom-parallel-io-pio-components)
-  - [Parallel IO Output 64 bit](#parallel-io-output-64-bit)
-  - [Parallel IO Input 64 bit](#parallel-io-input-64-bit)
-  - [Creating the components](#creating-the-components)
-    - [Output component](#output-component)
-    - [Input Component](#input-component)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Custom Avalon MM Components
 
 ## Summary
 
@@ -38,7 +28,7 @@ But there are few reasons I'm not using this one:
 
 ## Custom Parallel IO (PIO) Components
 
-Now let's look into how we'll write these. Since we have 2 inputs to our adder and one output, we'll need 2 different kinds of components. One which will allow us to write to and one which will allow us to read from.  Let's look at these now.
+Now let's look into how we'll write these. Since we have 2 inputs to our adder and one output, we'll need 2 different kinds of components. One which will allow us to write to and one which will allow us to read from. Let's look at these now.
 
 Note that when we say `output` for a custom component, we are referring to the direction of the port that is actually used in the component itself. So an `output` component will be connected to the `input`s of our adder and vice versa.
 
@@ -46,11 +36,11 @@ Note that when we say `output` for a custom component, we are referring to the d
 
 Looking at our interface requirements for Avalon Memory Map, we will require the following ports:
 
-* clk
-* reset
-* write - Flag to indicate whether we are writing or not.
-* writedata - Actual data that is passed.
-* pio_out - The port that connects to one of the inputs of our adder.
+- clk
+- reset
+- write - Flag to indicate whether we are writing or not.
+- writedata - Actual data that is passed.
+- pio_out - The port that connects to one of the inputs of our adder.
 
 With this, I have come up with the following module which serves our purpose:
 
@@ -67,12 +57,12 @@ module pio64_out (
 
 always_ff @ (posedge clk) begin
   if (reset) begin
-    pio_out <= '0; 
+    pio_out <= '0;
   end else if (avs_s0_write) begin
     pio_out <= avs_s0_writedata;
   end else begin
     pio_out <= pio_out;
-  end 
+  end
 end
 
 endmodule
@@ -88,17 +78,15 @@ vim pio64_out.sv
 # Save the file here.
 ```
 
-
-
 ### Parallel IO Input 64 bit
 
 Similarly, we will need the following ports for our input module:
 
-* clk
-* reset
-* read - Flag to indicate whether we are reading or not.
-* readdata - Actual data to return.
-* pio_in - The port that connects to the output of our adder.
+- clk
+- reset
+- read - Flag to indicate whether we are reading or not.
+- readdata - Actual data to return.
+- pio_in - The port that connects to the output of our adder.
 
 With this, we have the following design:
 
@@ -117,8 +105,8 @@ always_comb begin
   if (avs_s0_read) begin
     avs_s0_readdata = pio_in;
   end else begin
-    avs_s0_readdata = 'x; 
-  end 
+    avs_s0_readdata = 'x;
+  end
 end
 
 endmodule
@@ -151,7 +139,7 @@ Click on `Signals & Interfaces` and make the following changes:
 
 2. Change the `Type` in the dropdown to `Conduit`.
 
-3. Change the `Associated Reset`  in the dropdown to `reset`.
+3. Change the `Associated Reset` in the dropdown to `reset`.
 
 4. Click on the signal `pio_out [64] readdata` in the left hand menu and type in `export` in the `Signal Type` field. It should like the image below:
 
@@ -173,3 +161,10 @@ Create a new component for the input as well. Repeat the same steps as above but
 ![](images/pio_in_3.png)
 
 And that creates our custom components! In the next section we'll start wiring everything together.
+
+##
+
+<p align="right">Next | <b><a href="Simple-Hardware-Adder_-Wiring-the-components.md">Wiring the Components</a></b>
+<br/>
+Back | <b><a href="Simple-Hardware-Adder_-Primer-on-Avalon-Memory-Map-Interface.md">Primer on Avalon MM</a></p>
+</b><p align="center"><sup>My First SoC - Simple Hardware Adder | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Table of Contents</sup></a></p>

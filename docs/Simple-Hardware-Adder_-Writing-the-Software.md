@@ -1,26 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Back</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
+<br/>
+<sup>My First SoC - Simple Hardware Adder</sup></p>
 
-- [Summary](#summary)
-- [Writing the Code](#writing-the-code)
-  - [Getting started](#getting-started)
-  - [Required C headers](#required-c-headers)
-    - [Address of HPS to FPGA Bridge](#address-of-hps-to-fpga-bridge)
-  - [Address of the components](#address-of-the-components)
-  - [Accept 2 numbers as arguments](#accept-2-numbers-as-arguments)
-  - [Open /dev/mem](#open-devmem)
-  - [Map the address of the bridge using mmap](#map-the-address-of-the-bridge-using-mmap)
-  - [Map the address of the adder ports](#map-the-address-of-the-adder-ports)
-  - [Writing the input values](#writing-the-input-values)
-    - [(Optional) C Memory Addressing](#optional-c-memory-addressing)
-  - [Printing the sum](#printing-the-sum)
-  - [Wrap up](#wrap-up)
-  - [Full program code](#full-program-code)
-- [Compiling and Running on de10-nano](#compiling-and-running-on-de10-nano)
-- [Troubleshooting](#troubleshooting)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Writing the Software
 
 ## Summary
 
@@ -42,7 +24,7 @@ We'll write an application program in `C`. There are 2 ways to write this progra
 
    ```bash
    ${CROSS_COMPILE}gcc myprog.c -o myprog
-   
+
    # Copy the executable to de10-nano.
    scp myprog root@<ipaddress>:~
    ```
@@ -151,7 +133,7 @@ int main(int argc, char **argv) {
 
 ### Open /dev/mem
 
-We will now access `/dev/mem` through a file descriptor object.  For more details on this, check out the [man page](https://man7.org/linux/man-pages/man4/mem.4.html), but in a nutshell, `/dev/mem` provides access to the physical and virtual memory as well as any memory mapped peripherals (such as Avalon MM peripherals).
+We will now access `/dev/mem` through a file descriptor object. For more details on this, check out the [man page](https://man7.org/linux/man-pages/man4/mem.4.html), but in a nutshell, `/dev/mem` provides access to the physical and virtual memory as well as any memory mapped peripherals (such as Avalon MM peripherals).
 
 This is done as follows:
 
@@ -172,7 +154,7 @@ if (fd < 0) {
 ```C
 uint8_t* bridge_map = NULL;
 
-bridge_map = (uint8_t*)mmap(NULL, BRIDGE_SPAN, PROT_READ | PROT_WRITE, 
+bridge_map = (uint8_t*)mmap(NULL, BRIDGE_SPAN, PROT_READ | PROT_WRITE,
                                MAP_SHARED, fd, BRIDGE);
 if (bridge_map == MAP_FAILED) {
     perror("Couldn't map bridge.");
@@ -187,7 +169,7 @@ If you recall from the wiring section in platform designer, the address space is
 
 Therefore, our `bridge_map` variable, which is a pointer to the start of the bridge address is defined as a pointer to a single byte i.e. `uint8_t` which is the same as `unsigned char`.
 
-However, `mmap` returns  `void*`, so I'm just casting it to a `uint8_t*` to make it clear for me. Note that you can just as well replace `uint8_t*` with `void*` everywhere when working with C.
+However, `mmap` returns `void*`, so I'm just casting it to a `uint8_t*` to make it clear for me. Note that you can just as well replace `uint8_t*` with `void*` everywhere when working with C.
 
 This is because `void*` is an [extension in GCC](https://gcc.gnu.org/onlinedocs/gcc/Pointer-Arith.html) where the fictitious object `void` is considered to be 1 byte in size. Hence a lot of the examples you see online use `void*` when creating the map.
 
@@ -246,13 +228,9 @@ So, let's see how we can do this in C:
    *((uint64_t*) b_map) = b;
    ```
 
-
-
 The diagram below might make it more easy to understand:
 
 ![](images/software_3.png)
-
-
 
 So our code for the inputs and outputs now looks like this:
 
@@ -419,7 +397,7 @@ Unfortunately, this happens quite often and the bad news is, there is no easy wa
 
 7. Check the verilog and C code with the reference source code if there are any mistakes.
 
-8. Make sure the `MSEL` pins are all set to `ON` as described [here](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#set-the-msel-pins).
+8. Make sure the `MSEL` pins are all set to `ON` as described [here](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#set-the-msel-pins>).
 
 If unable to find the problem, maybe it's better to just start over again. I've done this countless times and it is the price to pay for learning.
 
@@ -460,7 +438,7 @@ int main(int argc, char **argv) {
 
   if (argc != 3) {
     std::cerr << "Only 2 numbers should be passed.\n";
-    return -1; 
+    return -1;
   }
 
   a = std::stoll(argv[1]);
@@ -470,16 +448,16 @@ int main(int argc, char **argv) {
 
   if (fd < 0) {
     std::cerr << "Couldn't open /dev/mem\n";
-    return -2; 
+    return -2;
   }
 
-  bridge_map = static_cast<uint8_t *>( 
+  bridge_map = static_cast<uint8_t *>(
       mmap(NULL, BRIDGE_SPAN, PROT_READ | PROT_WRITE, MAP_SHARED, fd, BRIDGE));
 
   if (bridge_map == MAP_FAILED) {
     std::cerr << "mmap failed.";
     close(fd);
-    return -3; 
+    return -3;
   }
 
   a_map = bridge_map + ADDER_A;
@@ -494,7 +472,7 @@ int main(int argc, char **argv) {
   std::cout << sum << std::endl;
 
   result = munmap(bridge_map, BRIDGE_SPAN);
-  
+
   if (result < 0) {
     std::cerr << "Couldnt unmap bridge.\n";
     close(fd);
@@ -513,3 +491,7 @@ Compile this as follows:
 ${CROSS_COMPILE}g++ -std=c++17 myprog.cc -o myprog
 ```
 
+##
+
+<p align="right">Back | <b><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Add the Simple Adder</a></p>
+</b><p align="center"><sup>My First SoC - Simple Hardware Adder | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Table of Contents</sup></a></p>

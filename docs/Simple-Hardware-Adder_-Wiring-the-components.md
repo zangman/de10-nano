@@ -1,18 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Simple-Hardware-Adder_-Custom-Avalon-MM-Components.md">Back</a> | <a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Next</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
+<br/>
+<sup>My First SoC - Simple Hardware Adder</sup></p>
 
-- [Summary](#summary)
-- [Components we'll use](#components-well-use)
-- [Wiring the components](#wiring-the-components)
-  - [Avalon-MM Pipeline Bridge](#avalon-mm-pipeline-bridge)
-  - [Parallel IO 64 bit Output](#parallel-io-64-bit-output)
-  - [Parallel IO 64 bit Input](#parallel-io-64-bit-input)
-  - [Mapping the memory](#mapping-the-memory)
-    - [Auto adjust address width](#auto-adjust-address-width)
-- [Generate the HDL and Finish](#generate-the-hdl-and-finish)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Wiring the Components
 
 ## Summary
 
@@ -22,14 +12,15 @@ Now we'll use the custom components we created in the previous step and wire the
 
 To complete our simple design, we'll use the following components:
 
- * **2 x Parallel IO 64 bit Output**: We'll use 2 instances of this component to map the inputs `a` and `b` to our simple adder.
- * **1 x Parallel IO 64 bit Input**: We'll use 1 instance of this component to map the output `sum` from our simple adder.
- * **Avalon-MM Pipeline Bridge**: We'll use this component from the IP Catalog for the following reasons:
-   1. Convert the AXI HPS-to-FPGA bridge to an Avalon MM bridge.
-   1. Specify the bus width as 64 bits.
-   
-   The image below shows where to find this component in the IP Catalog:
-   ![](images/wiring_1.png)
+- **2 x Parallel IO 64 bit Output**: We'll use 2 instances of this component to map the inputs `a` and `b` to our simple adder.
+- **1 x Parallel IO 64 bit Input**: We'll use 1 instance of this component to map the output `sum` from our simple adder.
+- **Avalon-MM Pipeline Bridge**: We'll use this component from the IP Catalog for the following reasons:
+
+  1.  Convert the AXI HPS-to-FPGA bridge to an Avalon MM bridge.
+  1.  Specify the bus width as 64 bits.
+
+  The image below shows where to find this component in the IP Catalog:
+  ![](images/wiring_1.png)
 
 **Note**: We really don't need the Avalon-MM Pipeline Bridge. We can just connect an AXI Master to an Avalon MM Slave and Platform Designer is smart enough to automatically insert the necessary adaptors and converters to do what is necessary. But I like to include it explicitly because it shows what other options are available for us to tweak.
 
@@ -47,8 +38,8 @@ Double click on the `Avalon-MM Pipeline Bridge` to add it in the design and make
 
 **Important**: Take note of the values in the `Data` section. Note that:
 
-* `Data width` is 64 bits or 8 bytes wide.
-* `Symbol width` is 8 bits or 1 byte wide.
+- `Data width` is 64 bits or 8 bytes wide.
+- `Symbol width` is 8 bits or 1 byte wide.
 
 This will be critical when we write the software to use our hardware adder in a subsequent section.
 
@@ -58,10 +49,10 @@ Complete the bridge configuration by wiring the signals as shown in the image be
 
 Things to take note:
 
-* All `clk` signals should be connected to the same `clk` which in our case is from `clk_0`
-* All `reset` signals are connected together and are driven by `clk_0.clk_reset`.
-* `AXI Master` should connect to the `Avalon Memory Mapped Slave`. Hence we have connected `h2f_axi_master` to `s0`.
-* The `Avalon Memory Mapped Master` will be connected to the other slaves in our design i.e. `m0`.
+- All `clk` signals should be connected to the same `clk` which in our case is from `clk_0`
+- All `reset` signals are connected together and are driven by `clk_0.clk_reset`.
+- `AXI Master` should connect to the `Avalon Memory Mapped Slave`. Hence we have connected `h2f_axi_master` to `s0`.
+- The `Avalon Memory Mapped Master` will be connected to the other slaves in our design i.e. `m0`.
 
 ### Parallel IO 64 bit Output
 
@@ -123,3 +114,10 @@ Now that we have all the components, let's hit `Ctrl + s` to save and then click
 Once it completes, hit `Finish` to close Platform Designer.
 
 Next we'll add our Simple Adder to our design and finish wiring everything.
+
+##
+
+<p align="right">Next | <b><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Add the Simple Adder</a></b>
+<br/>
+Back | <b><a href="Simple-Hardware-Adder_-Custom-Avalon-MM-Components.md">Custom Avalon MM Components</a></p>
+</b><p align="center"><sup>My First SoC - Simple Hardware Adder | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Table of Contents</sup></a></p>

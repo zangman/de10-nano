@@ -1,15 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="Simple-Hardware-Adder_-Wiring-the-components.md">Back</a> | <a href="Simple-Hardware-Adder_-Writing-the-Software.md">Next</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
+<br/>
+<sup>My First SoC - Simple Hardware Adder</sup></p>
 
-- [Summary](#summary)
-- [Add the design to the project](#add-the-design-to-the-project)
-- [Wire it together](#wire-it-together)
-- [Compile the design](#compile-the-design)
-- [Configuring the Device Tree](#configuring-the-device-tree)
-- [Flashing the design](#flashing-the-design)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Add the Simple Adder
 
 ## Summary
 
@@ -131,7 +124,7 @@ soc_system u0(
                .memory_mem_dm(HPS_DDR3_DM),                                 //                               .mem_dm
                .memory_oct_rzqin(HPS_DDR3_RZQ),                             //                               .oct_rzqin
                .hps_0_h2f_reset_reset_n(hps_fpga_reset_n)                   //                               .hps_0_h2f_reset.reset_n
-      
+
            );
 
 
@@ -159,24 +152,29 @@ endmodule
 
 ```
 
-
-
 ## Compile the design
 
 Double click the `Assembler` in the left side menu and let the compilation complete. On my computer, it takes about 10 minutes to complete.
 
 ## Configuring the Device Tree
 
-Before we can start using any of the bridges, we'll need to enable them in the device tree. This is covered over [here](https://github.com/zangman/de10-nano/wiki/Configuring-the-Device-Tree) so I won't be going into it again. In the de10-nano, check that the bridges are enabled with the following command. 
+Before we can start using any of the bridges, we'll need to enable them in the device tree. This is covered over [here](https://github.com/zangman/de10-nano/wiki/Configuring-the-Device-Tree) so I won't be going into it again. In the de10-nano, check that the bridges are enabled with the following command.
 
 ```bash
 cat /sys/class/fpga_bridge/*/state
 ```
 
 If they're `disabled` or you get an error then go through the steps described [here](https://github.com/zangman/de10-nano/wiki/Configuring-the-Device-Tree) and verify that the bridges are all enabled as shown on the same page.
+
 ## Flashing the design
 
-Now we can flash our design on the de10-nano. This has already been covered [here](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)) and [here](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-On-Boot-Up), so I won't be going into it here. You can use either method to flash the FPGA.
+Now we can flash our design on the de10-nano. This has already been covered [here](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)>) and [here](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-On-Boot-Up), so I won't be going into it here. You can use either method to flash the FPGA.
 
 Once your design has been successfully flashed and you can see the blinking LED to indicate it is ready, we can now proceed to writing the software to use our hardware adder.
 
+##
+
+<p align="right">Next | <b><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Writing the Software</a></b>
+<br/>
+Back | <b><a href="Simple-Hardware-Adder_-Wiring-the-components.md">Wiring the Components</a></p>
+</b><p align="center"><sup>My First SoC - Simple Hardware Adder | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Table of Contents</sup></a></p>
