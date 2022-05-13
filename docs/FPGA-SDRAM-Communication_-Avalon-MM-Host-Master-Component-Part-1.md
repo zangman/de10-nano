@@ -1,18 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="FPGA-SDRAM-Communication_-Avalon-MM-Agent-Slave-Trigger-Component.md">Back</a> | <a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Next</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
+<br/>
+<sup>FPGA - SDRAM Communication</sup></p>
 
-- [Summary](#summary)
-- [State Machine](#state-machine)
-- [Signals](#signals)
-- [State Changes](#state-changes)
-- [Populating Control Values](#populating-control-values)
-- [Retain the last read value](#retain-the-last-read-value)
-- [Full code](#full-code)
-- [Simulation and Verification](#simulation-and-verification)
-- [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Avalon MM Host/Master - 1
 
 ## Summary
 
@@ -98,17 +88,17 @@ always_comb begin
     INIT: begin
       if (do_read) next_state = READ_START;
     end
-    
+
     READ_START: begin
       if (avm_m0_waitrequest) next_state = READ_START; // Wait here.
       else next_state = READ_END;
     end
-    
+
     READ_END: begin
       if (!avm_m0_readdatavalid) next_state = READ_END; // Wait here.
       else next_state = INIT;
     end
-    
+
     default: begin
       next_state = INIT;
     end
@@ -208,17 +198,17 @@ always_comb begin
     INIT: begin
       if (do_read) next_state = READ_START;
     end
-    
+
     READ_START: begin
       if (avm_m0_waitrequest) next_state = READ_START; // Wait here.
       else next_state = READ_END;
     end
-    
+
     READ_END: begin
       if (!avm_m0_readdatavalid) next_state = READ_END; // Wait here.
       else next_state = INIT;
     end
-    
+
     default: begin
       next_state = INIT;
     end
@@ -395,10 +385,15 @@ int main(int argc, char **argv, char **env) {
 }
 ```
 
-
-
 ## References
 
 [Finite State Machines in Verilog](https://inst.eecs.berkeley.edu/~cs150/sp12/resources/FSM.pdf) - Excellent article that explains state machines in great detail.
 
 [ZipCPU Tutorials](https://zipcpu.com/tutorial/) - Excellent tutorials for beginners especially on verilator.
+
+##
+
+<p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Avalon MM Host/Master - 2</a></b>
+<br/>
+Back | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Agent-Slave-Trigger-Component.md">Avalon MM Agent/Slave - Trigger Component</a></p>
+</b><p align="center"><sup>FPGA - SDRAM Communication | </sup><a href="../README.md#fpga---sdram-communication"><sup>Table of Contents</sup></a></p>

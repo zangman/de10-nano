@@ -1,13 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="FPGA-SDRAM-Communication_-Introduction.md">Back</a> | <a href="FPGA-SDRAM-Communication_-More-about-the-Avalon-Memory-Mapped-Interface.md">Next</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
+<br/>
+<sup>FPGA - SDRAM Communication</sup></p>
 
-- [Summary](#summary)
-- [Block Diagram](#block-diagram)
-- [Approach - Custom Avalon MM Master](#approach---custom-avalon-mm-master)
-- [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# SDRAM Controller
 
 ## Summary
 
@@ -37,3 +32,9 @@ For our basic requirement, we'll be writing our own Custom Avalon MM Master Comp
 
 [Cyclone V HPS Technical Reference](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-v/cv_54001.pdf)
 
+##
+
+<p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-More-about-the-Avalon-Memory-Mapped-Interface.md">More on Avalon MM</a></b>
+<br/>
+Back | <b><a href="FPGA-SDRAM-Communication_-Introduction.md">Introduction</a></p>
+</b><p align="center"><sup>FPGA - SDRAM Communication | </sup><a href="../README.md#fpga---sdram-communication"><sup>Table of Contents</sup></a></p>

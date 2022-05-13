@@ -1,14 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Back</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
+<br/>
+<sup>FPGA - SDRAM Communication</sup></p>
 
-- [Summary](#summary)
-- [Allocate SDRAM Memory](#allocate-sdram-memory)
-- [Set the HPS registers to enable SDRAM access](#set-the-hps-registers-to-enable-sdram-access)
-- [Trying out our design](#trying-out-our-design)
-- [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Avalon MM Host/Master - 3
 
 ## Summary
 
@@ -64,20 +58,20 @@ What we need to do is:
    ```bash
    # Copy the rbf from dev machine to de10-nano.
    scp soc_system.rbf root@<ip address>:~
-   
+
    # SSH to the de10-nano
    ssh root@<ip address>
-   
+
    # Mount fat partition.
    mkdir fat
    mount /dev/mmcblk0p1 fat
-   
+
    # Copy it and rename it to sdr.rbf.
    cp soc_system.rbf fat/sdr.rbf
-   
+
    # Unmount fat.
    umount fat
-   
+
    # Reboot the device.
    reboot
    ```
@@ -117,7 +111,7 @@ What we need to do is:
 
 **NOTE**: If these steps aren't done exactly as explained here, the HPS will hang when the FPGA tries to access SDRAM.
 
-This needs to be done only once when powering it up for the first time. You can then proceed to flash any new designs [without rebooting](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)) even for designs that access the SDRAM. But if you power down the device (not reboot), you will need to go through the steps again.
+This needs to be done only once when powering it up for the first time. You can then proceed to flash any new designs [without rebooting](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)>) even for designs that access the SDRAM. But if you power down the device (not reboot), you will need to go through the steps again.
 
 To avoid doing this repeatedly, you can [create a bootscript](https://github.com/zangman/de10-nano/wiki/Creating-a-Bootscript) which will make it less tedious.
 
@@ -154,3 +148,7 @@ If all goes well, you should see the LEDs lighting up in an alternating pattern.
 
 [Cyclone V HPS Register Address Map and Definitions](https://www.intel.com/content/www/us/en/programmable/hps/cyclone-v/hps.html#sfo1411577376106.html) - Lists all the registers for the HPS.
 
+##
+
+<p align="right">Back | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Avalon MM Host/Master - 2</a></p>
+</b><p align="center"><sup>FPGA - SDRAM Communication | </sup><a href="../README.md#fpga---sdram-communication"><sup>Table of Contents</sup></a></p>

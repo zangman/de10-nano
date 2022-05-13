@@ -1,16 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="FPGA-SDRAM-Communication_-SDRAM-Controller.md">Back</a> | <a href="FPGA-SDRAM-Communication_-Avalon-MM-Agent-Slave-Trigger-Component.md">Next</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
+<br/>
+<sup>FPGA - SDRAM Communication</sup></p>
 
-- [Summary](#summary)
-- [Avalon MM Transactions](#avalon-mm-transactions)
-  - [Basic Avalon MM Read/Write](#basic-avalon-mm-readwrite)
-  - [Avalon MM Pipelined Read/Write](#avalon-mm-pipelined-readwrite)
-  - [Avalon MM Burst Read/Write](#avalon-mm-burst-readwrite)
-- [Avalon MM Bidirectional Port Signals for SDRAM Controller](#avalon-mm-bidirectional-port-signals-for-sdram-controller)
-- [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# More on Avalon MM
 
 ## Summary
 
@@ -42,9 +34,9 @@ In this case, the agent always returns a value in `readdata` and the host just h
 
 Usually we need more signals to enable some communication between the host and the agent. Some typical scenarios that Avalon bus covers are:
 
-* The agent can return multiple values and so we need some kind of addressing. We'll require the `address` signal.
-* Perhaps the agent needs to read and write as well.
-* Maybe the agent takes several clock cycles to have the data ready for the host to read. In this case, we can use the `waitrequest` signal.
+- The agent can return multiple values and so we need some kind of addressing. We'll require the `address` signal.
+- Perhaps the agent needs to read and write as well.
+- Maybe the agent takes several clock cycles to have the data ready for the host to read. In this case, we can use the `waitrequest` signal.
 
 This would be a good point to watch the [first part of the video](https://www.youtube.com/watch?v=8GAqT3nzHeQ) to see how these signals interact between the host and the agent for a basic read and write transaction. Here is a screenshot from the video with state changes on the bus that I've marked in red:
 
@@ -54,27 +46,27 @@ Note that the shaded areas of the waveform show the regions where Avalon makes n
 
 The waveforms are explained below:
 
-* **Read Transaction**
-  * *State A*:
-    * `address` and `read` are driven by the host.
-    * `waitrequest` driven high by the agent on the same edge when `read` is driven high. Note that this is only if the agent needs time to process/fetch the data. If it's not needed, the agent doesn't have to assert `waitrequest`.
-    * Also note that `waitrequest` might be asserted independent of the `read` state. The agent might have already asserted it even before the `read` was asserted.
-    * For as long as `waitrequest` is asserted, host must keep `address` and `read` constant.
-  * *State B*:
-    * The agent de-asserts `waitrequest` and populates `readdata`. Both of these will be sampled by the host on the very next positive edge of `clk`.
-  * *State C*:
-    * The host samples `readdata`. 
-    * This completes the transaction and the host should now de-assert `read`.
-* **Write Transaction**
-  * *State D*:
-    * `address`, `write` and **`writedata`** are driven by the host.
-    * `waitrequest` is driven high by the agent on the same edge when `write` is driven high.
-    * For as long as `waitrequest` is asserted, host must keep `address`, `write` and **`writedata`** constant.
-  * *State E*:
-    * The agent de-asserts `waitrequest`.
-  * *State F*:
-    * The agent samples `writedata` at the first rising edge of `clk` after `waitrequest` is de-asserted.
-    * This completes the transaction and the host should now de-assert `write`.
+- **Read Transaction**
+  - _State A_:
+    - `address` and `read` are driven by the host.
+    - `waitrequest` driven high by the agent on the same edge when `read` is driven high. Note that this is only if the agent needs time to process/fetch the data. If it's not needed, the agent doesn't have to assert `waitrequest`.
+    - Also note that `waitrequest` might be asserted independent of the `read` state. The agent might have already asserted it even before the `read` was asserted.
+    - For as long as `waitrequest` is asserted, host must keep `address` and `read` constant.
+  - _State B_:
+    - The agent de-asserts `waitrequest` and populates `readdata`. Both of these will be sampled by the host on the very next positive edge of `clk`.
+  - _State C_:
+    - The host samples `readdata`.
+    - This completes the transaction and the host should now de-assert `read`.
+- **Write Transaction**
+  - _State D_:
+    - `address`, `write` and **`writedata`** are driven by the host.
+    - `waitrequest` is driven high by the agent on the same edge when `write` is driven high.
+    - For as long as `waitrequest` is asserted, host must keep `address`, `write` and **`writedata`** constant.
+  - _State E_:
+    - The agent de-asserts `waitrequest`.
+  - _State F_:
+    - The agent samples `writedata` at the first rising edge of `clk` after `waitrequest` is de-asserted.
+    - This completes the transaction and the host should now de-assert `write`.
 
 ### Avalon MM Pipelined Read/Write
 
@@ -84,11 +76,11 @@ A Pipelined interface allows the host to separate the requests from the response
 
 ![](images/avalon_mm_pipelined_read.png)
 
-* When the agent asserts `waitrequest`, the host should keep the `address` and the `read` signals constant.
-* When the agent de-asserts `waitrequest`, the host is free to keep the `read` signal high and provide additional addresses to the agent to respond with data.
-* The host doesn't have to wait for the agent to respond with the data for any of the addresses before requesting for more data. The host can make the requests and get the responses in parallel.
-* Whenever the agent has data to respond with, it asserts the `readdatavalid` signal and populates `readdata` until the next positive edge of `clk`, which is when the host should sample `readdata`.
-* Subsequent responses from the agent can be captured by the host in the same way i.e. with the `readdatavalid` signal going high. The data is returned in the same order in which the addresses are sent.
+- When the agent asserts `waitrequest`, the host should keep the `address` and the `read` signals constant.
+- When the agent de-asserts `waitrequest`, the host is free to keep the `read` signal high and provide additional addresses to the agent to respond with data.
+- The host doesn't have to wait for the agent to respond with the data for any of the addresses before requesting for more data. The host can make the requests and get the responses in parallel.
+- Whenever the agent has data to respond with, it asserts the `readdatavalid` signal and populates `readdata` until the next positive edge of `clk`, which is when the host should sample `readdata`.
+- Subsequent responses from the agent can be captured by the host in the same way i.e. with the `readdatavalid` signal going high. The data is returned in the same order in which the addresses are sent.
 
 ### Avalon MM Burst Read/Write
 
@@ -112,7 +104,7 @@ It includes all the signals required for the Burst interface and one additional 
 
 So if `readdata` is 256 bits wide, `byteenable` will require 256/8 = 32 bits. If we are only interested in the first 8 bits of the data returned by the agent, then the host sets `byteenable` to `32'h0000_0001`.
 
-Screenshot below taken from the [Avalon Technical Spec](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/mnl_avalon_spec.pdf): 
+Screenshot below taken from the [Avalon Technical Spec](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/mnl_avalon_spec.pdf):
 
 ![](images/byteenable.png)
 
@@ -125,3 +117,10 @@ With this understanding under our belt, we can now proceed to building our Host 
 [Avalon Technical Spec](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/mnl_avalon_spec.pdf) - This is a handy reference for the technical specs of Avalon Bus. I had difficulty with the Avalon MM examples because I felt they were more complex than they needed to me and made it difficult to understand. The video above is what made everything clear to me. Still this reference is useful to know what the different signals are and how they are used.
 
 [Cyclone V HPS Technical Reference Manual](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-v/cv_54001.pdf) - The SDRAM Controller section in this doc has details about the Avalon MM Ports and about the various features of the controller itself.
+
+##
+
+<p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Agent-Slave-Trigger-Component.md">Avalon MM Agent/Slave - Trigger Component</a></b>
+<br/>
+Back | <b><a href="FPGA-SDRAM-Communication_-SDRAM-Controller.md">SDRAM Controller</a></p>
+</b><p align="center"><sup>FPGA - SDRAM Communication | </sup><a href="../README.md#fpga---sdram-communication"><sup>Table of Contents</sup></a></p>
