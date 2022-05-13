@@ -1,15 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [SSH without password (using keys)](#ssh-without-password-using-keys)
-  - [Summary](#summary)
-  - [Steps](#steps)
-    - [Create the public key on development machine](#create-the-public-key-on-development-machine)
-    - [Copy the public key to de10-nano](#copy-the-public-key-to-de10-nano)
-  - [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<p align="right"><sup><a href="Yocto-Linux.md">Back</a> | <a href="Creating-a-Bootscript.md">Next</a> | </sup><a href="../README.md#appendix"><sup>Contents</sup></a>
+<br/>
+<sup>Appendix</sup></p>
 
 # SSH without password (using keys)
 
@@ -51,3 +42,9 @@ Enter the password and that completes it!
 
 [linuxize.com - how to setup passwordless ssh login](https://linuxize.com/post/how-to-setup-passwordless-ssh-login/) - Most steps taken from here.
 
+##
+
+<p align="right">Next | <b><a href="Creating-a-Bootscript.md">Creating a bootscript</a></b>
+<br/>
+Back | <b><a href="Yocto-Linux.md">Yocto Linux</a></p>
+</b><p align="center"><sup>Appendix | </sup><a href="../README.md#appendix"><sup>Table of Contents</sup></a></p>

@@ -1,15 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<p align="right"><sup><a href="../README.md#appendix">Back</a> | <a href="SSH-Without-Password.md">Next</a> | </sup><a href="../README.md#appendix"><sup>Contents</sup></a>
+<br/>
+<sup>Appendix</sup></p>
 
-- [Summary](#summary)
-- [Steps](#steps)
-  - [Preparing the sources](#preparing-the-sources)
-  - [Configuration](#configuration)
-  - [Build It!](#build-it)
-- [Appendix](#appendix)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# Yocto Linux
 
 ## Summary
 
@@ -21,25 +14,25 @@ This page lists all the steps to build a Yocto based distro for de10-nano-soc. Y
 
 ### Preparing the sources
 
- 1. Create a working directory:
+1.  Create a working directory:
 
     ```bash
     mkdir yocto
     ```
 
- 2. Get the Yocto sources:
+2.  Get the Yocto sources:
 
     ```bash
     git clone git://git.yoctoproject.org/poky.git
     ```
 
- 3. Get the `meta-altera` recipes for Yocto:
+3.  Get the `meta-altera` recipes for Yocto:
 
     ```bash
     git clone git://github.com/kraj/meta-altera.git
     ```
 
- 4. Visit the [Yocto releases](https://wiki.yoctoproject.org/wiki/Releases) page and choose which release you wish to use. For this guide, we will choose `dunfell` as its the latest with long term support. Switch the branch in the `poky` repository to `dunfell`
+4.  Visit the [Yocto releases](https://wiki.yoctoproject.org/wiki/Releases) page and choose which release you wish to use. For this guide, we will choose `dunfell` as its the latest with long term support. Switch the branch in the `poky` repository to `dunfell`
 
     ```bash
     cd poky
@@ -47,7 +40,7 @@ This page lists all the steps to build a Yocto based distro for de10-nano-soc. Y
     cd ..
     ```
 
- 5. Prepare for the configuration and the build:
+5.  Prepare for the configuration and the build:
 
     ```bash
     source poky/oe-init-build-env ./build
@@ -67,19 +60,19 @@ Now we update the config files for our requirements. The steps followed here are
 
    Add the following line which points to the `meta-altera` recipe to the `BBLAYERS` variable, one line above the closing quotation mark.
 
-   ```  ${TOPDIR}/../meta-altera \```
+   ` ${TOPDIR}/../meta-altera \`
 
    So your file should now look like this:
 
    ```
    # POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
    # changes incompatibly
-   POKY_BBLAYERS_CONF_VERSION = "2" 
-   
+   POKY_BBLAYERS_CONF_VERSION = "2"
+
    BBPATH = "${TOPDIR}"
    BBFILES ?= ""
-   
-   BBLAYERS ?= " \ 
+
+   BBLAYERS ?= " \
      /home/myuser/yocto/poky/meta \
      /home/myuser/yocto/poky/meta-poky \
      /home/myuser/yocto/poky/meta-yocto-bsp \
@@ -103,7 +96,6 @@ Now we update the config files for our requirements. The steps followed here are
    PACKAGE_FEED_ARCHS = "all armhf"
    ```
 
-   
    Let's go through these in detail:
 
    1. The de10-Nano uses a cyclone5 chip. So we have to specify that as the machine:
@@ -144,8 +136,6 @@ Now we update the config files for our requirements. The steps followed here are
 
    6. TODO: Explain the remaining parameters in the config.
 
-
-
 ### Build It!
 
 Now we build the linux image. Run the following commands to start the build process:
@@ -168,8 +158,6 @@ Now we build the linux image. Run the following commands to start the build proc
    bitbake core-image-minimal
    ```
 
-
-
 ## Appendix
 
 All the resources that were used in putting together this guide:
@@ -181,3 +169,10 @@ All the resources that were used in putting together this guide:
 [Yocto official build guide](https://www.yoctoproject.org/docs/3.1.2/brief-yoctoprojectqs/brief-yoctoprojectqs.html)
 
 [Yocto official tips and tricks](https://wiki.yoctoproject.org/wiki/TipsAndTricks/EnablingAPackageFeed)
+
+##
+
+<p align="right">Next | <b><a href="SSH-Without-Password.md">SSH Without Password</a></b>
+<br/>
+Back | <b><a href="../README.md#appendix">Overview</a></p>
+</b><p align="center"><sup>Appendix | </sup><a href="../README.md#appendix"><sup>Table of Contents</sup></a></p>

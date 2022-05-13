@@ -1,17 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Creating a Bootscript](#creating-a-bootscript)
-  - [Summary](#summary)
-  - [Pre-requisites](#pre-requisites)
-  - [Steps](#steps)
-    - [Create the bootscript source file](#create-the-bootscript-source-file)
-    - [Compile the boot  script source](#compile-the-boot--script-source)
-    - [Copy the compiled script to de10-nano](#copy-the-compiled-script-to-de10-nano)
-  - [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<p align="right"><sup><a href="SSH-Without-Password.md">Back</a> | </sup><a href="../README.md#appendix"><sup>Contents</sup></a>
+<br/>
+<sup>Appendix</sup></p>
 
 # Creating a Bootscript
 
@@ -21,7 +10,7 @@ If you need to run some additional commands at boot time, instead of updating `b
 
 ## Pre-requisites
 
-You will require U-Boot sources available as described in the [Building U-Boot](https://github.com/zangman/de10-nano/wiki/Building-the-Universal-Bootloader-(U-Boot)#configure-u-boot-to-flash-fpga-automatically-at-boot-time) section. [This section](https://github.com/zangman/de10-nano/wiki/Building-the-Universal-Bootloader-(U-Boot)#configure-u-boot-to-flash-fpga-automatically-at-boot-time) shows how to modify `bootcmd` to check for a bootscript and you will need to have followed the same/similar steps when setting up U-Boot for your device.
+You will require U-Boot sources available as described in the [Building U-Boot](<https://github.com/zangman/de10-nano/wiki/Building-the-Universal-Bootloader-(U-Boot)#configure-u-boot-to-flash-fpga-automatically-at-boot-time>) section. [This section](<https://github.com/zangman/de10-nano/wiki/Building-the-Universal-Bootloader-(U-Boot)#configure-u-boot-to-flash-fpga-automatically-at-boot-time>) shows how to modify `bootcmd` to check for a bootscript and you will need to have followed the same/similar steps when setting up U-Boot for your device.
 
 ## Steps
 
@@ -51,7 +40,7 @@ fi;
 
 Save this as `bootscript.txt`.
 
-### Compile the boot  script source
+### Compile the boot script source
 
 We need to compile the bootscript source so that U-Boot can read it. U-Boot ships with a compiler called `mkimage` which we'll use to compile for the de10-nano as follows:
 
@@ -61,11 +50,11 @@ $DEWD/u-boot/tools/mkimage -C none -A arm -T script -d bootscript.txt u-boot.scr
 
 The params used here are explained as follows:
 
-* `-C none` - No compression
-* `-A arm` - ARM architecture
-* `-T script` - this is a script type
-* `-d booscript.txt` - path to the source file
-* `u-boot.scr` - Output file name
+- `-C none` - No compression
+- `-A arm` - ARM architecture
+- `-T script` - this is a script type
+- `-d booscript.txt` - path to the source file
+- `u-boot.scr` - Output file name
 
 ### Copy the compiled script to de10-nano
 
@@ -88,3 +77,7 @@ And that's it!
 
 [Sunxi U-Boot](https://linux-sunxi.org/U-Boot) - The command, syntax and params for `mkimage` are from this page.
 
+##
+
+<p align="right">Back | <b><a href="SSH-Without-Password.md">SSH Without Password</a></p>
+</b><p align="center"><sup>Appendix | </sup><a href="../README.md#appendix"><sup>Table of Contents</sup></a></p>
