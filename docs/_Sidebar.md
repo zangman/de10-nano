@@ -1,48 +1,55 @@
 # Contents
 
 ## Getting Started
- * [Introduction to SoCs](https://github.com/zangman/de10-nano/wiki/Introduction-to-SoCs)
- * [Introduction to DE10-Nano](https://github.com/zangman/de10-nano/wiki/Introduction-to-DE10-Nano)
- * [Setting up the development environment](https://github.com/zangman/de10-nano/wiki/Setting-up-the-Development-Environment)
+
+- [Introduction to SoCs](./Introduction-to-SoCs.md)
+- [Introduction to DE10-Nano](./Introduction-to-DE10-Nano.md)
+- [Setting up the development environment](./Setting-up-the-Development-Environment.md)
 
 ## Building Embedded Linux - Full Custom
- * [The Basics](https://github.com/zangman/de10-nano/wiki/Building-Embedded-Linux)
- * [Building the Universal Bootloader (U-Boot)](https://github.com/zangman/de10-nano/wiki/Building-the-Universal-Bootloader-(U-Boot))
- * [Building the Kernel](https://github.com/zangman/de10-nano/wiki/Building-the-Kernel)
- *  RootFS - Choose one:
-     * [Debian](https://github.com/zangman/de10-nano/wiki/Debian-Root-File-System)
-     * [Archlinux ARM](https://github.com/zangman/de10-nano/wiki/Archlinux-ARM-Root-File-System)
- * [Creating the SD Card Image](https://github.com/zangman/de10-nano/wiki/Building-the-SD-Card-image)
- * [(Optional) Setting up WIFI](https://github.com/zangman/de10-nano/wiki/%5BOptional%5D-Setting-up-Wifi)
+
+- [The Basics](./Building-Embedded-Linux.md)
+- [Building the Universal Bootloader (U-Boot)](./Building-the-Universal-Bootloader-U-Boot.md)
+- [Building the Kernel](./Building-the-Kernel.md)
+- RootFS - Choose one:
+  - [Debian](./Debian-Root-File-System.md))
+  - [Archlinux ARM](./Archlinux-ARM-Root-File-System.md)
+- [Creating the SD Card Image](./Building-the-SD-Card-image.md)
+- [(Optional) Setting up WIFI](./%5BOptional%5D-Setting-up-Wifi.md)
 
 ## Flashing the FPGA from SD Card
-   * [From Linux](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux))
-   * [On Boot Up](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-On-Boot-Up)
+
+- [From Linux](./Flash-FPGA-from-HPS-running-Linux.md)
+- [On Boot Up](./Flash-FPGA-On-Boot-Up.md)
 
 ## HPS and FPGA communication
- * [Configuring the Device Tree](https://github.com/zangman/de10-nano/wiki/Configuring-the-Device-Tree)
- * [Designing and Flashing the design](https://github.com/zangman/de10-nano/wiki/Building-SoC-Design)
+
+- [Configuring the Device Tree](./Configuring-the-Device-Tree.md)
+- [Designing and Flashing the design](./Building-SoC-Design.md)
 
 ## My First SoC - Simple Hardware Adder
- * [Introduction](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Introduction)
- * [Initial project setup](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Initial-Project-Setup)
- * [Simple Adder](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-The-Adder)
- * [Primer on Avalon MM](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Primer-on-Avalon-Memory-Map-Interface)
- * [Custom Avalon MM Components](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Custom-Avalon-MM-Components)
- * [Wiring the Components](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Wiring-the-components)
- * [Add the Simple Adder](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Setting-up-the-Adder)
- * [Writing the Software](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Writing-the-Software)
+
+- [Introduction](./Simple-Hardware-Adder_-Introduction.md)
+- [Initial project setup](./Simple-Hardware-Adder_-Initial-Project-Setup.md)
+- [Simple Adder](./Simple-Hardware-Adder_-The-Adder.md)
+- [Primer on Avalon MM](./Simple-Hardware-Adder_-Primer-on-Avalon-Memory-Map-Interface.md)
+- [Custom Avalon MM Components](./Simple-Hardware-Adder_-Custom-Avalon-MM-Components.md)
+- [Wiring the Components](./Simple-Hardware-Adder_-Wiring-the-components.md)
+- [Add the Simple Adder](./Simple-Hardware-Adder_-Setting-up-the-Adder.md)
+- [Writing the Software](./Simple-Hardware-Adder_-Writing-the-Software.md)
 
 ## FPGA - SDRAM Communication
- * [Introduction](https://github.com/zangman/de10-nano/wiki/FPGA-SDRAM-Communication:-Introduction)
- * [SDRAM Controller](https://github.com/zangman/de10-nano/wiki/FPGA-SDRAM-Communication:-SDRAM-Controller)
- * [More on Avalon MM](https://github.com/zangman/de10-nano/wiki/FPGA-SDRAM-Communication:-More-about-the-Avalon-Memory-Mapped-Interface)
- * [Avalon MM Agent/Slave - Trigger Component](https://github.com/zangman/de10-nano/wiki/FPGA-SDRAM-Communication:-Avalon-MM-Agent-Slave-Trigger-Component)
- * [Avalon MM Host/Master - 1](https://github.com/zangman/de10-nano/wiki/FPGA-SDRAM-Communication:-Avalon-MM-Host-Master-Component-Part-1)
- * [Avalon MM Host/Master - 2](https://github.com/zangman/de10-nano/wiki/FPGA-SDRAM-Communication:-Avalon-MM-Host-Master-Component-Part-2)
- * [Avalon MM Host/Master - 3](https://github.com/zangman/de10-nano/wiki/FPGA-SDRAM-Communication:-Avalon-MM-Host-Master-Component-Part-3)
+
+- [Introduction](./FPGA-SDRAM-Communication_-Introduction.md)
+- [SDRAM Controller](./FPGA-SDRAM-Communication_-SDRAM-Controller.md)
+- [More on Avalon MM](./FPGA-SDRAM-Communication_-More-about-the-Avalon-Memory-Mapped-Interface.md)
+- [Avalon MM Agent/Slave - Trigger Component](./FPGA-SDRAM-Communication_-Avalon-MM-Agent-Slave-Trigger-Component.md)
+- [Avalon MM Host/Master - 1](./FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-1.md)
+- [Avalon MM Host/Master - 2](./FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md)
+- [Avalon MM Host/Master - 3](./FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-3.md)
 
 ## Appendix
- * [Yocto Linux](https://github.com/zangman/de10-nano/wiki/Yocto-Linux)
- * [SSH Without Password](https://github.com/zangman/de10-nano/wiki/SSH-Without-Password)
- * [Creating a bootscript](https://github.com/zangman/de10-nano/wiki/Creating-a-Bootscript)
+
+- [Yocto Linux](./Yocto-Linux.md)
+- [SSH Without Password](./SSH-Without-Password.md)
+- [Creating a bootscript](./Creating-a-Bootscript.md)

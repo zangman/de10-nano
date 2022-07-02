@@ -219,9 +219,9 @@ Hit `Ctrl+S` to save and then double-click to build our design. This can take 10
 
 #### Convert file to `.rbf`
 
-The last step is to convert the file to `.rbf` format as explained [here](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#create-a-blink-design>).
+The last step is to convert the file to `.rbf` format as explained [here](./Flash-FPGA-from-HPS-running-Linux.md#create-a-blink-design).
 
-Once converted, you can program the FPGA either on [boot-up](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-On-Boot-Up) or from [the HPS](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)>). If you are programming it from the HPS, then remember that the FPGA will get wiped when you power down the board. If this is a problem for you then the boot-up method might be preferable. The GHRD includes a module that will cause one of the LEDs to blink continuously. If you see this, congratulations, your design is up and running.
+Once converted, you can program the FPGA either on [boot-up](./Flash-FPGA-On-Boot-Up.md) or from [the HPS](./Flash-FPGA-from-HPS-running-Linux.md). If you are programming it from the HPS, then remember that the FPGA will get wiped when you power down the board. If this is a problem for you then the boot-up method might be preferable. The GHRD includes a module that will cause one of the LEDs to blink continuously. If you see this, congratulations, your design is up and running.
 
 ### Program to interact between the HPS and the FPGA
 
@@ -320,7 +320,7 @@ int main(int argc, char ** argv)
 
 Hang on! We don't have the header file `hps_0.h`. This header file contains all the memory addresses that we need for our leds.
 
-Once quartus completes synthesis, it would have created a file called `soc_system.sopcinfo` which contains all the address information. The Embedded Development Suite that we installed in the beginning includes a utility that will help generate our header file. Run the following commands to generate the header file. Note that this requires you to have correctly set up the [development environment](https://github.com/zangman/de10-nano/wiki/Setting-up-the-Development-Environment) along with the paths, otherwise they won't work.
+Once quartus completes synthesis, it would have created a file called `soc_system.sopcinfo` which contains all the address information. The Embedded Development Suite that we installed in the beginning includes a utility that will help generate our header file. Run the following commands to generate the header file. Note that this requires you to have correctly set up the [development environment](./Setting-up-the-Development-Environment.md) along with the paths, otherwise they won't work.
 
 ```bash
 cd $DEWD/DE10_NANO_SoC_GHRD

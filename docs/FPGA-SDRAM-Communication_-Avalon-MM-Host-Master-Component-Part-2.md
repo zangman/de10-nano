@@ -1,6 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
 
 - [Summary](#summary)
 - [Building the project](#building-the-project)
@@ -21,7 +22,7 @@ Here we will go through the steps of setting the host component up in Platform D
 
 ### Initial setup
 
-We will use a copy of the `ghrd_barebones_template` that we created over [here](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Initial-Project-Setup#create-a-backup-of-this-project). If you don't have it, follow the steps as shown on [this page](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Initial-Project-Setup) to have a clean initial project to start with.
+We will use a copy of the `ghrd_barebones_template` that we created over [here](./Simple-Hardware-Adder_-Initial-Project-Setup.md#create-a-backup-of-this-project). If you don't have it, follow the steps as shown on [this page](./Simple-Hardware-Adder_-Initial-Project-Setup.md) to have a clean initial project to start with.
 
 Make a copy of the template first:
 
@@ -42,7 +43,7 @@ Right click on `hps_0` and select `Edit...`. Make sure the options are as shown 
 
 ### New component - Avalon Control
 
-This is the trigger component that we created earlier. We'll call it `avalon_control` and we'll create a new agent component. I won't go into great detail in creating this as it's already explained in the [Simple Adder](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Custom-Avalon-MM-Components) project. Here is a screenshot that shows what the signals tab looks like:
+This is the trigger component that we created earlier. We'll call it `avalon_control` and we'll create a new agent component. I won't go into great detail in creating this as it's already explained in the [Simple Adder](./Simple-Hardware-Adder_-Custom-Avalon-MM-Components.md) project. Here is a screenshot that shows what the signals tab looks like:
 
 ![](images/avalon_control.png)
 
@@ -84,8 +85,6 @@ Once the compilation succeeds, go to `File > Convert Programming Files` as shown
 
 ![](images/convert_rbf.png)
 
-
-
-Normally we would have flashed the design as explained [here](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)) and [here](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-On-Boot-Up). But in this case, we need to set some registers on the HPS otherwise the HPS will hang as soon as we try to read.
+Normally we would have flashed the design as explained [here](./Flash-FPGA-from-HPS-running-Linux.md) and [here](./Flash-FPGA-On-Boot-Up.md). But in this case, we need to set some registers on the HPS otherwise the HPS will hang as soon as we try to read.
 
 Let's cover this in the next section.
