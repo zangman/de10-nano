@@ -158,7 +158,7 @@ Double click the `Assembler` in the left side menu and let the compilation compl
 
 ## Configuring the Device Tree
 
-Before we can start using any of the bridges, we'll need to enable them in the device tree. This is covered over [here](https://github.com/zangman/de10-nano/wiki/Configuring-the-Device-Tree) so I won't be going into it again. In the de10-nano, check that the bridges are enabled with the following command.
+Before we can start using any of the bridges, we'll need to enable them in the device tree. This is covered over [here](./Configuring-the-Device-Tree.md) so I won't be going into it again. In the de10-nano, check that the bridges are enabled with the following command.
 
 ```bash
 cat /sys/class/fpga_bridge/*/state
