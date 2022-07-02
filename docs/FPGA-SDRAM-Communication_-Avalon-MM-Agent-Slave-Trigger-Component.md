@@ -25,7 +25,7 @@ The image below shows the general approach:
 
 ## Trigger Component
 
-We will need a trigger component that will initiate the read transaction. This will utilise the HPS-FPGA bridge in a similar way as was explained in the [Simple Adder](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Custom-Avalon-MM-Components) project.
+We will need a trigger component that will initiate the read transaction. This will utilise the HPS-FPGA bridge in a similar way as was explained in the [Simple Adder](./Simple-Hardware-Adder_-Custom-Avalon-MM-Components.md) project.
 
 But the difference is that we only need send a boolean value i.e. "Begin transaction". We don't really care about the data. So this will be an Avalon Agent component and we'll just use the `write` signal.
 

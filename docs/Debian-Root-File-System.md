@@ -170,7 +170,7 @@ While still in the `chroot` environment, let's do some setup so that our rootfs 
 
 ## (Optional) Setup WIFI
 
-You can also do the necessary steps for setting up WIFI as detailed [here](https://github.com/zangman/de10-nano/wiki/%5BOptional%5D-Setting-up-Wifi#install-the-necessary-firmware). This is optional and can be done later on also if you can connect your de10-nano to the LAN.
+You can also do the necessary steps for setting up WIFI as detailed [here](./%5BOptional%5D-Setting-up-Wifi.md#install-the-necessary-firmware). This is optional and can be done later on also if you can connect your de10-nano to the LAN.
 
 ## Clean up
 

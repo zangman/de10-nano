@@ -6,7 +6,7 @@
 
 ## Summary
 
-Flashing the FPGA on boot up is a convenient way to have your design on the FPGA every time the board powers up. Here we will go through the steps to do it. Make sure you've followed the step to [modify the U-Boot to flash the FPGA](<https://github.com/zangman/de10-nano/wiki/Building-the-Universal-Bootloader-(U-Boot)#part-1---customizing-the-bootloader-for-the-de10-nano>), without this, it will not work.
+Flashing the FPGA on boot up is a convenient way to have your design on the FPGA every time the board powers up. Here we will go through the steps to do it. Make sure you've followed the step to [modify the U-Boot to flash the FPGA](./Building-the-Universal-Bootloader-U-Boot.md#part-1---customizing-the-bootloader-for-the-de10-nano), without this, it will not work.
 
 ## Steps
 
@@ -14,8 +14,8 @@ Flashing the FPGA on boot up is a convenient way to have your design on the FPGA
 
 Complete the following steps to generate the `.rbf` file:
 
-- [Set the MSEL pins](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#set-the-msel-pins>)
-- [Create a blink design](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#create-a-blink-design>)
+- [Set the MSEL pins](./Flash-FPGA-from-HPS-running-Linux.md#set-the-msel-pins)
+- [Create a blink design](./Flash-FPGA-from-HPS-running-Linux.md#create-a-blink-design)
 
 ### Copy the RBF file into the FAT partition
 

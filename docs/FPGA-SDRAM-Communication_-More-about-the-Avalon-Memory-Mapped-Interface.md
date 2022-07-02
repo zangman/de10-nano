@@ -6,17 +6,17 @@
 
 ## Summary
 
-This is a follow up to the [Primer on Avalon MM](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Primer-on-Avalon-Memory-Map-Interface). If you haven't read that, please take a quick scan and then continue on this page. Here we talk a little bit about the different types of Avalon MM transactions.
+This is a follow up to the [Primer on Avalon MM](./Simple-Hardware-Adder_-Primer-on-Avalon-Memory-Map-Interface.md). If you haven't read that, please take a quick scan and then continue on this page. Here we talk a little bit about the different types of Avalon MM transactions.
 
 ## Avalon MM Transactions
 
 Avalon is a fairly comprehensive bus architecture. The kinds of transactions that one can do with Avalon are wide and varied. As you try to get more efficient with your transactions (Ex: get more throughput), the complexity of the transaction increases. The complexity also increases if you are writing a Host (Master) component versus an Agent (Slave) component. While an agent just has to respond to whatever responses are being made by a host, the host on the other hand has to not only respond to the agent's responses but also manage the bus to make sure the agent receives the instructions correctly.
 
-In the [Simple Hardware Adder](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Custom-Avalon-MM-Components) we had created agent components. This was because there was already a host provided by the HPS-FPGA bridge. But for the SDRAM controller, since there is no host, we will need to develop our own host component.
+In the [Simple Hardware Adder](./Simple-Hardware-Adder_-Custom-Avalon-MM-Components.md) we had created agent components. This was because there was already a host provided by the HPS-FPGA bridge. But for the SDRAM controller, since there is no host, we will need to develop our own host component.
 
 But before that, let's walk through a few simple transaction types with commonly used signals. The HPS SDRAM controller uses the **Avalon MM Burst Interface**. So it is necessary for us to understand how this is implemented if we wish to design our own custom host component. The Burst interface builds upon the Pipelined interface which builds upon the basic read/write interface. Which is why we cover all three below.
 
-The content below is mostly sourced from this [9 minute video](https://www.youtube.com/watch?v=8GAqT3nzHeQ). I strongly recommend watching this one, it was a lightbulb moment for me. Below, I will try and expand a bit more over what the video covers. But if everything in the video makes sense to you, feel free to just skip to the [last section](https://github.com/zangman/de10-nano/wiki/FPGA-SDRAM-Communication:-More-about-the-Avalon-Memory-Mapped-Interface#avalon-mm-bidirectional-port-signals-for-sdram-controller) which shows the ports required for the host component.
+The content below is mostly sourced from this [9 minute video](https://www.youtube.com/watch?v=8GAqT3nzHeQ). I strongly recommend watching this one, it was a lightbulb moment for me. Below, I will try and expand a bit more over what the video covers. But if everything in the video makes sense to you, feel free to just skip to the [last section](./FPGA-SDRAM-Communication_-More-about-the-Avalon-Memory-Mapped-Interface.md#avalon-mm-bidirectional-port-signals-for-sdram-controller) which shows the ports required for the host component.
 
 ### Basic Avalon MM Read/Write
 
