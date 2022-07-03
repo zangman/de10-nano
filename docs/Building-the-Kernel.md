@@ -90,7 +90,7 @@ Feel free to look through the other options and when done, press the right-arrow
 
 #### (Optional) Enable options for WIFI
 
-You can set up the necessary options needed for WIFI as explained [here](https://github.com/zangman/de10-nano/wiki/%5BOptional%5D-Setting-up-Wifi#compile-the-kernel-driver). This can be done later as well.
+You can set up the necessary options needed for WIFI as explained [here](./%5BOptional%5D-Setting-up-Wifi.md). This can be done later as well.
 
 ### Build the Kernel image
 

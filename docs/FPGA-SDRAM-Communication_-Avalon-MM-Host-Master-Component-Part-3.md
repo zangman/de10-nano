@@ -111,9 +111,9 @@ What we need to do is:
 
 **NOTE**: If these steps aren't done exactly as explained here, the HPS will hang when the FPGA tries to access SDRAM.
 
-This needs to be done only once when powering it up for the first time. You can then proceed to flash any new designs [without rebooting](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)>) even for designs that access the SDRAM. But if you power down the device (not reboot), you will need to go through the steps again.
+This needs to be done only once when powering it up for the first time. You can then proceed to flash any new designs [without rebooting](./Flash-FPGA-from-HPS-running-Linux.md) even for designs that access the SDRAM. But if you power down the device (not reboot), you will need to go through the steps again.
 
-To avoid doing this repeatedly, you can [create a bootscript](https://github.com/zangman/de10-nano/wiki/Creating-a-Bootscript) which will make it less tedious.
+To avoid doing this repeatedly, you can [create a bootscript](./Creating-a-Bootscript.md) which will make it less tedious.
 
 ## Trying out our design
 

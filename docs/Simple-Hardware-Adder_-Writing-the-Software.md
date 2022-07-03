@@ -20,7 +20,7 @@ We'll write an application program in `C`. There are 2 ways to write this progra
    gcc myprog.c -o myprog
    ```
 
-2. **Writing on a host machine and copying the executable** - This is my preferred approach. We basically write the program on a different machine, which in my case is Debian running on virtualbox. Then we compile it using the ARM cross-compiler that we downloaded and set up the path in [this section](https://github.com/zangman/de10-nano/wiki/Setting-up-the-Development-Environment#arm-compiler). Using this approach, the command line to compile it is:
+2. **Writing on a host machine and copying the executable** - This is my preferred approach. We basically write the program on a different machine, which in my case is Debian running on virtualbox. Then we compile it using the ARM cross-compiler that we downloaded and set up the path in [this section](./Setting-up-the-Development-Environment.md#arm-compiler). Using this approach, the command line to compile it is:
 
    ```bash
    ${CROSS_COMPILE}gcc myprog.c -o myprog
@@ -397,7 +397,7 @@ Unfortunately, this happens quite often and the bad news is, there is no easy wa
 
 7. Check the verilog and C code with the reference source code if there are any mistakes.
 
-8. Make sure the `MSEL` pins are all set to `ON` as described [here](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)#set-the-msel-pins>).
+8. Make sure the `MSEL` pins are all set to `ON` as described [here](./Flash-FPGA-from-HPS-running-Linux.md#set-the-msel-pins).
 
 If unable to find the problem, maybe it's better to just start over again. I've done this countless times and it is the price to pay for learning.
 

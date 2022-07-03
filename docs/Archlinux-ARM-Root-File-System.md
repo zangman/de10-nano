@@ -12,7 +12,7 @@ Here we'll walk through the steps to creating an Archlinux ARM root filesystem. 
 
 One of the main differences with creating the Archlinux ARM rootfs is we need to create the SD Card image first, mount it and then create our rootfs. I'm not entirely sure why this is required, but I suspect the reason is to take care of the various mount points correctly i.e. `/proc`, `/dev` etc.
 
-In any case, to get started, we'll need to go through all the steps listed [here](https://github.com/zangman/de10-nano/wiki/Building-the-SD-Card-image) all the way up to copying the [kernel and device tree](https://github.com/zangman/de10-nano/wiki/Building-the-SD-Card-image#kernel-and-device-tree-partition-1) and jump back here for the rootfs.
+In any case, to get started, we'll need to go through all the steps listed [here](./Building-the-SD-Card-image.md) all the way up to copying the [kernel and device tree](./Building-the-SD-Card-image.md#kernel-and-device-tree-partition-1) and jump back here for the rootfs.
 
 ## Archlinux ARM RootFS Steps
 
@@ -244,7 +244,7 @@ sudo rm ext4/usr/bin/qemu-arm-static
 sudo umount ext4
 ```
 
-Now head back over to [this section](https://github.com/zangman/de10-nano/wiki/Building-the-SD-Card-image#cleanup) to continue the clean up and writing to SD Card.
+Now head back over to [this section](./Building-the-SD-Card-image.md#cleanup) to continue the clean up and writing to SD Card.
 
 ##
 

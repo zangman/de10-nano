@@ -10,7 +10,7 @@ If you need to run some additional commands at boot time, instead of updating `b
 
 ## Pre-requisites
 
-You will require U-Boot sources available as described in the [Building U-Boot](<https://github.com/zangman/de10-nano/wiki/Building-the-Universal-Bootloader-(U-Boot)#configure-u-boot-to-flash-fpga-automatically-at-boot-time>) section. [This section](<https://github.com/zangman/de10-nano/wiki/Building-the-Universal-Bootloader-(U-Boot)#configure-u-boot-to-flash-fpga-automatically-at-boot-time>) shows how to modify `bootcmd` to check for a bootscript and you will need to have followed the same/similar steps when setting up U-Boot for your device.
+You will require U-Boot sources available as described in the [Building U-Boot](./Building-the-Universal-Bootloader-U-Boot.md#configure-u-boot-to-flash-fpga-automatically-at-boot-time) section. [This section](./Building-the-Universal-Bootloader-U-Boot.md#configure-u-boot-to-flash-fpga-automatically-at-boot-time) shows how to modify `bootcmd` to check for a bootscript and you will need to have followed the same/similar steps when setting up U-Boot for your device.
 
 ## Steps
 

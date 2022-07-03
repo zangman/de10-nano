@@ -158,17 +158,17 @@ Double click the `Assembler` in the left side menu and let the compilation compl
 
 ## Configuring the Device Tree
 
-Before we can start using any of the bridges, we'll need to enable them in the device tree. This is covered over [here](https://github.com/zangman/de10-nano/wiki/Configuring-the-Device-Tree) so I won't be going into it again. In the de10-nano, check that the bridges are enabled with the following command.
+Before we can start using any of the bridges, we'll need to enable them in the device tree. This is covered over [here](./Configuring-the-Device-Tree.md) so I won't be going into it again. In the de10-nano, check that the bridges are enabled with the following command.
 
 ```bash
 cat /sys/class/fpga_bridge/*/state
 ```
 
-If they're `disabled` or you get an error then go through the steps described [here](https://github.com/zangman/de10-nano/wiki/Configuring-the-Device-Tree) and verify that the bridges are all enabled as shown on the same page.
+If they're `disabled` or you get an error then go through the steps described [here](./Configuring-the-Device-Tree.md) and verify that the bridges are all enabled as shown on the same page.
 
 ## Flashing the design
 
-Now we can flash our design on the de10-nano. This has already been covered [here](<https://github.com/zangman/de10-nano/wiki/Flash-FPGA-from-HPS-(running-Linux)>) and [here](https://github.com/zangman/de10-nano/wiki/Flash-FPGA-On-Boot-Up), so I won't be going into it here. You can use either method to flash the FPGA.
+Now we can flash our design on the de10-nano. This has already been covered [here](./Flash-FPGA-from-HPS-running-Linux.md) and [here](./Flash-FPGA-On-Boot-Up.md), so I won't be going into it here. You can use either method to flash the FPGA.
 
 Once your design has been successfully flashed and you can see the blinking LED to indicate it is ready, we can now proceed to writing the software to use our hardware adder.
 

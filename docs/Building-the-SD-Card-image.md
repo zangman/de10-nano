@@ -311,7 +311,7 @@ sudo umount fat
 
 #### Root Filesystem partition
 
-> Note: If your rootfs is Archlinux ARM, then jump to [this section](https://github.com/zangman/de10-nano/wiki/Archlinux-ARM-Root-File-System) to continue with the rootfs setup instead of the steps below.
+> Note: If your rootfs is Archlinux ARM, then jump to [this section](./Archlinux-ARM-Root-File-System.md) to continue with the rootfs setup instead of the steps below.
 
 For the final partition, here are the steps:
 

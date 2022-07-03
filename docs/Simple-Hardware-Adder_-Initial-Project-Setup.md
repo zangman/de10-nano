@@ -12,8 +12,8 @@ We're going to create a template project and save it so that we can reuse it for
 
 Complete the following steps explained at the links below and proceed to the next section when done:
 
-1. [Download the CD-ROM](Building-SoC-Design.md#download-the-cd-rom)
-2. [Copy the GHRD to the working directory](Building-SoC-Design.md#copy-the-ghrd-to-working-directory)
+1. [Download the CD-ROM](./Building-SoC-Design.md#download-the-cd-rom)
+2. [Copy the GHRD to the working directory](./Building-SoC-Design.md#copy-the-ghrd-to-working-directory)
 
 ## Upgrade the IP to current quartus version
 

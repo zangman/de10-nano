@@ -12,7 +12,7 @@ For a beginner, this is quite complicated. So, to make it easier to follow, I've
 
 ## State Machine
 
-From the section on the [Avalon MM Read and Write interfaces](https://github.com/zangman/de10-nano/wiki/FPGA-SDRAM-Communication:-More-about-the-Avalon-Memory-Mapped-Interface#avalon-mm-bidirectional-port-signals-for-sdram-controller), it is quite obvious that we need to implement a state machine. For a read transaction, I can think of three different states:
+From the section on the [Avalon MM Read and Write interfaces](./FPGA-SDRAM-Communication_-More-about-the-Avalon-Memory-Mapped-Interface.md#avalon-mm-bidirectional-port-signals-for-sdram-controller), it is quite obvious that we need to implement a state machine. For a read transaction, I can think of three different states:
 
 1. **INIT** - When we're idle and ready to start a transaction.
 2. **READ_START** - When we're initiated the read transaction and waiting for the `waitrequest` to be de-asserted.

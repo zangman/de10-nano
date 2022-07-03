@@ -6,7 +6,7 @@
 
 ## Summary
 
-If you haven't done it already, I would recommend working on the [Simple Hardware Adder](https://github.com/zangman/de10-nano/wiki/Simple-Hardware-Adder:-Introduction) project first before attempting this one. That project covers a lot of introductory concepts such Platform Designer, Avalon Slaves, memory addressing etc. which we'll build upon in this project.
+If you haven't done it already, I would recommend working on the [Simple Hardware Adder](./Simple-Hardware-Adder_-Introduction.md) project first before attempting this one. That project covers a lot of introductory concepts such Platform Designer, Avalon Slaves, memory addressing etc. which we'll build upon in this project.
 
 In this project, we'll up the game quite a bit and introduce several new concepts and techniques. These include:
 
