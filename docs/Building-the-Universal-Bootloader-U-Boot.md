@@ -148,6 +148,7 @@ We're modifying this command to do two things.
     Presumably, `0x2000000` is the RAM address where we want to copy the contents of the binary and `0x700000` is the size of the binary in bytes. But where does `0x700000` or `7MB` come from? Well, if we look in the [Cyclone V Device Data Sheet](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-v/cv_51002.pdf) on page 78, we see a table showing the size of `.rbf` configuration files in bits. Here is a screenshot:
 
     ![](images/uboot_rbf_size.png)
+
     The de10-nano uses a Cyclone V 5CSEBA6U23I7 and I've highlighted that above. So converting that from bits to MB, we get about `6.68MB` which is close to the `7MB` above.
 
 After making the changes, save the file and exit. Then commit it to the branch.
