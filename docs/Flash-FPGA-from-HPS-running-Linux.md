@@ -4,6 +4,21 @@
 
 # Flashing the FPGA from Linux
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Set the MSEL pins](#set-the-msel-pins)
+  - [Create a blink design](#create-a-blink-design)
+  - [Creating the device tree overlay](#creating-the-device-tree-overlay)
+  - [Compiling the device tree overlay](#compiling-the-device-tree-overlay)
+  - [Flash the FPGA](#flash-the-fpga)
+  - [Updating the design](#updating-the-design)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 This document details how to update the FPGA design from Linux without having to reboot the machine.
@@ -181,8 +196,6 @@ Then follow the steps as per the previous section to flash the new design.
 ## References
 
 [Zynq PL programming with FPGA Manager](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841645/Solution+Zynq+PL+Programming+With+FPGA+Manager) - This page has the details that work for version 5.5 of the kernel.
-
-##
 
 <p align="right">Next | <b><a href="Flash-FPGA-On-Boot-Up.md">Flashing the FPGA On Boot Up</a></b>
 <br/>

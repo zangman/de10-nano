@@ -4,6 +4,19 @@
 
 # Creating a Bootscript
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Pre-requisites](#pre-requisites)
+- [Steps](#steps)
+  - [Create the bootscript source file](#create-the-bootscript-source-file)
+  - [Compile the boot script source](#compile-the-boot-script-source)
+  - [Copy the compiled script to de10-nano](#copy-the-compiled-script-to-de10-nano)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 If you need to run some additional commands at boot time, instead of updating `bootcmd` in u-boot sources and writing to sd card, it's easier to just create a script file and copy that to the fat partition. Here we will create a simple bootscript that enables the required registers for access to SDRAM.
@@ -76,8 +89,6 @@ And that's it!
 ## References
 
 [Sunxi U-Boot](https://linux-sunxi.org/U-Boot) - The command, syntax and params for `mkimage` are from this page.
-
-##
 
 <p align="right">Back | <b><a href="SSH-Without-Password.md">SSH Without Password</a></p>
 </b><p align="center"><sup>Appendix | </sup><a href="../README.md#appendix"><sup>Table of Contents</sup></a></p>

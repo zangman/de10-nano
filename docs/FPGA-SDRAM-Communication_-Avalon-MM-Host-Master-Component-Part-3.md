@@ -4,6 +4,17 @@
 
 # Avalon MM Host/Master - 3
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Allocate SDRAM Memory](#allocate-sdram-memory)
+- [Set the HPS registers to enable SDRAM access](#set-the-hps-registers-to-enable-sdram-access)
+- [Trying out our design](#trying-out-our-design)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 There are some configuration changes that are required before we can flash our design. We'll go through those in this section.
@@ -147,8 +158,6 @@ If all goes well, you should see the LEDs lighting up in an alternating pattern.
 ## References
 
 [Cyclone V HPS Register Address Map and Definitions](https://www.intel.com/content/www/us/en/programmable/hps/cyclone-v/hps.html#sfo1411577376106.html) - Lists all the registers for the HPS.
-
-##
 
 <p align="right">Back | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Avalon MM Host/Master - 2</a></p>
 </b><p align="center"><sup>FPGA - SDRAM Communication | </sup><a href="../README.md#fpga---sdram-communication"><sup>Table of Contents</sup></a></p>

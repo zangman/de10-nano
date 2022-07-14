@@ -1,8 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
-
 - [Summary](#summary)
 - [Building the project](#building-the-project)
   - [Initial setup](#initial-setup)
@@ -13,6 +11,9 @@
   - [Convert to rbf](#convert-to-rbf)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- START doctoc -->
+<!-- END doctoc -->
 
 ## Summary
 

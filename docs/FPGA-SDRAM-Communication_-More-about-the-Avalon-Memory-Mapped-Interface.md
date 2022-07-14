@@ -4,6 +4,19 @@
 
 # More on Avalon MM
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Avalon MM Transactions](#avalon-mm-transactions)
+  - [Basic Avalon MM Read/Write](#basic-avalon-mm-readwrite)
+  - [Avalon MM Pipelined Read/Write](#avalon-mm-pipelined-readwrite)
+  - [Avalon MM Burst Read/Write](#avalon-mm-burst-readwrite)
+- [Avalon MM Bidirectional Port Signals for SDRAM Controller](#avalon-mm-bidirectional-port-signals-for-sdram-controller)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 This is a follow up to the [Primer on Avalon MM](./Simple-Hardware-Adder_-Primer-on-Avalon-Memory-Map-Interface.md). If you haven't read that, please take a quick scan and then continue on this page. Here we talk a little bit about the different types of Avalon MM transactions.
@@ -117,8 +130,6 @@ With this understanding under our belt, we can now proceed to building our Host 
 [Avalon Technical Spec](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/mnl_avalon_spec.pdf) - This is a handy reference for the technical specs of Avalon Bus. I had difficulty with the Avalon MM examples because I felt they were more complex than they needed to me and made it difficult to understand. The video above is what made everything clear to me. Still this reference is useful to know what the different signals are and how they are used.
 
 [Cyclone V HPS Technical Reference Manual](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-v/cv_54001.pdf) - The SDRAM Controller section in this doc has details about the Avalon MM Ports and about the various features of the controller itself.
-
-##
 
 <p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Agent-Slave-Trigger-Component.md">Avalon MM Agent/Slave - Trigger Component</a></b>
 <br/>

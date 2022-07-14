@@ -4,6 +4,22 @@
 
 # Initial project setup
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Getting the project ready](#getting-the-project-ready)
+- [Upgrade the IP to current quartus version](#upgrade-the-ip-to-current-quartus-version)
+    - [Platform Designer](#platform-designer)
+      - [Startup](#startup)
+      - [Trim the System](#trim-the-system)
+      - [Trim the HDL Code](#trim-the-hdl-code)
+      - [Compile the design](#compile-the-design)
+    - [Why are we doing this?](#why-are-we-doing-this)
+    - [Create a backup of this project](#create-a-backup-of-this-project)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 We're going to create a template project and save it so that we can reuse it for other projects. To do this, we'll start with the GHRD project that comes with the de10-nano CD-ROM and remove a bunch of stuff to make it as simple as possible.
@@ -229,8 +245,6 @@ cp -r DE10_NANO_SoC_GHRD ghrd_barebones_template
 ```
 
 Proceed to the next section on the right to start working on the design for the Simple Adder.
-
-##
 
 <p align="right">Next | <b><a href="Simple-Hardware-Adder_-The-Adder.md">Simple Adder</a></b>
 <br/>

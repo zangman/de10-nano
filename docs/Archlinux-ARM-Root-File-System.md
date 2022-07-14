@@ -4,6 +4,33 @@
 
 # Archlinux ARM Root File System
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Initial setup](#initial-setup)
+- [Archlinux ARM RootFS Steps](#archlinux-arm-rootfs-steps)
+  - [Install dependencies](#install-dependencies)
+  - [Mount the partition](#mount-the-partition)
+  - [Download prebuilt tarball](#download-prebuilt-tarball)
+  - [Chroot into the folder](#chroot-into-the-folder)
+  - [Customising the rootfs](#customising-the-rootfs)
+    - [Initializing the keys](#initializing-the-keys)
+    - [Update the locale](#update-the-locale)
+    - [Install vim/neovim](#install-vimneovim)
+    - [Set hostname](#set-hostname)
+    - [Root password](#root-password)
+    - [fstab](#fstab)
+    - [Enable serial console](#enable-serial-console)
+    - [Enable root login over ssh](#enable-root-login-over-ssh)
+    - [uboot-tools](#uboot-tools)
+    - [NTP - sync correct time](#ntp---sync-correct-time)
+    - [Speed up SSH connections](#speed-up-ssh-connections)
+    - [(Optional) Install wireless tools for wifi dongle](#optional-install-wireless-tools-for-wifi-dongle)
+  - [Finishing up](#finishing-up)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Here we'll walk through the steps to creating an Archlinux ARM root filesystem. I built this in Manjaro linux which is an Archlinux variant. If you use Debian or some other distro to build this, the steps might be a bit different.
@@ -245,8 +272,6 @@ sudo umount ext4
 ```
 
 Now head back over to [this section](./Building-the-SD-Card-image.md#cleanup) to continue the clean up and writing to SD Card.
-
-##
 
 <p align="right">Next | <b><a href="Building-the-SD-Card-image.md">Creating the SD Card Image</a></b>
 <br/>

@@ -4,6 +4,18 @@
 
 # Add the Simple Adder
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Add the design to the project](#add-the-design-to-the-project)
+- [Wire it together](#wire-it-together)
+- [Compile the design](#compile-the-design)
+- [Configuring the Device Tree](#configuring-the-device-tree)
+- [Flashing the design](#flashing-the-design)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Now let's add our Simple Adder design to the project and wire it up to our SoC. We're almost done with the hardware part!
@@ -171,8 +183,6 @@ If they're `disabled` or you get an error then go through the steps described [h
 Now we can flash our design on the de10-nano. This has already been covered [here](./Flash-FPGA-from-HPS-running-Linux.md) and [here](./Flash-FPGA-On-Boot-Up.md), so I won't be going into it here. You can use either method to flash the FPGA.
 
 Once your design has been successfully flashed and you can see the blinking LED to indicate it is ready, we can now proceed to writing the software to use our hardware adder.
-
-##
 
 <p align="right">Next | <b><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Writing the Software</a></b>
 <br/>

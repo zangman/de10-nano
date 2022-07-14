@@ -4,6 +4,17 @@
 
 # Configuring the Device Tree
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Enable the FPGA bridges](#enable-the-fpga-bridges)
+  - [Generate the Device Tree Binary](#generate-the-device-tree-binary)
+  - [Copy the Device Tree Binary to the DE10-Nano](#copy-the-device-tree-binary-to-the-de10-nano)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Here we will make some minor changes to the device tree so that we can have the HPS and the FPGA communicate with each other. The main change we need to do is enable the FPGA bridges which are key in allowing this communication to happen. Once we enable them in the device tree, the Altera driver will kick in and allow us bi-directional communication.
@@ -164,8 +175,6 @@ enabled
 ```
 
 That means we are now ready to flash our design and run a program in user space.
-
-##
 
 <p align="right">Next | <b><a href="Building-SoC-Design.md">Designing and Flashing the design</a></b>
 <br/>

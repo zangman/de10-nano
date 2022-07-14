@@ -4,6 +4,25 @@
 
 # Building the Kernel
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+  - [Summary](#summary)
+  - [Steps](#steps)
+    - [Library dependencies](#library-dependencies)
+    - [Download the Kernel](#download-the-kernel)
+    - [Configure the Kernel](#configure-the-kernel)
+    - [Primer on Flashing FPGA](#primer-on-flashing-fpga)
+    - [Kernel Options](#kernel-options)
+      - [Do not append version](#do-not-append-version)
+      - [Enable Overlay filesystem support](#enable-overlay-filesystem-support)
+      - [Enable CONFIGFS](#enable-configfs)
+      - [(Optional) Enable options for WIFI](#optional-enable-options-for-wifi)
+    - [Build the Kernel image](#build-the-kernel-image)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Here we build a kernel for the DE10-Nano from scratch.
@@ -111,8 +130,6 @@ Once the compilation is complete, you now have a compressed Linux kernel image.
 [Building embedded linux for the Terasic DE10-Nano](https://bitlog.it/20170820_building_embedded_linux_for_the_terasic_de10-nano.html) - A large part of this page has been taken from here.
 
 [Stackoverflow - Cannot mount configfs](https://stackoverflow.com/questions/50877808/configfs-do-not-mount-device-tree-overlays) - This page explains why you cannot see the device tree overlay.
-
-##
 
 <p align="right">Next | <b><a href="Building-the-Kernal-RootFS-Choose-One.md">RootFS - Choose one</a></b>
 <br/>

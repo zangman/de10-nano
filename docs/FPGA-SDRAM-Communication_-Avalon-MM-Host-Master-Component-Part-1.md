@@ -4,6 +4,21 @@
 
 # Avalon MM Host/Master - 1
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [State Machine](#state-machine)
+- [Signals](#signals)
+- [State Changes](#state-changes)
+- [Populating Control Values](#populating-control-values)
+- [Retain the last read value](#retain-the-last-read-value)
+- [Full code](#full-code)
+- [Simulation and Verification](#simulation-and-verification)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Here we'll go through the steps of designing our Avalon MM Host (Master) Component in SystemVerilog which interfaces with the SDRAM Controller. We'll begin with a simple component that reads a byte from SDRAM and makes it available externally.
@@ -390,8 +405,6 @@ int main(int argc, char **argv, char **env) {
 [Finite State Machines in Verilog](https://inst.eecs.berkeley.edu/~cs150/sp12/resources/FSM.pdf) - Excellent article that explains state machines in great detail.
 
 [ZipCPU Tutorials](https://zipcpu.com/tutorial/) - Excellent tutorials for beginners especially on verilator.
-
-##
 
 <p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Avalon MM Host/Master - 2</a></b>
 <br/>

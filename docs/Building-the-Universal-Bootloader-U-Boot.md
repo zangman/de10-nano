@@ -4,6 +4,25 @@
 
 # Building the Universal Bootloader (U-Boot)
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Getting the sources](#getting-the-sources)
+  - [Configuring](#configuring)
+    - [Part 1 - Customizing the bootloader for the DE10-Nano](#part-1---customizing-the-bootloader-for-the-de10-nano)
+      - [Creating a new branch](#creating-a-new-branch)
+      - [Configure U-Boot to flash FPGA automatically at boot time](#configure-u-boot-to-flash-fpga-automatically-at-boot-time)
+      - [Asssign a permanent mac address to the ethernet device](#asssign-a-permanent-mac-address-to-the-ethernet-device)
+    - [Part 2 - Finish the configuration](#part-2---finish-the-configuration)
+  - [Building](#building)
+- [References](#references)
+- [Appendix](#appendix)
+  - [Setting the mac address at boot time](#setting-the-mac-address-at-boot-time)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 U-Boot is a universal bootloader. Truly. It is used in almost every known embedded device out there and the DE10-Nano is no exception. Here we will build a U-Boot image to be used for the DE10-Nano.
@@ -277,8 +296,6 @@ If you skipped the section on hardcoding the mac address, you can change it at b
 setenv ethaddr 56:6b:20:e9:4a:47
 saveenv
 ```
-
-##
 
 <p align="right">Next | <b><a href="Building-the-Kernel.md">Building the Kernel</a></b>
 <br/>

@@ -4,6 +4,35 @@
 
 # Building the SD Card Image
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Create the SD Card image file](#create-the-sd-card-image-file)
+  - [Partitioning the drive](#partitioning-the-drive)
+    - [Bootloader partition](#bootloader-partition)
+    - [Kernel and Device Tree partition](#kernel-and-device-tree-partition)
+    - [Root Partition](#root-partition)
+    - [Writing the partition table](#writing-the-partition-table)
+  - [Creating the file systems](#creating-the-file-systems)
+  - [Writing to the partitions](#writing-to-the-partitions)
+    - [Bootloader partition](#bootloader-partition-1)
+    - [Kernel and Device Tree partition](#kernel-and-device-tree-partition-1)
+    - [Root Filesystem partition](#root-filesystem-partition)
+  - [Cleanup](#cleanup)
+  - [Writing to SD Card](#writing-to-sd-card)
+    - [Writing in Linux](#writing-in-linux)
+      - [Note: Writing to a used SD Card](#note-writing-to-a-used-sd-card)
+    - [Writing in Windows](#writing-in-windows)
+- [References](#references)
+- [Appendix](#appendix)
+  - [Scripts to automate the SD Card creation](#scripts-to-automate-the-sd-card-creation)
+  - [Note on the DE0 Device Tree](#note-on-the-de0-device-tree)
+  - [Note on updating sdcard.img](#note-on-updating-sdcardimg)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Before reading this, you should have completed the sections on building the bootloader, the kernel, rootfs (for debian) and the device tree. Your hard work has paid off and we're almost at the finish line! We now have all the parts needed to create our own Embedded Linux distro for the DE10-Nano.
@@ -481,8 +510,6 @@ The solution is to wipe the partition clean before updating it. This can be done
 ```bash
 sudo dd if=/dev/zero of=/dev/loop0p3 bs=64k oflag=sync status=progress
 ```
-
-##
 
 <p align="right">Next | <b><a href="%5BOptional%5D-Setting-up-Wifi.md">(Optional) Setting up WIFI</a></b>
 <br/>

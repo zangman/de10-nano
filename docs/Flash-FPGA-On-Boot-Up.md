@@ -4,6 +4,16 @@
 
 # Flashing the FPGA On Boot Up
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Getting the RBF File](#getting-the-rbf-file)
+  - [Copy the RBF file into the FAT partition](#copy-the-rbf-file-into-the-fat-partition)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Flashing the FPGA on boot up is a convenient way to have your design on the FPGA every time the board powers up. Here we will go through the steps to do it. Make sure you've followed the step to [modify the U-Boot to flash the FPGA](./Building-the-Universal-Bootloader-U-Boot.md#part-1---customizing-the-bootloader-for-the-de10-nano), without this, it will not work.
@@ -77,8 +87,6 @@ Retrieving file: /extlinux/../socfpga_cyclone5_de0_nano_soc.dtb
 
 Starting kernel ...
 ```
-
-##
 
 <p align="right">Back | <b><a href="Flash-FPGA-from-HPS-running-Linux.md">Flashing the FPGA from Linux</a></p>
 </b><p align="center"><sup>Flashing the FPGA from SD Card | </sup><a href="../README.md#flashing-the-fpga-from-sd-card"><sup>Table of Contents</sup></a></p>

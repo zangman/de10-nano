@@ -12,6 +12,9 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 ## Summary
 
 We won't be doing too much to generate the device tree. However, this page will form the basis of understanding what the device tree is used for. The device tree will be important for us once we start building our own hardware using the FPGA and interacting with it from the HPS.

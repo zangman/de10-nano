@@ -4,6 +4,18 @@
 
 # Yocto Linux
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Preparing the sources](#preparing-the-sources)
+  - [Configuration](#configuration)
+  - [Build It!](#build-it)
+- [Appendix](#appendix)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 This page lists all the steps to build a Yocto based distro for de10-nano-soc. Yocto is a complete build system i.e. it generates everything needed for a fully functioning Linux system for your DE10-Nano and this includes the bootloader (U-Boot), kernel and the rootFS.
@@ -169,8 +181,6 @@ All the resources that were used in putting together this guide:
 [Yocto official build guide](https://www.yoctoproject.org/docs/3.1.2/brief-yoctoprojectqs/brief-yoctoprojectqs.html)
 
 [Yocto official tips and tricks](https://wiki.yoctoproject.org/wiki/TipsAndTricks/EnablingAPackageFeed)
-
-##
 
 <p align="right">Next | <b><a href="SSH-Without-Password.md">SSH Without Password</a></b>
 <br/>

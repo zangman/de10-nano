@@ -4,6 +4,24 @@
 
 # Debian Root File System
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Debootstrap and QEMU](#debootstrap-and-qemu)
+- [First Stage](#first-stage)
+- [Second Stage](#second-stage)
+- [NOTE - Manjaro/Arch](#note---manjaroarch)
+- [Configuration](#configuration)
+- [(Optional) Setup WIFI](#optional-setup-wifi)
+- [Clean up](#clean-up)
+- [Create a tarball](#create-a-tarball)
+- [References](#references)
+- [Appendix](#appendix)
+  - [BuildRoot and Yocto](#buildroot-and-yocto)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 There are several flavours of rootfs to choose from. This one focuses on the Debian rootfs. This will give you an environment similar to the Rasbperry Pi OS for your DE10-Nano. There is a small note in the Appendix about BuildRoot and Yocto if you're interested in the differences.
@@ -222,8 +240,6 @@ And that completes the Debian rootfs. Be careful when extracting this as it will
 - Well supported steps for firmware updates
 
 I wanted a general purpose OS for my DE10-Nano which is why I chose to go with Debian. But if you're doing this for work, chances are you're pretty much looking for BuildRoot or Yocto.
-
-##
 
 <p align="right">Next | <b><a href="Building-the-SD-Card-image.md">Creating the SD Card Image</a></b>
 <br/>

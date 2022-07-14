@@ -4,6 +4,19 @@
 
 # Primer on Avalon MM
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Introduction to Buses](#introduction-to-buses)
+- [Avalon Memory Map](#avalon-memory-map)
+- [AXI Bridges](#axi-bridges)
+- [Avalon Memory Map Interface](#avalon-memory-map-interface)
+- [Learn more](#learn-more)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Here I will walk you through a high level summary of the Avalon Memory Map. I would recommend you go through the [detailed reference](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/mnl_avalon_spec.pdf) to learn more about it.
@@ -69,8 +82,6 @@ This is very very basic intro and I highly recommend going through the reference
 
 - [YouTube tutorial - Custom component development using Avalon and AXI](https://www.youtube.com/watch?v=Vw2_1pqa2h0) - Highly recommend watching this video. It is quite long, but explains everything about the interface.
 - [Avalon Memory Map Interface](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/mnl_avalon_spec.pdf)
-
-##
 
 <p align="right">Next | <b><a href="Simple-Hardware-Adder_-Custom-Avalon-MM-Components.md">Custom Avalon MM Components</a></b>
 <br/>

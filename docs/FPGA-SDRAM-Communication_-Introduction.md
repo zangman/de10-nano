@@ -4,6 +4,14 @@
 
 # Introduction
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Goal](#goal)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 If you haven't done it already, I would recommend working on the [Simple Hardware Adder](./Simple-Hardware-Adder_-Introduction.md) project first before attempting this one. That project covers a lot of introductory concepts such Platform Designer, Avalon Slaves, memory addressing etc. which we'll build upon in this project.
@@ -21,8 +29,6 @@ And perhaps more. I'll try to be as detailed as possible, but as always, if I've
 In the previous project, we used the HPS to FPGA bridge to share data from the HPS to the FPGA. While this works fine for many data transfers, it's not fast enough when dealing with video data. For that reading and writing to SDRAM will be much faster. The Cyclone V FPGA supports this and we'll be taking advantage of it.
 
 By the end of the project we will read a value from SDRAM and show it on the LEDs of the de10-nano. Note that it is very unlikely that you would use the SDRAM in this way, but this allows us to keep the project simple so that the concepts make sense. This is a lot more complicated than appears at first glance.
-
-##
 
 <p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-SDRAM-Controller.md">SDRAM Controller</a></b>
 <br/>

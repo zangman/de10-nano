@@ -4,6 +4,20 @@
 
 # Introduction to SoCs
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [SoCs are different from standard FPGAs](#socs-are-different-from-standard-fpgas)
+- [You can ignore the HPS and it becomes a standard FPGA](#you-can-ignore-the-hps-and-it-becomes-a-standard-fpga)
+- [I'm comfortable with basic FPGAs, I want to use the HPS, so how?!](#im-comfortable-with-basic-fpgas-i-want-to-use-the-hps-so-how)
+- [Stop ranting, tell me something useful!](#stop-ranting-tell-me-something-useful)
+- [How does the HPS interact with the SoC? Can I just access some pins internally?](#how-does-the-hps-interact-with-the-soc-can-i-just-access-some-pins-internally)
+- [Now we can start!](#now-we-can-start)
+- [Additional Resources](#additional-resources)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 If you have never worked with SoCs, this page will help you understand why an SoC like the DE10-Nano is quite different from a regular FPGA.
@@ -56,8 +70,6 @@ I have found the following resources immensely helpful when I was getting starte
 - [Hello world on DE1-SOC using Platform Designer](https://www.youtube.com/watch?v=XXMeiVhjaZU&t=2268s). This was the eye opener for me and took an entire weekend the first time. Study this slowly and carefully and follow the exact same steps to get an LED working by communicating from the HPS to the FPGA. While it is for the DE1-SOC, the steps are identical to the DE10-Nano. Just copy the values from the GHRD on the CD-ROM instead of the values he uses in the video.
 - [Building embedded linux for the DE10-Nano](https://bitlog.it/20170820_building_embedded_linux_for_the_terasic_de10-nano.html) - This is another incredible resource that talks about everything end to end including the device tree and building a linux distro. There are many steps which have been used and referenced directly from here.
 - [Classroom videos on DE1-SoC](https://www.youtube.com/watch?v=sKhvMhTiuM4) - These are a series of 25 videos on the DE1-SOC which I found very helpful. I have only gone through the first 3-4 but they are quite interesting. Good if you want an introduction on how you would go about building a design on an SoC.
-
-##
 
 <p align="right">Next | <b><a href="Introduction-to-DE10-Nano.md">Introduction to DE10-Nano</a></b>
 <br/>
