@@ -44,7 +44,7 @@ You may wonder why we're using AXI Bridges to interface with Avalon Bus and also
 There are 3 bridges available in the HPS:
 
 1. **FPGA-to-HPS bridge** - This enables communication from the FPGA to the HPS. We won't be using this one.
-2. **HPS-to-FPGA bridge** - This is also known as the heavyweight bridge which allows the HPS to communicate with the HPS. It makes available 960MB of memory space for data transfer. It is high speed and should primarily be used for low latency data transfer.
+2. **HPS-to-FPGA bridge** - This is also known as the heavyweight bridge which allows the HPS to communicate with the FPGA. It makes available 960MB of memory space for data transfer. It is high speed and should primarily be used for low latency data transfer.
 3. **Lightweight HPS-to-FPGA bridge** - The lightweight bridge should primarily be used for control ports (enable read, get status etc). Most of the examples you see online use the lightweight bridge. This only has 2MB of memory space available and is slower than the heavyweight bridge. It's main purpose is to take away the pressure from the heavyweight bridge for reads and writes that don't require low latency.
 
 In our case, we're going to use the heavyweight bridge because I had quite a bit of trouble getting it to work and there aren't too many examples online on this bridge.
