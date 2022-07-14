@@ -80,7 +80,7 @@ To just download the Debian or Arch Linux ARM (**NEW**) image for the DE10-Nano,
 
 ## Isn't there documentation already? Why this guide?
 
-- **Not beginner friendly** - There is a lot of documentation online, but they don't show always explain everything.
+- **Not beginner friendly** - There is a lot of documentation online, but they don't always explain everything.
 - **Comprehensive** - The ultimate goal of this site is to be comprehensive so all the information needed is available and accessible easily.
 - **Focused** - There are several boards by Terasic and Altera which use Cyclone V and all of them vary slightly. This guide only focuses on the DE10-Nano. If you are using a DE1 or any other Cyclone V board, a lot of the content will still be applicable. But I haven't tested it, so I don't know if it will work or not.
 
