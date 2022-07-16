@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="Flash-FPGA-from-HPS-running-Linux.md">Back</a> | </sup><a href="../README.md#flashing-the-fpga-from-sd-card"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Flash-FPGA-from-HPS-running-Linux.md">Back</a> | <a href="Configuring-the-Device-Tree.md">Next</a> | </sup><a href="../README.md#flashing-the-fpga-from-sd-card"><sup>Contents</sup></a>
 <br/>
 <sup>Flashing the FPGA from SD Card</sup></p>
 
@@ -88,5 +88,7 @@ Retrieving file: /extlinux/../socfpga_cyclone5_de0_nano_soc.dtb
 Starting kernel ...
 ```
 
+<p align="right">Next | <b><a href="Configuring-the-Device-Tree.md">HPS and FPGA communication - Device Tree</a></b>
+<br/>
 <p align="right">Back | <b><a href="Flash-FPGA-from-HPS-running-Linux.md">Flashing the FPGA from Linux</a></p>
 </b><p align="center"><sup>Flashing the FPGA from SD Card | </sup><a href="../README.md#flashing-the-fpga-from-sd-card"><sup>Table of Contents</sup></a></p>

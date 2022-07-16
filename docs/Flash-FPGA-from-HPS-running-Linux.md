@@ -197,8 +197,6 @@ Then follow the steps as per the previous section to flash the new design.
 
 [Zynq PL programming with FPGA Manager](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841645/Solution+Zynq+PL+Programming+With+FPGA+Manager) - This page has the details that work for version 5.5 of the kernel.
 
-<p align="right">Next | <b><a href="Configuring-the-Device-Tree.md">HPS and FPGA communication - Device Tree</a></b>
-<br/>
 <p align="right">Next | <b><a href="Flash-FPGA-On-Boot-Up.md">Flashing the FPGA On Boot Up</a></b>
 <br/>
 Back | <b><a href="../README.md#flashing-the-fpga-from-sd-card">Overview</a></p>

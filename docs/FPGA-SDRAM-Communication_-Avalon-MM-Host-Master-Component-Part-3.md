@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Back</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
+<p align="right"><sup><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Back</a> | <a href="Yocto-Linux.md">Next</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
 <br/>
 <sup>FPGA - SDRAM Communication</sup></p>
 

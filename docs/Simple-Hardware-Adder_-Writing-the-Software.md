@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Back</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Back</a> | <a href="FPGA-SDRAM-Communication_-Introduction.md">Next</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
 <br/>
 <sup>My First SoC - Simple Hardware Adder</sup></p>
 

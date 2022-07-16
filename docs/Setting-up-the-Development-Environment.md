@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="Introduction-to-DE10-Nano.md">Back</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Introduction-to-DE10-Nano.md">Back</a> | <a href="Building-Embedded-Linux.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
 <br/>
 <sup>Getting Started</sup></p>
 

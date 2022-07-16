@@ -1,3 +1,7 @@
+<p align="right"><sup><a href="Building-the-SD-Card-image.md">Back</a> |<a href="Flash-FPGA-from-HPS-running-Linux.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<br/>
+<sup>Building Embedded Linux - Full Custom</sup></p>
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -15,10 +19,6 @@
   - [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-<p align="right"><sup><a href="Building-the-SD-Card-image.md">Back</a> |</sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
-<br/>
-<sup>Building Embedded Linux - Full Custom</sup></p>
 
 # Setting Up WIFI
 

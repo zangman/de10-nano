@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="Configuring-the-Device-Tree.md">Back</a> | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Configuring-the-Device-Tree.md">Back</a> | <a href="Simple-Hardware-Adder_-Introduction.md">Next</a> | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Contents</sup></a>
 <br/>
 <sup>HPS and FPGA communication</sup></p>
 
