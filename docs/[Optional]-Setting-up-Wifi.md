@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="Building-the-SD-Card-image.md">Back</a> |<a href="Flash-FPGA-from-HPS-running-Linux.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Building-the-SD-Card-image.md">Back</a> | <a href="Flash-FPGA-from-HPS-running-Linux.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
 <br/>
 <sup>Building Embedded Linux - Full Custom</sup></p>
 

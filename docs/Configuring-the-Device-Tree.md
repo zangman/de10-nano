@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="../README.md#hps-and-fpga-communication">Back</a> | <a href="Building-SoC-Design.md">Next</a> | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Flash-FPGA-On-Boot-Up.md">Back</a> | <a href="Building-SoC-Design.md">Next</a> | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Contents</sup></a>
 <br/>
 <sup>HPS and FPGA communication</sup></p>
 
@@ -178,5 +178,5 @@ That means we are now ready to flash our design and run a program in user space.
 
 <p align="right">Next | <b><a href="Building-SoC-Design.md">Designing and Flashing the design</a></b>
 <br/>
-Back | <b><a href="../README.md#hps-and-fpga-communication">Overview</a></p>
+Back | <b><a href="Flash-FPGA-On-Boot-Up.md">Flashing the FPGA On Boot Up</a></p>
 </b><p align="center"><sup>HPS and FPGA communication | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Table of Contents</sup></a></p>

@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="../README.md#my-first-soc---simple-hardware-adder">Back</a> | <a href="Simple-Hardware-Adder_-Initial-Project-Setup.md">Next</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Building-SoC-Design.md">Back</a> | <a href="Simple-Hardware-Adder_-Initial-Project-Setup.md">Next</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
 <br/>
 <sup>My First SoC - Simple Hardware Adder</sup></p>
 
@@ -28,5 +28,5 @@ When you're ready, go ahead to the Initial project setup.
 
 <p align="right">Next | <b><a href="Simple-Hardware-Adder_-Initial-Project-Setup.md">Initial project setup</a></b>
 <br/>
-Back | <b><a href="../README.md#my-first-soc---simple-hardware-adder">Overview</a></p>
+Back | <b><a href="Building-SoC-Design.md">Designing and Flashing the design</a></p>
 </b><p align="center"><sup>My First SoC - Simple Hardware Adder | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Table of Contents</sup></a></p>

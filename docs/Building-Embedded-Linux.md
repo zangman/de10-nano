@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="../README.md#building-embedded-linux---full-custom">Back</a> | <a href="Building-the-Universal-Bootloader-U-Boot.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Setting-up-the-Development-Environment.md">Back</a> | <a href="Building-the-Universal-Bootloader-U-Boot.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
 <br/>
 <sup>Building Embedded Linux - Full Custom</sup></p>
 

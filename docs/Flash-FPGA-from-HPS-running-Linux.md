@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="../README.md#flashing-the-fpga-from-sd-card">Back</a> | <a href="Flash-FPGA-On-Boot-Up.md">Next</a> | </sup><a href="../README.md#flashing-the-fpga-from-sd-card"><sup>Contents</sup></a>
+<p align="right"><sup><a href="[Optional]-Setting-up-Wifi.md">Back</a> | <a href="Flash-FPGA-On-Boot-Up.md">Next</a> | </sup><a href="../README.md#flashing-the-fpga-from-sd-card"><sup>Contents</sup></a>
 <br/>
 <sup>Flashing the FPGA from SD Card</sup></p>
 

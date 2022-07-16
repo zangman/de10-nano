@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="../README.md#fpga---sdram-communication">Back</a> | <a href="FPGA-SDRAM-Communication_-SDRAM-Controller.md">Next</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Simple-Hardware-Adder_-Writing-the-Software.md">Back</a> | <a href="FPGA-SDRAM-Communication_-SDRAM-Controller.md">Next</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
 <br/>
 <sup>FPGA - SDRAM Communication</sup></p>
 
@@ -32,5 +32,5 @@ By the end of the project we will read a value from SDRAM and show it on the LED
 
 <p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-SDRAM-Controller.md">SDRAM Controller</a></b>
 <br/>
-Back | <b><a href="../README.md#fpga---sdram-communication">Overview</a></p>
+Back | <b><a href="Simple-Hardware-Adder_-Writing-the-Software.md">Simple Hardware Adder - Writing the Software</a></p>
 </b><p align="center"><sup>FPGA - SDRAM Communication | </sup><a href="../README.md#fpga---sdram-communication"><sup>Table of Contents</sup></a></p>

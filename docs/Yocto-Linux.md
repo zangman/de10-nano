@@ -1,4 +1,4 @@
-<p align="right"><sup><a href="../README.md#appendix">Back</a> | <a href="SSH-Without-Password.md">Next</a> | </sup><a href="../README.md#appendix"><sup>Contents</sup></a>
+<p align="right"><sup><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-3.md">Back</a> | <a href="SSH-Without-Password.md">Next</a> | </sup><a href="../README.md#appendix"><sup>Contents</sup></a>
 <br/>
 <sup>Appendix</sup></p>
 
@@ -184,5 +184,5 @@ All the resources that were used in putting together this guide:
 
 <p align="right">Next | <b><a href="SSH-Without-Password.md">SSH Without Password</a></b>
 <br/>
-Back | <b><a href="../README.md#appendix">Overview</a></p>
+Back | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-3.md">FPGA-SDRAM Communication - Avalon MM Host/Master - 3</a></p>
 </b><p align="center"><sup>Appendix | </sup><a href="../README.md#appendix"><sup>Table of Contents</sup></a></p>
