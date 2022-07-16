@@ -2,25 +2,27 @@
 <br/>
 <sup>Building Embedded Linux - Full Custom</sup></p>
 
+# Setting Up WIFI
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Setting Up WIFI](#setting-up-wifi)
-  - [Compile the kernel driver](#compile-the-kernel-driver)
-  - [Copy the module to the FAT partition of the SD card](#copy-the-module-to-the-fat-partition-of-the-sd-card)
-  - [Install the necessary firmware](#install-the-necessary-firmware)
-  - [Device configuration](#device-configuration)
-    - [Install wpa-supplicant](#install-wpa-supplicant)
-    - [Configure wpa-supplicant](#configure-wpa-supplicant)
-    - [Configure /etc/network/interfaces](#configure-etcnetworkinterfaces)
-    - [Enable the service](#enable-the-service)
-    - [Prevent wlan0 renaming](#prevent-wlan0-renaming)
-  - [References](#references)
+- [Summary](#summary)
+- [Compile the kernel driver](#compile-the-kernel-driver)
+- [Copy the module to the FAT partition of the SD card](#copy-the-module-to-the-fat-partition-of-the-sd-card)
+- [Install the necessary firmware](#install-the-necessary-firmware)
+- [Device configuration](#device-configuration)
+  - [Install wpa-supplicant](#install-wpa-supplicant)
+  - [Configure wpa-supplicant](#configure-wpa-supplicant)
+  - [Configure /etc/network/interfaces](#configure-etcnetworkinterfaces)
+  - [Enable the service](#enable-the-service)
+  - [Prevent wlan0 renaming](#prevent-wlan0-renaming)
+- [References](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Setting Up WIFI
+## Summary
 
 If you've followed the steps with building Debian as shown earlier, the ethernet should work out of the box. Just plug in a LAN cable and it should work.
 
