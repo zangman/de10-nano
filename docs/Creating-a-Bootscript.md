@@ -90,5 +90,7 @@ And that's it!
 
 [Sunxi U-Boot](https://linux-sunxi.org/U-Boot) - The command, syntax and params for `mkimage` are from this page.
 
+<p align="right">Next | <b><a href="../README.md">Back to table of contents</a></b>
+<br/>
 <p align="right">Back | <b><a href="SSH-Without-Password.md">SSH Without Password</a></p>
 </b><p align="center"><sup>Appendix | </sup><a href="../README.md#appendix"><sup>Table of Contents</sup></a></p>

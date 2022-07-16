@@ -160,5 +160,7 @@ And that's it. Hopefully if you've got the steps right, the wifi should be worki
 
 - [This forum post](https://www.element14.com/community/community/designcenter/single-board-computers/riotboard/blog/2015/01/27/setup-mediatek-rt5370-wifi-on-riotboard-ubuntu-platform) on element14.
 
+<p align="right">Next | <b><a href="Flash-FPGA-from-HPS-running-Linux.md">Flashing the FPGA from Linux</a></b>
+<br/>
 <p align="right">Back | <b><a href="Building-the-SD-Card-image.md">Creating the SD Card Image</a></p>
 </b><p align="center"><sup>Building Embedded Linux - Full Custom | </sup><a href="../README.md#building-embedded-linux---full-custom"><sup>Table of Contents</sup></a></p>

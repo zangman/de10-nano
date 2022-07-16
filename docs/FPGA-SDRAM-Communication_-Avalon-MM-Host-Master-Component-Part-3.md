@@ -159,5 +159,7 @@ If all goes well, you should see the LEDs lighting up in an alternating pattern.
 
 [Cyclone V HPS Register Address Map and Definitions](https://www.intel.com/content/www/us/en/programmable/hps/cyclone-v/hps.html#sfo1411577376106.html) - Lists all the registers for the HPS.
 
+<p align="right">Next | <b><a href="Yocto-Linux.md">Appendix - Yocto Linux</a></b>
+<br/>
 <p align="right">Back | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Avalon MM Host/Master - 2</a></p>
 </b><p align="center"><sup>FPGA - SDRAM Communication | </sup><a href="../README.md#fpga---sdram-communication"><sup>Table of Contents</sup></a></p>

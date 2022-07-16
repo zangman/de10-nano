@@ -214,5 +214,7 @@ echo "export CROSS_COMPILE=$DEWD/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnue
 >
 > If `CROSS_COMPILE` is not set, then it uses the system default `gcc`. If it is set, it uses the version specified by the variable.
 
+<p align="right">Next | <b><a href="Building-Embedded-Linux.md">Building Embedded Linux - The Basics</a></b>
+<br/>
 <p align="right">Back | <b><a href="Introduction-to-DE10-Nano.md">Introduction to DE10-Nano</a></p>
 </b><p align="center"><sup>Getting Started | </sup><a href="../README.md#getting-started"><sup>Table of Contents</sup></a></p>

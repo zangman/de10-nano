@@ -516,5 +516,7 @@ Compile this as follows:
 ${CROSS_COMPILE}g++ -std=c++17 myprog.cc -o myprog
 ```
 
+<p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-Introduction.md">FPGA-SDRAM Communication</a></b>
+<br/>
 <p align="right">Back | <b><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Add the Simple Adder</a></p>
 </b><p align="center"><sup>My First SoC - Simple Hardware Adder | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Table of Contents</sup></a></p>

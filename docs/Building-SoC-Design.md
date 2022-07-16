@@ -479,5 +479,7 @@ ${CROSS_COMPILE}g++ -std=c++17 blink_leds.cc -o blink_leds
 
 [Custom component development using Avalon and AXI interfaces](https://www.youtube.com/watch?v=Vw2_1pqa2h0) - Very informational training video that explains a lot of the magic going on in this article (posted in 2018 by Intel/Altera).
 
+<p align="right">Next | <b><a href="Simple-Hardware-Adder_-Introduction.md">My first SoC - Simple Hardware Adder</a></b>
+<br/>
 <p align="right">Back | <b><a href="Configuring-the-Device-Tree.md">Configuring the Device Tree</a></p>
 </b><p align="center"><sup>HPS and FPGA communication | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Table of Contents</sup></a></p>
