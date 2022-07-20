@@ -1,8 +1,19 @@
-<p align="right"><sup><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Back</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
+<p align="right"><sup><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Back</a> | <a href="Yocto-Linux.md">Next</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
 <br/>
 <sup>FPGA - SDRAM Communication</sup></p>
 
 # Avalon MM Host/Master - 3
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Allocate SDRAM Memory](#allocate-sdram-memory)
+- [Set the HPS registers to enable SDRAM access](#set-the-hps-registers-to-enable-sdram-access)
+- [Trying out our design](#trying-out-our-design)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Summary
 
@@ -148,7 +159,7 @@ If all goes well, you should see the LEDs lighting up in an alternating pattern.
 
 [Cyclone V HPS Register Address Map and Definitions](https://www.intel.com/content/www/us/en/programmable/hps/cyclone-v/hps.html#sfo1411577376106.html) - Lists all the registers for the HPS.
 
-##
-
+<p align="right">Next | <b><a href="Yocto-Linux.md">Appendix - Yocto Linux</a></b>
+<br/>
 <p align="right">Back | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-2.md">Avalon MM Host/Master - 2</a></p>
 </b><p align="center"><sup>FPGA - SDRAM Communication | </sup><a href="../README.md#fpga---sdram-communication"><sup>Table of Contents</sup></a></p>

@@ -7,8 +7,6 @@
 - [Debian](Debian-Root-File-System.md)
 - [Archlinux ARM](Archlinux-ARM-Root-File-System.md)
 
-##
-
 <p align="right">Next | <b><a href="Building-the-SD-Card-image.md">Creating the SD Card Image</a></b>
 <br/>
 Back | <b><a href="Building-the-Kernel.md">Building the Kernel</a></p>

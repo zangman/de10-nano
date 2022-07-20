@@ -1,8 +1,19 @@
-<p align="right"><sup><a href="../README.md#hps-and-fpga-communication">Back</a> | <a href="Building-SoC-Design.md">Next</a> | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Flash-FPGA-On-Boot-Up.md">Back</a> | <a href="Building-SoC-Design.md">Next</a> | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Contents</sup></a>
 <br/>
 <sup>HPS and FPGA communication</sup></p>
 
 # Configuring the Device Tree
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Enable the FPGA bridges](#enable-the-fpga-bridges)
+  - [Generate the Device Tree Binary](#generate-the-device-tree-binary)
+  - [Copy the Device Tree Binary to the DE10-Nano](#copy-the-device-tree-binary-to-the-de10-nano)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Summary
 
@@ -165,9 +176,7 @@ enabled
 
 That means we are now ready to flash our design and run a program in user space.
 
-##
-
 <p align="right">Next | <b><a href="Building-SoC-Design.md">Designing and Flashing the design</a></b>
 <br/>
-Back | <b><a href="../README.md#hps-and-fpga-communication">Overview</a></p>
+Back | <b><a href="Flash-FPGA-On-Boot-Up.md">Flashing the FPGA On Boot Up</a></p>
 </b><p align="center"><sup>HPS and FPGA communication | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Table of Contents</sup></a></p>

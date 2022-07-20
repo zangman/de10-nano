@@ -1,8 +1,16 @@
-<p align="right"><sup><a href="../README.md#fpga---sdram-communication">Back</a> | <a href="FPGA-SDRAM-Communication_-SDRAM-Controller.md">Next</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Simple-Hardware-Adder_-Writing-the-Software.md">Back</a> | <a href="FPGA-SDRAM-Communication_-SDRAM-Controller.md">Next</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
 <br/>
 <sup>FPGA - SDRAM Communication</sup></p>
 
 # Introduction
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Goal](#goal)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Summary
 
@@ -22,9 +30,7 @@ In the previous project, we used the HPS to FPGA bridge to share data from the H
 
 By the end of the project we will read a value from SDRAM and show it on the LEDs of the de10-nano. Note that it is very unlikely that you would use the SDRAM in this way, but this allows us to keep the project simple so that the concepts make sense. This is a lot more complicated than appears at first glance.
 
-##
-
 <p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-SDRAM-Controller.md">SDRAM Controller</a></b>
 <br/>
-Back | <b><a href="../README.md#fpga---sdram-communication">Overview</a></p>
+Back | <b><a href="Simple-Hardware-Adder_-Writing-the-Software.md">Simple Hardware Adder - Writing the Software</a></p>
 </b><p align="center"><sup>FPGA - SDRAM Communication | </sup><a href="../README.md#fpga---sdram-communication"><sup>Table of Contents</sup></a></p>

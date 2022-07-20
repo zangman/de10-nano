@@ -4,6 +4,21 @@
 
 # Custom Avalon MM Components
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Goal of the custom components](#goal-of-the-custom-components)
+- [IP Catalog](#ip-catalog)
+- [Custom Parallel IO (PIO) Components](#custom-parallel-io-pio-components)
+  - [Parallel IO Output 64 bit](#parallel-io-output-64-bit)
+  - [Parallel IO Input 64 bit](#parallel-io-input-64-bit)
+  - [Creating the components](#creating-the-components)
+    - [Output component](#output-component)
+    - [Input Component](#input-component)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Here we walk through the steps to create simple Avalon MM Components that will help us interface with our simple adder.
@@ -161,8 +176,6 @@ Create a new component for the input as well. Repeat the same steps as above but
 ![](images/pio_in_3.png)
 
 And that creates our custom components! In the next section we'll start wiring everything together.
-
-##
 
 <p align="right">Next | <b><a href="Simple-Hardware-Adder_-Wiring-the-components.md">Wiring the Components</a></b>
 <br/>

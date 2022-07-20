@@ -1,8 +1,17 @@
-<p align="right"><sup><a href="../README.md#building-embedded-linux---full-custom">Back</a> | <a href="Building-the-Universal-Bootloader-U-Boot.md">Next</a> | </sup><a href="../README.md#building-embedded-linux---full-custom"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Setting-up-the-Development-Environment.md">Back</a> | <a href="Building-the-Universal-Bootloader-U-Boot.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
 <br/>
 <sup>Building Embedded Linux - Full Custom</sup></p>
 
 # The Basics
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Yocto or Full Custom?](#yocto-or-full-custom)
+- [What do we need for Embedded Linux?](#what-do-we-need-for-embedded-linux)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Summary
 
@@ -23,8 +32,6 @@ There are a few steps we need to go through to build a working embedded linux OS
 - **Bootloader** - The bootloader does some hardware initialization before it hands over to the Kernel to initialize the OS.
 - **Kernel** - The kernel is the heart of the OS and contains all the information about the hardware on the board.
 - **RootFS** - The root filesystem is the location where we work and write programs etc.
-
-##
 
 <p align="right">Next | <b><a href="Building-the-Universal-Bootloader-U-Boot.md">Building the Universal Bootloader (U-Boot)</a></b>
 <br/>

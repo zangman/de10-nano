@@ -4,6 +4,18 @@
 
 # Add the Simple Adder
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Add the design to the project](#add-the-design-to-the-project)
+- [Wire it together](#wire-it-together)
+- [Compile the design](#compile-the-design)
+- [Configuring the Device Tree](#configuring-the-device-tree)
+- [Flashing the design](#flashing-the-design)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Now let's add our Simple Adder design to the project and wire it up to our SoC. We're almost done with the hardware part!
@@ -172,9 +184,7 @@ Now we can flash our design on the de10-nano. This has already been covered [her
 
 Once your design has been successfully flashed and you can see the blinking LED to indicate it is ready, we can now proceed to writing the software to use our hardware adder.
 
-##
-
-<p align="right">Next | <b><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Writing the Software</a></b>
+<p align="right">Next | <b><a href="Simple-Hardware-Adder_-Writing-the-Software.md">Writing the Software</a></b>
 <br/>
 Back | <b><a href="Simple-Hardware-Adder_-Wiring-the-components.md">Wiring the Components</a></p>
 </b><p align="center"><sup>My First SoC - Simple Hardware Adder | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Table of Contents</sup></a></p>

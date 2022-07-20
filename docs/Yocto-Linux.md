@@ -1,8 +1,20 @@
-<p align="right"><sup><a href="../README.md#appendix">Back</a> | <a href="SSH-Without-Password.md">Next</a> | </sup><a href="../README.md#appendix"><sup>Contents</sup></a>
+<p align="right"><sup><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-3.md">Back</a> | <a href="SSH-Without-Password.md">Next</a> | </sup><a href="../README.md#appendix"><sup>Contents</sup></a>
 <br/>
 <sup>Appendix</sup></p>
 
 # Yocto Linux
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Preparing the sources](#preparing-the-sources)
+  - [Configuration](#configuration)
+  - [Build It!](#build-it)
+- [Appendix](#appendix)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Summary
 
@@ -170,9 +182,7 @@ All the resources that were used in putting together this guide:
 
 [Yocto official tips and tricks](https://wiki.yoctoproject.org/wiki/TipsAndTricks/EnablingAPackageFeed)
 
-##
-
 <p align="right">Next | <b><a href="SSH-Without-Password.md">SSH Without Password</a></b>
 <br/>
-Back | <b><a href="../README.md#appendix">Overview</a></p>
+Back | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-3.md">FPGA-SDRAM Communication - Avalon MM Host/Master - 3</a></p>
 </b><p align="center"><sup>Appendix | </sup><a href="../README.md#appendix"><sup>Table of Contents</sup></a></p>

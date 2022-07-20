@@ -1,8 +1,33 @@
-<p align="right"><sup><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Back</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Back</a> | <a href="FPGA-SDRAM-Communication_-Introduction.md">Next</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
 <br/>
 <sup>My First SoC - Simple Hardware Adder</sup></p>
 
 # Writing the Software
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Writing the Code](#writing-the-code)
+  - [Getting started](#getting-started)
+  - [Required C headers](#required-c-headers)
+    - [Address of HPS to FPGA Bridge](#address-of-hps-to-fpga-bridge)
+  - [Address of the components](#address-of-the-components)
+  - [Accept 2 numbers as arguments](#accept-2-numbers-as-arguments)
+  - [Open /dev/mem](#open-devmem)
+  - [Map the address of the bridge using mmap](#map-the-address-of-the-bridge-using-mmap)
+  - [Map the address of the adder ports](#map-the-address-of-the-adder-ports)
+  - [Writing the input values](#writing-the-input-values)
+    - [(Optional) C Memory Addressing](#optional-c-memory-addressing)
+  - [Printing the sum](#printing-the-sum)
+  - [Wrap up](#wrap-up)
+  - [Full program code](#full-program-code)
+- [Compiling and Running on de10-nano](#compiling-and-running-on-de10-nano)
+- [Troubleshooting](#troubleshooting)
+- [Appendix](#appendix)
+  - [C++ Program](#c-program)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Summary
 
@@ -491,7 +516,7 @@ Compile this as follows:
 ${CROSS_COMPILE}g++ -std=c++17 myprog.cc -o myprog
 ```
 
-##
-
+<p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-Introduction.md">FPGA-SDRAM Communication</a></b>
+<br/>
 <p align="right">Back | <b><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Add the Simple Adder</a></p>
 </b><p align="center"><sup>My First SoC - Simple Hardware Adder | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Table of Contents</sup></a></p>

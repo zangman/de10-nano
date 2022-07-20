@@ -4,6 +4,16 @@
 
 # SDRAM Controller
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Block Diagram](#block-diagram)
+- [Approach - Custom Avalon MM Master](#approach---custom-avalon-mm-master)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Here we'll go into some high level detail on the SDRAM controller present on the HPS. I am not an expert, so I will try my best to explain this the way I understand it.
@@ -31,8 +41,6 @@ For our basic requirement, we'll be writing our own Custom Avalon MM Master Comp
 ## References
 
 [Cyclone V HPS Technical Reference](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/hb/cyclone-v/cv_54001.pdf)
-
-##
 
 <p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-More-about-the-Avalon-Memory-Mapped-Interface.md">More on Avalon MM</a></b>
 <br/>
