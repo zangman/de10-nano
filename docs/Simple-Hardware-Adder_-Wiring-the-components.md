@@ -4,6 +4,21 @@
 
 # Wiring the Components
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Components we'll use](#components-well-use)
+- [Wiring the components](#wiring-the-components)
+  - [Avalon-MM Pipeline Bridge](#avalon-mm-pipeline-bridge)
+  - [Parallel IO 64 bit Output](#parallel-io-64-bit-output)
+  - [Parallel IO 64 bit Input](#parallel-io-64-bit-input)
+  - [Mapping the memory](#mapping-the-memory)
+    - [Auto adjust address width](#auto-adjust-address-width)
+- [Generate the HDL and Finish](#generate-the-hdl-and-finish)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Now we'll use the custom components we created in the previous step and wire them all together in platform designer and make the necessary edits.
@@ -114,8 +129,6 @@ Now that we have all the components, let's hit `Ctrl + s` to save and then click
 Once it completes, hit `Finish` to close Platform Designer.
 
 Next we'll add our Simple Adder to our design and finish wiring everything.
-
-##
 
 <p align="right">Next | <b><a href="Simple-Hardware-Adder_-Setting-up-the-Adder.md">Add the Simple Adder</a></b>
 <br/>

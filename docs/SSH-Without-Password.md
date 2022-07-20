@@ -4,6 +4,17 @@
 
 # SSH without password (using keys)
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Create the public key on development machine](#create-the-public-key-on-development-machine)
+  - [Copy the public key to de10-nano](#copy-the-public-key-to-de10-nano)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 It's tedious to keep typing the password everytime I need to copy something or ssh into my de10-nano. So listing the steps here to ssh/scp without a password using ssh keys.
@@ -41,8 +52,6 @@ Enter the password and that completes it!
 ## References
 
 [linuxize.com - how to setup passwordless ssh login](https://linuxize.com/post/how-to-setup-passwordless-ssh-login/) - Most steps taken from here.
-
-##
 
 <p align="right">Next | <b><a href="Creating-a-Bootscript.md">Creating a bootscript</a></b>
 <br/>

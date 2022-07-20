@@ -1,8 +1,23 @@
-<p align="right"><sup><a href="Introduction-to-DE10-Nano.md">Back</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Introduction-to-DE10-Nano.md">Back</a> | <a href="Building-Embedded-Linux.md">Next</a> | </sup><a href="../README.md#getting-started"><sup>Contents</sup></a>
 <br/>
 <sup>Getting Started</sup></p>
 
 # Setting up the Development Environment
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Operating System](#operating-system)
+  - [Important: Storage space](#important-storage-space)
+  - [Setting up sudo](#setting-up-sudo)
+- [Quartus Download and Install](#quartus-download-and-install)
+  - [[Optional] Access JTAG as normal user](#optional-access-jtag-as-normal-user)
+- [Working Directory](#working-directory)
+- [ARM Compiler](#arm-compiler)
+  - [Get a suitable ARM compiler](#get-a-suitable-arm-compiler)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Summary
 
@@ -199,7 +214,7 @@ echo "export CROSS_COMPILE=$DEWD/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnue
 >
 > If `CROSS_COMPILE` is not set, then it uses the system default `gcc`. If it is set, it uses the version specified by the variable.
 
-##
-
+<p align="right">Next | <b><a href="Building-Embedded-Linux.md">Building Embedded Linux - The Basics</a></b>
+<br/>
 <p align="right">Back | <b><a href="Introduction-to-DE10-Nano.md">Introduction to DE10-Nano</a></p>
 </b><p align="center"><sup>Getting Started | </sup><a href="../README.md#getting-started"><sup>Table of Contents</sup></a></p>

@@ -1,8 +1,33 @@
-<p align="right"><sup><a href="Configuring-the-Device-Tree.md">Back</a> | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Configuring-the-Device-Tree.md">Back</a> | <a href="Simple-Hardware-Adder_-Introduction.md">Next</a> | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Contents</sup></a>
 <br/>
 <sup>HPS and FPGA communication</sup></p>
 
 # Designing and Flashing the design
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Steps](#steps)
+  - [Download the CD-ROM](#download-the-cd-rom)
+  - [Copy the GHRD to working directory](#copy-the-ghrd-to-working-directory)
+  - [Editing our design in Quartus](#editing-our-design-in-quartus)
+    - [Open the Project](#open-the-project)
+    - [Platform Designer](#platform-designer)
+      - [Startup](#startup)
+      - [Custom component HDL code](#custom-component-hdl-code)
+      - [Creating a Custom Component](#creating-a-custom-component)
+      - [Connecting the system](#connecting-the-system)
+      - [Generating the HDL](#generating-the-hdl)
+    - [Synthesis](#synthesis)
+    - [Convert file to `.rbf`](#convert-file-to-rbf)
+  - [Program to interact between the HPS and the FPGA](#program-to-interact-between-the-hps-and-the-fpga)
+    - [(Optional) Compiling on the DE10-Nano](#optional-compiling-on-the-de10-nano)
+- [Appendix](#appendix)
+  - [C++ Code](#c-code)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Summary
 
@@ -454,7 +479,7 @@ ${CROSS_COMPILE}g++ -std=c++17 blink_leds.cc -o blink_leds
 
 [Custom component development using Avalon and AXI interfaces](https://www.youtube.com/watch?v=Vw2_1pqa2h0) - Very informational training video that explains a lot of the magic going on in this article (posted in 2018 by Intel/Altera).
 
-##
-
+<p align="right">Next | <b><a href="Simple-Hardware-Adder_-Introduction.md">My first SoC - Simple Hardware Adder</a></b>
+<br/>
 <p align="right">Back | <b><a href="Configuring-the-Device-Tree.md">Configuring the Device Tree</a></p>
 </b><p align="center"><sup>HPS and FPGA communication | </sup><a href="../README.md#hps-and-fpga-communication"><sup>Table of Contents</sup></a></p>

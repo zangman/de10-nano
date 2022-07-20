@@ -4,6 +4,15 @@
 
 # Avalon MM Agent/Slave - Trigger Component
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [User Experience](#user-experience)
+- [Trigger Component](#trigger-component)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 We're going to talk a bit about the user experience and put together a simple Agent/Slave component that acts as the trigger for our Host/Master component that we're going to put together in the next section.
@@ -53,8 +62,6 @@ endmodule
 This is as simple as a component can be.
 
 In the next section, we'll create the main SDRAM Reader component which will be triggered by this component.
-
-##
 
 <p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-1.md">Avalon MM Host/Master - 1</a></b>
 <br/>

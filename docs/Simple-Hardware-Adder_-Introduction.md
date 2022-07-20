@@ -1,8 +1,16 @@
-<p align="right"><sup><a href="../README.md#my-first-soc---simple-hardware-adder">Back</a> | <a href="Simple-Hardware-Adder_-Initial-Project-Setup.md">Next</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
+<p align="right"><sup><a href="Building-SoC-Design.md">Back</a> | <a href="Simple-Hardware-Adder_-Initial-Project-Setup.md">Next</a> | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Contents</sup></a>
 <br/>
 <sup>My First SoC - Simple Hardware Adder</sup></p>
 
 # Introduction
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Summary
 
@@ -18,9 +26,7 @@ When you're ready, go ahead to the Initial project setup.
 
 [Playing with the Cyclone V SoC on the DE0-Nano-SoC](https://digibird1.wordpress.com/playing-with-the-cyclone-v-soc-system-de0-nano-soc-kitatlas-soc/) - The idea of the Simple Adder, how to use parallel IOs and using the heavyweight HPS-to-FPGA bus are all explained here and was instrumental in putting a lot of this content together. If you haven't seen it, I highly recommend going through. They talk about many other features also such as DMA etc which I hope to learn and include here at some point.
 
-##
-
 <p align="right">Next | <b><a href="Simple-Hardware-Adder_-Initial-Project-Setup.md">Initial project setup</a></b>
 <br/>
-Back | <b><a href="../README.md#my-first-soc---simple-hardware-adder">Overview</a></p>
+Back | <b><a href="Building-SoC-Design.md">Designing and Flashing the design</a></p>
 </b><p align="center"><sup>My First SoC - Simple Hardware Adder | </sup><a href="../README.md#my-first-soc---simple-hardware-adder"><sup>Table of Contents</sup></a></p>

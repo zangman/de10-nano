@@ -4,6 +4,19 @@
 
 # Primer on Avalon MM
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Summary](#summary)
+- [Introduction to Buses](#introduction-to-buses)
+- [Avalon Memory Map](#avalon-memory-map)
+- [AXI Bridges](#axi-bridges)
+- [Avalon Memory Map Interface](#avalon-memory-map-interface)
+- [Learn more](#learn-more)
+- [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Summary
 
 Here I will walk you through a high level summary of the Avalon Memory Map. I would recommend you go through the [detailed reference](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/mnl_avalon_spec.pdf) to learn more about it.
@@ -31,7 +44,7 @@ You may wonder why we're using AXI Bridges to interface with Avalon Bus and also
 There are 3 bridges available in the HPS:
 
 1. **FPGA-to-HPS bridge** - This enables communication from the FPGA to the HPS. We won't be using this one.
-2. **HPS-to-FPGA bridge** - This is also known as the heavyweight bridge which allows the HPS to communicate with the HPS. It makes available 960MB of memory space for data transfer. It is high speed and should primarily be used for low latency data transfer.
+2. **HPS-to-FPGA bridge** - This is also known as the heavyweight bridge which allows the HPS to communicate with the FPGA. It makes available 960MB of memory space for data transfer. It is high speed and should primarily be used for low latency data transfer.
 3. **Lightweight HPS-to-FPGA bridge** - The lightweight bridge should primarily be used for control ports (enable read, get status etc). Most of the examples you see online use the lightweight bridge. This only has 2MB of memory space available and is slower than the heavyweight bridge. It's main purpose is to take away the pressure from the heavyweight bridge for reads and writes that don't require low latency.
 
 In our case, we're going to use the heavyweight bridge because I had quite a bit of trouble getting it to work and there aren't too many examples online on this bridge.
@@ -69,8 +82,6 @@ This is very very basic intro and I highly recommend going through the reference
 
 - [YouTube tutorial - Custom component development using Avalon and AXI](https://www.youtube.com/watch?v=Vw2_1pqa2h0) - Highly recommend watching this video. It is quite long, but explains everything about the interface.
 - [Avalon Memory Map Interface](https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/mnl_avalon_spec.pdf)
-
-##
 
 <p align="right">Next | <b><a href="Simple-Hardware-Adder_-Custom-Avalon-MM-Components.md">Custom Avalon MM Components</a></b>
 <br/>

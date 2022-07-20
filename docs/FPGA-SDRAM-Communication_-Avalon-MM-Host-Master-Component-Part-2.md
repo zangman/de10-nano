@@ -1,7 +1,11 @@
+<p align="right"><sup><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-1.md">Back</a> | <a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-3.md">Next</a> | </sup><a href="../README.md#fpga---sdram-communication"><sup>Contents</sup></a>
+<br/>
+<sup>FPGA - SDRAM Communication</sup></p>
+
+# Avalon MM Host/Master - 2
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
 
 - [Summary](#summary)
 - [Building the project](#building-the-project)
@@ -13,6 +17,9 @@
   - [Convert to rbf](#convert-to-rbf)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- START doctoc -->
+<!-- END doctoc -->
 
 ## Summary
 
@@ -88,3 +95,8 @@ Once the compilation succeeds, go to `File > Convert Programming Files` as shown
 Normally we would have flashed the design as explained [here](./Flash-FPGA-from-HPS-running-Linux.md) and [here](./Flash-FPGA-On-Boot-Up.md). But in this case, we need to set some registers on the HPS otherwise the HPS will hang as soon as we try to read.
 
 Let's cover this in the next section.
+
+<p align="right">Next | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-3.md">Avalon MM Host/Master - 3</a></b>
+<br/>
+Back | <b><a href="FPGA-SDRAM-Communication_-Avalon-MM-Host-Master-Component-Part-1.md">Avalon MM Host/Master - 1</a></p>
+</b><p align="center"><sup>FPGA - SDRAM Communication | </sup><a href="../README.md#fpga---sdram-communication"><sup>Table of Contents</sup></a></p>
