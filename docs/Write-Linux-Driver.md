@@ -62,7 +62,7 @@ This is a good starting point to work with, but there are some problems we need 
 - base address wrong
 - clk_0 not defined to our dtsi
 - reg cannot hold 3 values in our dtsi
-s
+
 ### Determine base address and span of FPGA peripherals
 
 We need to determine the base address of our custom IP component and update the device tree with it. One way of doing this is by using the utility called *sopc-create-header-files* which decodes the SOPCINFO file. We have used this program before to create the **hps_0.h** header file in [Designing and Flashing the design](./Building-SoC-Design.md).
@@ -155,7 +155,7 @@ Copy the following device tree entry and add it to the device tree inside of the
 				clocks = <&l4_main_clk>;
 		}; //end leds@0xff200000 (custom_leds_0)
 ```
-Make sure to save your modifications.
+Please not that the clocks property has been updated to match the clock name (*<&l4_main_clk>*) that exists in our setup. Make sure to save your modifications.
 
 ### Generate the Device Tree Binary
 
@@ -204,7 +204,7 @@ Upon reboot, if you login and run the following command:
 cat /sys/devices/platform/soc/ff200000.leds/*
 ```
 
-You should see that they're all enabled:
+You should see something like the following output:
 
 ```bash
 (null)
