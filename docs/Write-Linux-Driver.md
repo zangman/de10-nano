@@ -10,7 +10,7 @@ This article explains how to write a driver for our FPGA custom IP. The driver w
 
 Content on this page has been obtained from the excellent [bitlog article](https://bitlog.it/20170820_building_embedded_linux_for_the_terasic_de10-nano.html), which has obtained it's content from this [rocketboards article](https://rocketboards.org/foswiki/Documentation/EmbeddedLinuxBeginnerSGuide#11). The steps below have been updated to work with our setup and configuration.
 
-Before we begin, make sure you have studied, completed, and understood the content from [Designing and Flashing the design](../Building-SoC-Design.md). Head over to the [discussions board](https://github.com/zangman/de10-nano/discussions) if you have questions.
+Before we begin, make sure you have studied, completed, and understood the content from [Designing and Flashing the design](./Building-SoC-Design.md). Head over to the [discussions board](https://github.com/zangman/de10-nano/discussions) if you have questions.
 
 ## Steps
 
