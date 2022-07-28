@@ -62,10 +62,10 @@ This is a good starting point to work with, but there are some problems we need 
 - base address wrong
 - clk_0 not defined to our dtsi
 - reg cannot hold 3 values in our dtsi
-
+s
 ### Determine base address and span of FPGA peripherals
 
-We need to determine the base address of our custom IP component and update the device tree with it. One way of doing this is by using the utility called *sopc-create-header-files* which decodes the SOPCINFO file. We have used this program before to create the **hps_0.h** header file in [Designing and Flashing the design](docs/Building-SoC-Design.md).
+We need to determine the base address of our custom IP component and update the device tree with it. One way of doing this is by using the utility called *sopc-create-header-files* which decodes the SOPCINFO file. We have used this program before to create the **hps_0.h** header file in [Designing and Flashing the design](./Building-SoC-Design.md).
 
 Start by creating a directory to store the generated files.
 
@@ -137,7 +137,7 @@ The output shows us what the base addresses are for the peripherals in the FPGA.
 
 ### Modify socfpga.dtsi
 
-We need to add the base address from the previous step to the *socfpga.dtsi* that we saw at the start of the [Configuring the Device Tree](docs/Configuring-the-Device-Tree.md) guide. 
+We need to add the base address from the previous step to the *socfpga.dtsi* that we saw at the start of the [Configuring the Device Tree](./Configuring-the-Device-Tree.md) guide. 
 
 ```bash
 # Change into the linux directory.
@@ -167,7 +167,7 @@ cd $DEWD/linux-socfpga
 # Linux kernel magically allows this.
 make ARCH=arm my_custom.dtb
 ```
-We are going to continue to use **my_custom.dtb** from [Configuring the Device Tree](docs/Configuring-the-Device-Tree.md) which contains our changes to enable the FPGA bridges. It is required for the FPGA bridges to be enabled in order to access components on the FPGA.
+We are going to continue to use **my_custom.dtb** from [Configuring the Device Tree](./Configuring-the-Device-Tree.md) which contains our changes to enable the FPGA bridges. It is required for the FPGA bridges to be enabled in order to access components on the FPGA.
 
 ### Copy the Device Tree Binary to the DE10-Nano
 
@@ -224,7 +224,7 @@ That means we can see that our custom IP device is listed and we are now ready t
 
 ### Write the simple Linux driver
 
-We should have the FPGA flashed with the design from [Designing and Flashing the design](docs/Building-SoC-Design.md) and now the custom LED component listed in the device tree. We are ready to write a Loadable Kernal Module that will control the LEDs. We'll use the cross-compiling method to build the binary on our host Debian system and then copy it over to the DE10-Nano. Run the following commands to create a file:
+We should have the FPGA flashed with the design from [Designing and Flashing the design](./Building-SoC-Design.md) and now the custom LED component listed in the device tree. We are ready to write a Loadable Kernal Module that will control the LEDs. We'll use the cross-compiling method to build the binary on our host Debian system and then copy it over to the DE10-Nano. Run the following commands to create a file:
 
 ```bash
 cd $DEWD
