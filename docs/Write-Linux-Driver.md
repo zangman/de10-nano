@@ -44,7 +44,7 @@ embedded_command_shell.sh
 # Generate the device tree.
 sopc2dts --input soc_system.sopcinfo --output soc_system.dts --type dts --board soc_system_board_info.xml --board hps_common_board_info.xml --bridge-removal all --clocks
 
-# Let's get out oof the embedded_command_shell.
+# Let's get out of the embedded_command_shell.
 exit
 ```
 
