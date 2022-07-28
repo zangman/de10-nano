@@ -119,7 +119,7 @@ The following grep patterns will extract the span of the FPGA peripherals in our
 ```bash
 cd $DEWD/DE10_NANO_SoC_GHRD/qsys_headers
 
-# list out the base addresses of the FPGA components
+# list out the span of the FPGA components
 cat soc_system.h | grep -E -e "#define HPS_0_ARM_A9_0_" | grep -v -E -e "HPS_0_ARM_A9_0_HPS_0_" | grep -E -e "_SPAN\s"
 ```
 You should see something like the following output:
