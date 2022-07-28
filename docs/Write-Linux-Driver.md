@@ -16,7 +16,7 @@ Before we begin, make sure you have studied, completed, and understood the conte
 
 ### Modify *custom_leds_hw.tcl* file
 
-In the Platform Designer step of the [Designing and Flashing the design](../Building-SoC-Design.md) a file called *custom_leds_hw.tcl* is generated. Open the file and add the following lines to it:
+In the Platform Designer step of the [Designing and Flashing the design](./Building-SoC-Design.md) a file called *custom_leds_hw.tcl* is generated. Open the file and add the following lines to it:
 
 ```
 # Device tree generation
