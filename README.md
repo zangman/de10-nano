@@ -48,6 +48,7 @@ To just download the Debian or Arch Linux ARM (**NEW**) image for the DE10-Nano,
 
 - [Configuring the Device Tree](docs/Configuring-the-Device-Tree.md)
 - [Designing and Flashing the design](docs/Building-SoC-Design.md)
+- [Writing a simple Linux Driver](docs/Write-Linux-Driver.md)
 
 # My First SoC - Simple Hardware Adder
 

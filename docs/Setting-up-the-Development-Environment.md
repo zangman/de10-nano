@@ -21,20 +21,20 @@
 
 ## Summary
 
-Here we will take some time to set up our development environment which will be similar to the one was used when putting together this guide. This will ensure that:
+Here we will take some time to set up our development environment. This environment will be similar to what was used for creating this guide. This will ensure that:
 
 - All the commands used in this guide work seamlessly.
 - You can close your session and/or restart your terminal without having to do the set up again.
 
 ## Operating System
 
-We will use Debian as the main OS for everything. At the time of writing this guide, buster is the latest version of Debian. I strongly recommend using Debian for your development environment, it will save you a fair bit of time debugging and makes it easier to follow along with all the commands.
+We will use Debian as the main OS for everything. At the time of writing this guide, buster is the latest version of Debian. A complete list of Debian releases can be viewed in the [Index of releases](https://www.debian.org/releases/#:~:text=for%20detailed%20information.-,Index%20of%20releases,-The%20next%20release). I strongly recommend using Debian for your development environment, it will save you a fair bit of time debugging and makes it easier to follow along with all the commands.
 
 This guide does not go into the details of installing Debian, there are plenty of resources available online. You can use [virtualbox](https://www.virtualbox.org/) as well if you don't have a dedicated Debian machine. That's what I used.
 
 ### Important: Storage space
 
-I would suggest having at least 200 GB of disk space available when starting out. You can probably get away with 100 GB, but it's better to have a buffer. FPGA software and building a working Linux distro requires a fair bit of space. If you are using virtualbox and don't currently have the kind of space, I would suggest you make the space available before you begin rather than resizing it later, to save a bit of hassle.
+I would suggest having at least 200 GB of disk space available when starting out. You can probably get away with 100 GB, but it's better to have a buffer. FPGA software and building a working Linux distro requires a fair bit of space. If you are using virtualbox and don't currently have that amount of space, I would suggest that you make the space available before you begin rather than resizing it later. This will save a bit of hassle.
 
 Proceed to the next step after you have a working Debian install. If you are using virtualbox, make sure you have Virtualbox Guest Additions installed so that you can have full screen working.
 
@@ -46,9 +46,9 @@ You can also choose not to use sudo. Simply run the command `su` to become root 
 
 ## Quartus Download and Install
 
-The following software is needed. All the tools are free, but you will need to create an account on Intel's website before you can download.
+The following software is needed. All the tools are free, but you will need to create an account in order to download. The software can be obtained from [Intel's FPGA Software Download Center](https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html?s=Newest).
 
-Download the following by choosing the latest available Quartus Lite version. At the time of writing, it is 20.1:
+Download the following by choosing the latest available Quartus Lite version. This guide will use version 20.1:
 
 - Quartus Prime Lite Edition
   - Quartus Prime (Includes Nios II EDS)
@@ -72,7 +72,7 @@ Once downloaded, you will need to make the installer executable. I downloaded al
 cd ~/Downloads/quartus_downloads/
 chmod +x *.run
 
-# Install Quartus Prime. Replace this wtih the version you downloaded.
+# Install Quartus Prime. Replace this with the version you downloaded.
 # This takes 15-20 mins to complete.
 # The default install location is fine i.e. ~/intelFPGA_lite
 ./QuartusLiteSetup-20.1.0.711-linux.run
