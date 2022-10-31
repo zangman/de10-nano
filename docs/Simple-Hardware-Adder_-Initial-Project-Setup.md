@@ -24,6 +24,13 @@
 
 We're going to create a template project and save it so that we can reuse it for other projects. To do this, we'll start with the GHRD project that comes with the de10-nano CD-ROM and remove a bunch of stuff to make it as simple as possible.
 
+#### Why are we doing this?
+
+Strictly speaking, you don't need to do all these edits. But it helps to make it as simple as possible to understand what is actually going on under the hood. I've found this approach helpful for my own learning and hope you will find it useful too. It also compiles the design much faster. For me, the original design with everything takes about 15 mins to compile. The trimmed down version takes less than 10 mins.
+
+Of course, you can leave everything as is in the GHRD, in the platform designer as well as in quartus, and it will work perfectly.
+
+
 ## Getting the project ready
 
 Complete the following steps explained at the links below and proceed to the next section when done:
@@ -229,11 +236,6 @@ endmodule
 
 Save the file and compile the design. If everything went right, you should not see any errors (ignore the warnings).
 
-#### Why are we doing this?
-
-Strictly speaking, you don't need to do all these edits. But it helps to make it as simple as possible to understand what is actually going on under the hood. I've found this approach helpful for my own learning and hope you will find it useful too. It also compiles the design much faster. For me, the original design with everything takes about 15 mins to compile. The trimmed down version takes less than 10 mins.
-
-Of course, you can leave everything as is in the GHRD, in the platform designer as well as in quartus, and it will work perfectly.
 
 #### Create a backup of this project
 
