@@ -32,7 +32,7 @@ Below is a more detailed block diagram of how everything is wired up:
 
 As you can see in the highlighted sections, the way the FPGA is connected to the SDRAM controller completely bypasses the L3 Main switch. The other bridges such as the FPGA-to-HPS and Lightweight FPGA-to-HPS bridges are routed via the L3 Main Switch. This allows (as I understand it) for much faster memory access.
 
-Another interesting thing to note is that the SDRAM controller allows upto 6 independent masters to work simultaneously and access the SDRAM directly. This can be configured in Platform Designer.
+Another interesting thing to note is that the SDRAM controller allows up to 6 independent masters to work simultaneously and access the SDRAM directly. This can be configured in Platform Designer.
 
 ## Approach - Custom Avalon MM Master
 
