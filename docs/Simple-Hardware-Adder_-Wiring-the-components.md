@@ -105,7 +105,7 @@ Let's talk a little bit about the memory addressing. We want our components to b
 
    However, the `Base` and `End` addresses for all the 3 components that we added is exactly the same which won't work. Each one needs to have it's own non-overlapping address space.
 
-   For this, we edit the values in the `Base` column to ensure they're not overlapping. I prefer to keep them continuous, but you can give any address as long as it's between `0` and `0x3FF` as provided by the bridge component. Here is what my screen now looks like:
+   For this, we edit the values in the `Base` column to ensure they're not overlapping. I prefer to keep them contiguous, but you can give any address as long as it's between `0` and `0x3FF` as provided by the bridge component. Here is what my screen now looks like:
    ![](images/wiring_9.png)
 
 #### Auto adjust address width
