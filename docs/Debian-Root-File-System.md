@@ -225,7 +225,7 @@ And that completes the Debian rootfs. Be careful when extracting this as it will
 
 ## References
 
-[Quck and easy bootstrap of Debian for armhf](https://blog.lazy-evaluation.net/posts/linux/debian-armhf-bootstrap.html)
+[Quick and easy bootstrap of Debian for armhf](https://blog.lazy-evaluation.net/posts/linux/debian-armhf-bootstrap.html)
 
 [Debootstrap - Linux-Sunxi](http://linux-sunxi.org/Debootstrap)
 
