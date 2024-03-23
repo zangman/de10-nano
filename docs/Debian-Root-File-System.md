@@ -133,7 +133,7 @@ While still in the `chroot` environment, let's do some setup so that our rootfs 
   dpkg-reconfigure locales
   ```
 
-- **Ethernet** - To get the ethernet on the DE10-Nano working, we need to add the following to the file`/etc/network/interfaces` under the line that says `source-directory /etc/network/interfaces.d`. This will enable DHCP:
+- **Ethernet** - To get the ethernet on the DE10-Nano working, we need to add the following to the file`/etc/network/interfaces` under the line that says `source-directory /etc/network/interfaces.d`. This will enable DHCP.  *A note for folks attempting this with a more recent version of Linux.  You will need to replace 'eth0' with 'end0' in the code below, or the systemd networking.service will fail on boot.  This is a result of the change to the [Predictable Interface Names](https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/) naming scheme.*
 
   ```bash
   auto lo eth0
