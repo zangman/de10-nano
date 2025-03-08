@@ -6,7 +6,7 @@
 
 ## Summary
 
-This article explains how to write a driver for our FPGA custom IP. The driver will be a very basic Loadable Kernal Module (LMK) and serve as an example for how you can write a software interface for your custom hardware in the FPGA. A device driver's purpose is to provide kernal code to access the hardware, but without forcing particular policies or rules on the users. Different users have different needs and the driver should only expose capabilities of the hardware.
+This article explains how to write a driver for our FPGA custom IP. The driver will be a very basic Loadable Kernal Module (LKM) and serve as an example for how you can write a software interface for your custom hardware in the FPGA. A device driver's purpose is to provide kernal code to access the hardware, but without forcing particular policies or rules on the users. Different users have different needs and the driver should only expose capabilities of the hardware.
 
 Content on this page has been obtained from the excellent [bitlog article](https://bitlog.it/20170820_building_embedded_linux_for_the_terasic_de10-nano.html), which has obtained it's content from this [rocketboards article](https://rocketboards.org/foswiki/Documentation/EmbeddedLinuxBeginnerSGuide#11). The steps below have been updated to work with our setup and configuration.
 
@@ -72,16 +72,15 @@ Start by creating a directory to store the generated files.
 ```bash
 cd $DEWD/DE10_NANO_SoC_GHRD
 
+embedded_command_shell.sh
+
 # Make directory for header files
 mkdir qsys_headers 
-```
 
-Run the following commands to use the **soc_system.sopcinfo** to generate the header files.
-
-```bash
-cd $DEWD/DE10_NANO_SoC_GHRD
-
+# Run the following command to use the **soc_system.sopcinfo** to generate the header files.
 sopc-create-header-files $DEWD/DE10_NANO_SoC_GHRD/soc_system.sopcinfo --output-dir qsys_headers 
+
+exit
 
 # Make directory for header files.0
 cd qsys_headers 
