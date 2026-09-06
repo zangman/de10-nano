@@ -46,55 +46,29 @@ You can also choose not to use sudo. Simply run the command `su` to become root 
 
 ## Quartus Download and Install
 
-The following software is needed. All the tools are free, but you will need to create an account in order to download. The software can be obtained from [Intel's FPGA Software Download Center](https://www.intel.com/content/www/us/en/collections/products/fpga/software/downloads.html?s=Newest).
+The following software is needed. All the tools are free, but you will need to create an account, fill in your address etc in order to download. It's annoying I know, but not nearly as annoying as HP printer software. So we can live with it :).
 
-Download the following by choosing the latest available Quartus Lite version. This guide will use version 20.1:
+The software can be obtained from [Altera's FPGA Software Download Center](https://www.altera.com/downloads/fpga-development-tools/quartus-prime-lite-edition-design-software-version-25-1-linux). 
 
-- Quartus Prime Lite Edition
-  - Quartus Prime (Includes Nios II EDS)
-  - ModelSim-Intel FPGA Edition (includes Starter Edition)
-    (Required for design simulation)
-  - Cyclone V device support
-- Quartus Standard Edition
-  - Intel SoC FPGA Embedded Development Suite Standard Edition
+Download the Installer for **Quartus Prime Lite** as shown below:
 
-Refer to the screenshots below:
+![](images2/setting-up-download-installer.png)
 
-![](images/quartus_download1.png)
+Then run the installer and select the following components:
 
-![EDS](images/quartus_download2.png)
+![](images2/setting-up-installer.png)
 
-Quartus Prime installer can install the other tools as well if they are all present in the same directory. So it is advisable to wait until all the files are downloaded before you install them.
+Wait for it to complete. Note the location where it is installing everything. You can configure it, but in my case I leave it at default.
 
-Once downloaded, you will need to make the installer executable. I downloaded all the files into `~/Downloads/quartus_downloads`. Modify the commands below accordingly depending on where you downloaded the files.
 
-```bash
-cd ~/Downloads/quartus_downloads/
-chmod +x *.run
-
-# Install Quartus Prime. Replace this with the version you downloaded.
-# This takes 15-20 mins to complete.
-# The default install location is fine i.e. ~/intelFPGA_lite
-./QuartusLiteSetup-20.1.0.711-linux.run
-
-# Once it completes, install EDS.
-# Make sure to change the install location from ~/intelFPGA to ~/intelFPGA_lite.
-./SoCEDSSetup-20.1.0.711-linux.run
-```
-
-Let's edit `.bash_aliases` so that we the quartus tools are easily accessible:
+Let's edit `.bash_aliases` so that the quartus tools are easily accessible. This file is sourced in my `.bashrc` so it gets loaded up on every terminal start.
 
 ```bash
 echo "" >> ~/.bash_aliases
 echo "# Path for Quartus tools." >> ~/.bash_aliases
 
 # Access to quartus, qsys etc.
-echo "export PATH=$HOME/intelFPGA_lite/20.1/quartus/bin:\$PATH" >> ~/.bash_aliases
-
-# Access to embedded_command_shell.sh which sets up the
-# environment variables so that all the embedded tools are available
-# like bsp-settings-editor etc.
-echo "export PATH=$HOME/intelFPGA_lite/20.1/embedded:\$PATH" >> ~/.bash_aliases
+echo "export PATH=$HOME/altera_lite/25.1std/quartus/bin:\$PATH" >> ~/.bash_aliases
 ```
 
 ### [Optional] Access JTAG as normal user
@@ -176,22 +150,26 @@ Here we will set up the environment to use the Linaro GCC to enable cross compil
 
 ### Get a suitable ARM compiler
 
-Head over to the [downloads page at Linaro](https://www.linaro.org/downloads/) and download the latest binary release for `arm-linux-gnueabihf`. This is the version of `gcc` that we will use to compile our kernel with. The latest version at the time of writing is `7.5.0-2019.12`. We will fetch the `x86_64` release because we're using Debian on a 64-bit machine.
+Head over to the [Arm GNU Toolchain](https://developer.arm.com/tools-and-software/gnu-toolchain) and download the latest binary release for `arm-linux-gnueabihf` from the toolchain. The direct link for this at the time of writing is [here](https://gitlab.arm.com/tooling/gnu-toolchains-for-arm/-/tree/releases/15.3.rel1?ref_type=heads#linux).
+
+![](images2/setting-up-arm-toolchain.png)
+
+
+Download this file into the working directory. Extract it using the commands below:
 
 ```bash
 cd $DEWD
-wget https://developer.arm.com/-/media/Files/downloads/gnu-a/10.3-2021.07/binrel/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf.tar.asc
 
-tar -xf gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf.tar.asc
+tar -xf arm-gnu-toolchain-15.3.rel1-x86_64-arm-none-linux-gnueabihf.tar.xz
 
 # Delete the archive since we don't need it anymore.
-rm gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf.tar.asc
+rm arm-gnu-toolchain-15.3.rel1-x86_64-arm-none-linux-gnueabihf.tar.xz
 ```
 
 Set the `CROSS_COMPILE` environment variable to point to the binary location. This is to tell the kernel `Makefile` where the compiler binary is located.
 
 ```bash
-export CROSS_COMPILE=$DEWD/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-
+export CROSS_COMPILE=$DEWD/arm-gnu-toolchain-15.3.rel1-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-
 ```
 
 With this step, we are done. However, if we close the current terminal or restart the machine, we will lose the `CROSS_COMPILE` environment variable and will have to set it up again. To avoid this, let's add this to `~/.bash_aliases` so that it gets set up every time we open a new shell.
@@ -201,7 +179,7 @@ Run the following commands while in the same directory:
 ```bash
 echo "" >> ~/.bash_aliases
 echo "# Cross compiler for DE10-Nano." >> ~/.bash_aliases
-echo "export CROSS_COMPILE=$DEWD/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-" >> ~/.bash_aliases
+echo "export CROSS_COMPILE=$DEWD/arm-gnu-toolchain-15.3.rel1-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-" >> ~/.bash_aliases
 ```
 
 > **Did you know?**

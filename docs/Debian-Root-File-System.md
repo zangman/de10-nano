@@ -42,9 +42,9 @@ In the first stage, we will create a directory to hold the rootfs. Note that alm
 cd $DEWD
 mkdir rootfs
 
-# buster is the latest debian version at the time of writing.
+# trixie is the latest debian version at the time of writing.
 # Replace it with whatever is the latest.
-sudo debootstrap --arch=armhf --foreign buster rootfs
+sudo debootstrap --arch=armhf --foreign trixie rootfs
 ```
 
 ## Second Stage
@@ -143,15 +143,19 @@ While still in the `chroot` environment, let's do some setup so that our rootfs 
   iface eth0 inet dhcp
   ```
 
-- **Sources.list** - Use a more complete apt `sources.list`. Edit the file `/etc/apt/sources.list` and add the following. Replace `buster` with whatever version of debian you are using:
+- **Sources.list** - Use a more complete apt `sources.list`. Edit the file `/etc/apt/sources.list` and add the following. Search online for the ones you need for the right distro:
 
   ```bash
-  deb http://deb.debian.org/debian/ buster main contrib non-free
-  deb-src http://deb.debian.org/debian/ buster main contrib non-free
-  deb http://deb.debian.org/debian/ buster-updates main contrib non-free
-  deb-src http://deb.debian.org/debian/ buster-updates main contrib non-free
-  deb http://deb.debian.org/debian-security/ buster/updates main contrib non-free
-  deb-src http://deb.debian.org/debian-security/ buster/updates main contrib non-free
+  # Debian Trixie Main & Updates
+  deb http://deb.debian.org/debian/ trixie main contrib non-free non-free-firmware
+  # deb-src http://deb.debian.org/debian/ trixie main contrib non-free non-free-firmware
+  
+  deb http://deb.debian.org/debian/ trixie-updates main contrib non-free non-free-firmware
+  # deb-src http://deb.debian.org/debian/ trixie-updates main contrib non-free non-free-firmware
+  
+  # Debian Trixie Security Updates
+  deb http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
+  # deb-src http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
   ```
 
 - **Openssh-Server** - Install `openssh-server` so that you can `ssh` into the device:
