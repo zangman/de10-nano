@@ -64,7 +64,7 @@ cd $DEWD
 git clone https://github.com/u-boot/u-boot.git
 ```
 
-List all the tags and select a release that you want to use. For this guide, I used the latest stable release `v2021.07`:
+List all the tags and select a release that you want to use. For this guide, I used the latest stable release `v2026.07`:
 
 ```bash
 cd $DEWD/u-boot
@@ -73,7 +73,7 @@ cd $DEWD/u-boot
 git tag
 
 # Checkout the desired release.
-git checkout v2021.07
+git checkout v2026.07
 ```
 
 ### Configuring
@@ -92,7 +92,7 @@ These steps are optional i.e. you can skip them and your bootloader will work gr
 We want to keep our changes separate from the branch synced with the repo. So let's create a new branch:
 
 ```bash
-git checkout -b v2021.07_mine_fpga_boot_mac
+git checkout -b v2026.07_mine_fpga_boot_mac
 ```
 
 ##### Configure U-Boot to flash FPGA automatically at boot time
@@ -110,18 +110,17 @@ Towards the end of the file, look for the following lines:
 
 ```bash
   BOOT_TARGET_DEVICES(BOOTENV_DEV)                                  \
-  \
-  "distro_bootcmd=" BOOTENV_SET_SCSI_NEED_INIT                      \
-    BOOTENV_SET_NVME_NEED_INIT                                \
-    BOOTENV_SET_IDE_NEED_INIT                                 \
-    BOOTENV_SET_VIRTIO_NEED_INIT                              \
-    "for target in ${boot_targets}; do "                      \
-      "run bootcmd_${target}; "                         \
-    "done\0"
+	\
+	"distro_bootcmd=" BOOTENV_SET_SCSI_NEED_INIT                      \
+		BOOTENV_SET_NVME_NEED_INIT                                \
+		BOOTENV_SET_IDE_NEED_INIT                                 \
+		BOOTENV_SET_VIRTIO_NEED_INIT                              \
+		BOOTENV_SET_EXTENSION_NEED_INIT                           \
+		"for target in ${boot_targets}; do "                      \
+			"run bootcmd_${target}; "                         \
+		"done\0"
 
-#ifndef CONFIG_BOOTCOMMAND
-#define CONFIG_BOOTCOMMAND "run distro_bootcmd"
-#endif
+#endif  /* _CONFIG_CMD_DISTRO_BOOTCMD_H */
 ```
 
 We will modify the variable `distro_bootcmd` to load the FPGA design from the FAT partition. So modify it to look like this:
@@ -149,9 +148,7 @@ We will modify the variable `distro_bootcmd` to load the FPGA design from the FA
       "run bootcmd_${target}; "                         \
     "done\0"
 
-#ifndef CONFIG_BOOTCOMMAND
-#define CONFIG_BOOTCOMMAND "run distro_bootcmd"
-#endif
+#endif  /* _CONFIG_CMD_DISTRO_BOOTCMD_H */
 ```
 
 Quick explanation of what we're doing here. `distro_bootcmd` sets up the u-boot sequence of commands and at the end launches the kernel with `run bootcm_${target}`.
@@ -187,7 +184,7 @@ Let's generate a random mac address first. You can get it online if you like, bu
 cd $DEWD/u-boot
 
 # Compile the mac address generator.
-make -C tools gen_eth_addr
+gcc -o tools/gen_eth_addr tools/gen_eth_addr.c
 
 # Run it!
 tools/gen_eth_addr
@@ -278,6 +275,10 @@ Now we can build U-Boot. Run the following command:
 ```bash
 make ARCH=arm -j 24
 ```
+
+> Note: If you get some error here, it's possible that the variable `CROSS_COMPILE` hasn't been set. Check the section in the [setting up the development environment](Setting-up-the-Development-Environment.md)
+> 
+> Other possible errors are with missing libraries (openssl, gnutls etc). You'll probably have to resolve these for your linux distro.
 
 Once the compilation completes, it should have generated the file `u-boot-with-spl.sfp`. This is the bootloader combined with the secondary program loader (spl).
 
